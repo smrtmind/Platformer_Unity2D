@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - layer1
-  - layer2
+  - 
+  - 
   - Ground
   - Ladder
-  - 
+  - Decor
   - 
   - 
   - 
@@ -41,9 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: layer1
+  - name: 
     uniqueID: 156832157
     locked: 0
-  - name: layer2
+  - name: 
     uniqueID: 2254299031
+    locked: 0
+  - name: Level
+    uniqueID: 3978697857
+    locked: 0
+  - name: Chars
+    uniqueID: 1447187359
+    locked: 0
+  - name: Decor
+    uniqueID: 189240101
+    locked: 0
+  - name: Props
+    uniqueID: 438754173
     locked: 0
