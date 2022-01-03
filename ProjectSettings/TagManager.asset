@@ -16,8 +16,8 @@ TagManager:
   - 
   - 
   - Ground
-  - Ladder
-  - Decor
+  - 
+  - 
   - 
   - 
   - 
@@ -53,7 +53,7 @@ TagManager:
   - name: Chars
     uniqueID: 1447187359
     locked: 0
-  - name: Decor
+  - name: 
     uniqueID: 189240101
     locked: 0
   - name: Props

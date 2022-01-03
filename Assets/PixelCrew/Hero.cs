@@ -14,6 +14,7 @@ namespace PixelCrew
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private float _jump;
+        public int _score;
 
         private void Awake()
         {
@@ -43,9 +44,10 @@ namespace PixelCrew
 
             if (isJumping)
             {
-                if (IsGrounded())
+                if (IsGrounded() && _rigidbody.velocity.y <= 0.1f)
                 {
                     _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+                    //_speed++;
                 }
             }
 

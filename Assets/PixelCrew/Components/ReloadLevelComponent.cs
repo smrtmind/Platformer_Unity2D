@@ -5,10 +5,15 @@ namespace PixelCrew.Components
 {
     public class ReloadLevelComponent : MonoBehaviour
     {
+        [SerializeField] private Hero _hero;
+
         public void Reload()
         {
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
+
+            _hero._score = default;
+            Debug.Log("Replay level");
         }
     }
 }
