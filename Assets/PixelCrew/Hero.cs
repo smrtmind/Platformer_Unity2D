@@ -33,23 +33,11 @@ namespace PixelCrew
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;
-
-            //temp decision
-            if (_speed == 4)
-            {
-                _speed--;
-            }
         }
 
         public void SetJump(float jump)
         {
             _jump = jump;
-
-            //temp decision
-            if (_speed != 4)
-            {
-                _speed++;
-            }
         }
 
         private void FixedUpdate()
