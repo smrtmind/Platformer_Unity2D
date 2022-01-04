@@ -32,8 +32,7 @@ namespace PixelCrew.Components
             }
 
             _hero._score += points;
-            Debug.Log($"You have collected {_coin} coin (+{points})\n" +
-                      $"SCORE: {_hero._score}");
+            Debug.Log($"You have collected {_coin} coin (+{points}) / TOTAL SCORE: {_hero._score}");
         }
     }
 }

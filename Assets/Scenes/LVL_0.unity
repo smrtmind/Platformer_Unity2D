@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 104826108}
   - component: {fileID: 104826107}
   - component: {fileID: 104826106}
+  - component: {fileID: 104826111}
   m_Layer: 0
   m_Name: Coins_4 (2)
   m_TagString: Untagged
@@ -274,6 +275,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &104826111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104826105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 6582046967323461550, guid: 3061a332f93c593458102e00bbe22b94, type: 3}
+  - {fileID: 1942777921290549423, guid: 3061a332f93c593458102e00bbe22b94, type: 3}
+  - {fileID: 8793606821965667882, guid: 3061a332f93c593458102e00bbe22b94, type: 3}
+  - {fileID: 3444832735345940322, guid: 3061a332f93c593458102e00bbe22b94, type: 3}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &130833007
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +312,7 @@ GameObject:
   - component: {fileID: 130833013}
   - component: {fileID: 130833014}
   - component: {fileID: 130833011}
+  - component: {fileID: 130833015}
   m_Layer: 0
   m_Name: Hero_0
   m_TagString: Player
@@ -335,8 +359,7 @@ SpriteRenderer:
   m_SortingLayerID: 1447187359
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6146700129834819302, guid: 4655ad36e099ba746b572a78fa8207da,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a453efad274da44d8289c2d952bb4e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -388,8 +411,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00029408932}
-  m_Size: {x: 0.75, y: 0.8744118}
+  m_Offset: {x: 0, y: 0.02901861}
+  m_Size: {x: 0.75, y: 0.8169628}
   m_Direction: 0
 --- !u!114 &130833012
 MonoBehaviour:
@@ -404,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  _jumpSpeed: 12
+  _jumpForce: 12
   _groundCheck: {fileID: 1341568695}
   _score: 0
 --- !u!114 &130833013
@@ -504,6 +527,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &130833015
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130833007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e04a8913e25ae274e8b1bf79a166b86d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &321216390
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486247289}
   - component: {fileID: 486247288}
+  - component: {fileID: 486247290}
   m_Layer: 0
   m_Name: PalmTreeBackgroundSheet_0
   m_TagString: Untagged
@@ -856,6 +899,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &486247290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486247287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 8683632313750085214, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: 262518517033693272, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: 762285979657935423, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: 1400697303485121525, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &487703917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,6 +1748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 948445488}
   - component: {fileID: 948445487}
+  - component: {fileID: 948445489}
   m_Layer: 0
   m_Name: WaterReflectLarge_0
   m_TagString: Untagged
@@ -1755,6 +1821,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &948445489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948445486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -6018279857378552221, guid: 6773050cc0d22df499f8a3fe48685802, type: 3}
+  - {fileID: -6505298659582443948, guid: 6773050cc0d22df499f8a3fe48685802, type: 3}
+  - {fileID: -7718236803453008505, guid: 6773050cc0d22df499f8a3fe48685802, type: 3}
+  - {fileID: -2749089684739404911, guid: 6773050cc0d22df499f8a3fe48685802, type: 3}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1140303639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,6 +1853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1140303641}
   - component: {fileID: 1140303640}
+  - component: {fileID: 1140303642}
   m_Layer: 0
   m_Name: PalmTreeBackgroundSheet_6
   m_TagString: Untagged
@@ -1837,6 +1926,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1140303642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140303639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -2645899244835350471, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: -6487789065682943626, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: 1981876992937066421, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: 7744047822205964645, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1143478778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,6 +2096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179742740}
   - component: {fileID: 1179742739}
+  - component: {fileID: 1179742741}
   m_Layer: 0
   m_Name: PalmTreeBackgroundSheet_0 (1)
   m_TagString: Untagged
@@ -2057,6 +2169,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179742741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179742738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 8683632313750085214, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: 262518517033693272, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: 762285979657935423, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  - {fileID: 1400697303485121525, guid: 47e804c89fffd14459a6d1b18cf9025c, type: 3}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1331681464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,9 +2282,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.030457944}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.26954207
 --- !u!1 &1354856678
 GameObject:
   m_ObjectHideFlags: 0
