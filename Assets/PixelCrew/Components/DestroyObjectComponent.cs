@@ -16,23 +16,23 @@ namespace PixelCrew.Components
 
         public void CollectCoin()
         {
-            string _coin = default;
-            int points = default;
+            string coinName = default;
+            int coinCost = default;
 
-            if (_objectToDestroy.name.Contains("Coins_0"))
+            if (_objectToDestroy.name.Contains("SilverCoin"))
             {
-                points = 1;
-                _coin = "silver";
+                coinCost = 1;
+                coinName = "silver";
             }
 
-            else if (_objectToDestroy.name.Contains("Coins_4"))
+            else if (_objectToDestroy.name.Contains("GoldCoin"))
             {
-                points = 10;
-                _coin = "gold";
+                coinCost = 10;
+                coinName = "gold";
             }
 
-            _hero._score += points;
-            Debug.Log($"You have collected {_coin} coin (+{points}) / TOTAL SCORE: {_hero._score}");
+            _hero._score += coinCost;
+            Debug.Log($"You have collected {coinName} coin (+{coinCost}) / TOTAL SCORE: {_hero._score}");
         }
     }
 }
