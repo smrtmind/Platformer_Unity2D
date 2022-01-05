@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace PixelCrew
@@ -19,18 +17,21 @@ namespace PixelCrew
         private int _currentSpriteIndex;
         private float _nextFrameTime;
 
-        private bool _isPlaying = true;
-
         private void Start()
         {
             _renderer = GetComponent<SpriteRenderer>();
+        }
+
+        private void OnEnable()
+        {
             _secondsPerFrame = 1f / _frameRate;
             _nextFrameTime = Time.time + _secondsPerFrame;
+            _currentSpriteIndex = default;
         }
 
         private void Update()
         {
-            if (!_isPlaying || _nextFrameTime > Time.time) return;
+            if (_nextFrameTime > Time.time) return;
 
             if (_currentSpriteIndex >= _sprites.Length)
             {
@@ -41,7 +42,7 @@ namespace PixelCrew
 
                 else
                 {
-                    _isPlaying = false;
+                    enabled = false;
                     _onComplete?.Invoke();
                     return;
                 }

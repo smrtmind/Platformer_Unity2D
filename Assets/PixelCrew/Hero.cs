@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using PixelCrew.Components;
 using UnityEngine;
 
 namespace PixelCrew
@@ -8,20 +7,29 @@ namespace PixelCrew
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
+        [SerializeField] private float _damageJumpForce;
+        [SerializeField] private LayerMask _groundLayer;
+        [SerializeField] private float _interactionRadius;
+        [SerializeField] private Collider2D[] _interactionResult = new Collider2D[1];
+        [SerializeField] private LayerMask _interactionLayer;
 
-        [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private float _groundCheckRadius;
+        [SerializeField] private Vector3 _groundCheckPositionDelta;
 
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private Animator _animator;
         private SpriteRenderer _sprite;
+        private bool _isGrounded;
+        private bool _allowDoubleJump;
 
         private float _jump;
-        public int _score;     
+        public int _coins;
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
+        private static readonly int Hit = Animator.StringToHash("is-hit");
 
         private void Awake()
         {
@@ -40,36 +48,66 @@ namespace PixelCrew
             _jump = jump;
         }
 
+        private void Update()
+        {
+            _isGrounded = IsGrounded();
+        }
+
         private void FixedUpdate()
         {
-            _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
+            var xVelocity = _direction.x * _speed;
+            var yVelocity = CalculateYVelocity();
+            _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
-            var isJumping = _jump > 0;//_direction.y > 0
-            bool isGrounded = IsGrounded();
-            //check if you push up
-            if (_direction.y > 0)
-            {
-                Debug.Log("PUSHED UP");
-            }
-
-            if (isJumping)
-            {
-                if (isGrounded && _rigidbody.velocity.y <= 0.1f)
-                {
-                    _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-                }
-            }
-
-            else if (_rigidbody.velocity.y > 0)
-            {
-                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
-            }
-
-            _animator.SetBool(IsGroundKey, isGrounded);
+            _animator.SetBool(IsGroundKey, _isGrounded);
             _animator.SetBool(IsRunningKey, _direction.x != 0);
             _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
 
             UpdateSpriteDirection();
+        }
+
+        private float CalculateYVelocity()
+        {
+            var yVelocity = _rigidbody.velocity.y;
+            var isJumpPressing = _jump > 0;//_direction.y > 0
+
+            //check if you push up
+            //if (_direction.y > 0)
+            //{
+            //    Debug.Log("PUSHED UP");
+            //}
+
+            if (_isGrounded) _allowDoubleJump = true;
+
+            if (isJumpPressing)
+            {
+                yVelocity = CalculateJumpVelocity(yVelocity);
+            }
+
+            else if (_rigidbody.velocity.y > 0)
+            {
+                yVelocity *= 0.5f;
+            }
+
+            return yVelocity;
+        }
+
+        private float CalculateJumpVelocity(float yVelocity)
+        {
+            var isFalling = _rigidbody.velocity.y <= 0.001f;
+            if (!isFalling) return yVelocity;
+
+            if (_isGrounded)
+            {
+                yVelocity += _jumpForce;
+            }
+            else if (_allowDoubleJump)
+            {
+                yVelocity = _jumpForce;
+                _allowDoubleJump = false;
+            }
+
+            return yVelocity;
         }
 
         private void UpdateSpriteDirection()
@@ -87,12 +125,50 @@ namespace PixelCrew
 
         private bool IsGrounded()
         {
-            return _groundCheck.IsTouchingLayer;
+            var hit = Physics2D.CircleCast(transform.position + _groundCheckPositionDelta, _groundCheckRadius,
+                Vector2.down, 0, _groundLayer);
+            return hit.collider != null;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = IsGrounded() ? Color.green : Color.red;
+            Gizmos.DrawSphere(transform.position + _groundCheckPositionDelta, _groundCheckRadius);
         }
 
         public void SaySomething()
         {
             Debug.Log("Hello!");
+        }
+
+        public void AddCoins(int coins)
+        {
+            _coins += coins;
+            Debug.Log($"+{coins} coins. TOTAL COINS: {_coins}");
+        }
+
+        public void TakeDamage()
+        {
+            _animator.SetTrigger(Hit);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpForce);
+        }
+
+        public void Interact()
+        {
+            var size = Physics2D.OverlapCircleNonAlloc(
+                transform.position,
+                _interactionRadius,
+                _interactionResult,
+                _interactionLayer);
+
+            for (int i = 0; i < size; i++)
+            {
+                var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
         }
     }
 }

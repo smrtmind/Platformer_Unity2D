@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace PixelCrew.Components 
+namespace PixelCrew.Components
 {
     public class DestroyObjectComponent : MonoBehaviour
     {
@@ -12,27 +10,20 @@ namespace PixelCrew.Components
         public void DestroyObject()
         {
             Destroy(_objectToDestroy);
+            ItemCheck(_objectToDestroy.name);
         }
 
-        public void CollectCoin()
+        private void ItemCheck(string name)
         {
-            string coinName = default;
-            int coinCost = default;
-
-            if (_objectToDestroy.name.Contains("SilverCoin"))
+            if (name.Contains("SilverCoin"))
             {
-                coinCost = 1;
-                coinName = "silver";
+                _hero.AddCoins(coins: 1);
             }
 
-            else if (_objectToDestroy.name.Contains("GoldCoin"))
+            else if (name.Contains("GoldCoin"))
             {
-                coinCost = 10;
-                coinName = "gold";
+                _hero.AddCoins(coins: 10);
             }
-
-            _hero._score += coinCost;
-            Debug.Log($"You have collected {coinName} coin (+{coinCost}) / TOTAL SCORE: {_hero._score}");
         }
     }
 }

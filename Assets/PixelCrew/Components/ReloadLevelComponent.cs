@@ -12,7 +12,7 @@ namespace PixelCrew.Components
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
 
-            _hero._score = default;
+            _hero._coins = default;
             Debug.Log("Replay level");
         }
     }
