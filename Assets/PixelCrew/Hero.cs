@@ -10,12 +10,12 @@ namespace PixelCrew
         [SerializeField] private float _damageJumpForce;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
-        [SerializeField] private Collider2D[] _interactionResult = new Collider2D[1];
         [SerializeField] private LayerMask _interactionLayer;
 
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
+        private Collider2D[] _interactionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private Animator _animator;
