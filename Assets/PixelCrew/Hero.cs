@@ -22,6 +22,7 @@ namespace PixelCrew
         private SpriteRenderer _sprite;
         private bool _isGrounded;
         private bool _allowDoubleJump;
+        private bool _isJumping;
 
         private float _jump;
         public int _coins;
@@ -77,14 +78,19 @@ namespace PixelCrew
             //    Debug.Log("PUSHED UP");
             //}
 
-            if (_isGrounded) _allowDoubleJump = true;
+            if (_isGrounded)
+            {
+                _allowDoubleJump = true;
+                _isJumping = false;
+            }
 
             if (isJumpPressing)
             {
+                _isJumping = true;
                 yVelocity = CalculateJumpVelocity(yVelocity);
             }
 
-            else if (_rigidbody.velocity.y > 0)
+            else if (_rigidbody.velocity.y > 0 && _isJumping)
             {
                 yVelocity *= 0.5f;
             }
@@ -149,8 +155,19 @@ namespace PixelCrew
 
         public void TakeDamage()
         {
+            _isJumping = false;
             _animator.SetTrigger(Hit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpForce);
+
+            if (_coins > 0)
+            {
+                SpawnCoins();
+            }
+        }
+
+        private void SpawnCoins()
+        {
+
         }
 
         public void Interact()

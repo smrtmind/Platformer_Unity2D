@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 8888775303428955533}
   - component: {fileID: 8888775303428955532}
   - component: {fileID: 8888775303428955535}
+  - component: {fileID: 6363752694044756516}
   - component: {fileID: 8888775303428955530}
   m_Layer: 0
   m_Name: GoldCoin
@@ -257,6 +258,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6363752694044756516}
+        m_MethodName: Add
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8888775303428955535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,8 +281,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430acfd34f12c314db907c638305ec1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hero: {fileID: 0}
   _objectToDestroy: {fileID: 8888775303428955520}
+--- !u!114 &6363752694044756516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888775303428955520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6bad22a09748649acca936d9247305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numCoins: 10
 --- !u!114 &8888775303428955530
 MonoBehaviour:
   m_ObjectHideFlags: 0

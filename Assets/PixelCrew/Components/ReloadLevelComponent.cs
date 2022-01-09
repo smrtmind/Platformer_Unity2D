@@ -5,7 +5,12 @@ namespace PixelCrew.Components
 {
     public class ReloadLevelComponent : MonoBehaviour
     {
-        [SerializeField] private Hero _hero;
+        private Hero _hero;
+
+        private void Start()
+        {
+            _hero = FindObjectOfType<Hero>();
+        }
 
         public void Reload()
         {
