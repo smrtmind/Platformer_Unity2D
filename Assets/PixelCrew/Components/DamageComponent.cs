@@ -29,9 +29,19 @@ namespace PixelCrew.Components
             }
         }
 
-        private void Target(GameObject target)
+        private HealthComponent Target(GameObject target)
         {
             _healthComponent = target.GetComponent<HealthComponent>();
+
+            if (_healthComponent != null)
+            {
+                return _healthComponent;
+            }
+
+            else
+            {
+                throw new System.Exception();
+            }
         }
     }
 }
