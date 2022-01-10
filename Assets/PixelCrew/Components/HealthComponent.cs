@@ -18,5 +18,10 @@ namespace PixelCrew.Components
                 _onDie?.Invoke();
             }
         }
+
+        public void ApplyHeal(int healValue)
+        {
+            _health += healValue;
+        }
     }
 }

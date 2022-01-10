@@ -1085,8 +1085,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1143478779
-BoxCollider2D:
+--- !u!60 &1143478779
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1098,7 +1098,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015381962, y: -0.078175336}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1108,9 +1108,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.71116716, y: 0.7810517}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3369522, y: 0.31040746}
+      - {x: -0.33917308, y: -0.28137898}
+      - {x: -0.23614025, y: -0.4666574}
+      - {x: 0.24579835, y: -0.4666574}
+      - {x: 0.3689847, y: -0.2877857}
+      - {x: 0.3689847, y: 0.31040746}
 --- !u!212 &1143478780
 SpriteRenderer:
   m_ObjectHideFlags: 0
