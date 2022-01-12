@@ -17,6 +17,7 @@ namespace PixelCrew
 
         [SerializeField] private SpawnComponent _runDustParticles;
         [SerializeField] private SpawnComponent _jumpDustParticles;
+        [SerializeField] private SpawnComponent _fallDustParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -207,6 +208,11 @@ namespace PixelCrew
         {
             _jumpDustParticles.Spawn();
         }
+
+        //public void SpawnFallDust()
+        //{
+        //    _fallDustParticles.Spawn();
+        //}
 
         public void SetCoinsToDefault()
         {
