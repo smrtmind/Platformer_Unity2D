@@ -15,7 +15,8 @@ namespace PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
-        [SerializeField] private SpawnComponent _footStepParticles;
+        [SerializeField] private SpawnComponent _runDustParticles;
+        [SerializeField] private SpawnComponent _jumpDustParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -176,7 +177,6 @@ namespace PixelCrew
             burst.count = numCoinsToDispose;
             _hitParticles.emission.SetBurst(0, burst);
 
-            _hitParticles.gameObject.SetActive(true);
             _hitParticles.Play();
         }
 
@@ -200,7 +200,12 @@ namespace PixelCrew
 
         public void SpawnFootDust()
         {
-            _footStepParticles.Spawn();
+            _runDustParticles.Spawn();
+        }
+
+        public void SpawnJumpDust()
+        {
+            _jumpDustParticles.Spawn();
         }
 
         public void SetCoinsToDefault()

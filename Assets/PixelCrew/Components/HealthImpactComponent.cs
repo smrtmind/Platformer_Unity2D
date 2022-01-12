@@ -2,7 +2,7 @@
 
 namespace PixelCrew.Components
 {
-    public class DamageComponent : MonoBehaviour
+    public class HealthImpactComponent : MonoBehaviour
     {
         [SerializeField] private string _effect;
         [SerializeField] private int _amountOfPoints;
