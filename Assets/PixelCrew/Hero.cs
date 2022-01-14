@@ -25,6 +25,7 @@ namespace PixelCrew
         private Vector2 _direction;
         private Animator _animator;
         private bool _isGrounded;
+        private bool _doubleJumpIsActive;
         private bool _allowDoubleJump;
         private bool _isJumping;
 
@@ -83,7 +84,11 @@ namespace PixelCrew
 
             if (_isGrounded)
             {
-                _allowDoubleJump = true;
+                if (_doubleJumpIsActive)
+                {
+                    _allowDoubleJump = true;
+                }
+
                 _isJumping = false;
             }
 
@@ -110,7 +115,7 @@ namespace PixelCrew
             {
                 yVelocity += _jumpForce;
             }
-            else if (_allowDoubleJump)
+            else if (_allowDoubleJump && _doubleJumpIsActive)
             {
                 yVelocity = _jumpForce;
                 _allowDoubleJump = false;
@@ -217,6 +222,12 @@ namespace PixelCrew
         public void SetCoinsToDefault()
         {
             _coins = default;
+        }
+
+        public void ActivateDoubleJump()
+        {
+            _doubleJumpIsActive = true;
+            Debug.Log("NEW SKILL: DOUBLE JUMP");
         }
     }
 }
