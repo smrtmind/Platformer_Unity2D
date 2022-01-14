@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Components;
+using PixelCrew.Utils;
 using UnityEngine;
 
 namespace PixelCrew
@@ -8,6 +9,7 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpForce;
         [SerializeField] private float _damageJumpForce;
+        [SerializeField] private float _slamDownVelocity;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
@@ -15,6 +17,7 @@ namespace PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
+        [Space] [Header("Particles")]
         [SerializeField] private SpawnComponent _runDustParticles;
         [SerializeField] private SpawnComponent _jumpDustParticles;
         [SerializeField] private SpawnComponent _fallDustParticles;
@@ -113,11 +116,13 @@ namespace PixelCrew
 
             if (_isGrounded)
             {
-                yVelocity += _jumpForce;
+                yVelocity = _jumpForce;
+                _jumpDustParticles.Spawn();
             }
             else if (_allowDoubleJump && _doubleJumpIsActive)
             {
                 yVelocity = _jumpForce;
+                _jumpDustParticles.Spawn();
                 _allowDoubleJump = false;
             }
 
@@ -204,20 +209,22 @@ namespace PixelCrew
             }
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.IsInLayer(_groundLayer))
+            {
+                var contact = other.contacts[0];
+                if (contact.relativeVelocity.y >= _slamDownVelocity)
+                {
+                    _fallDustParticles.Spawn();
+                }
+            }
+        }
+
         public void SpawnFootDust()
         {
             _runDustParticles.Spawn();
         }
-
-        public void SpawnJumpDust()
-        {
-            _jumpDustParticles.Spawn();
-        }
-
-        //public void SpawnFallDust()
-        //{
-        //    _fallDustParticles.Spawn();
-        //}
 
         public void SetCoinsToDefault()
         {

@@ -7,7 +7,7 @@ namespace PixelCrew.Components
     public class EnterCollisionComponent : MonoBehaviour
     {
         [SerializeField] private string _tag;
-        [SerializeField] private EnterCollisionEvent _action;
+        [SerializeField] private EnterEvent _action;
 
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -19,7 +19,7 @@ namespace PixelCrew.Components
     }
 
     [Serializable]
-    public class EnterCollisionEvent : UnityEvent<GameObject>
+    public class EnterEvent : UnityEvent<GameObject>
     {
 
     }

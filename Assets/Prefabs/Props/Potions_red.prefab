@@ -142,7 +142,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 484055723}
-        m_MethodName: ApplyOperation
+        m_MethodName: Apply
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -164,8 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27e11f5006636b4794361900974e308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _effect: Heal
-  _amountOfPoints: 5
+  _healthDelta: 5
 --- !u!114 &4486830295018082482
 MonoBehaviour:
   m_ObjectHideFlags: 0

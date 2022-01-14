@@ -1,13 +1,11 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 namespace PixelCrew.Components
 {
     public class EnterTriggerComponent : MonoBehaviour
     {
         [SerializeField] private string _tag;
-        [SerializeField] private EnterTriggerEvent _action;
+        [SerializeField] private EnterEvent _action;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -16,11 +14,5 @@ namespace PixelCrew.Components
                 _action?.Invoke(other.gameObject);
             }
         }
-    }
-
-    [Serializable]
-    public class EnterTriggerEvent : UnityEvent<GameObject>
-    {
-
     }
 }
