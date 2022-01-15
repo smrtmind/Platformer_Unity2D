@@ -34,5 +34,13 @@ namespace PixelCrew
                 _hero.Interact();
             }
         }
+
+        public void OnDash(InputAction.CallbackContext context)
+        {
+            if (context.canceled)
+            {
+                _hero.SetDash(true);
+            }
+        }
     }
 }

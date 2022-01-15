@@ -10,6 +10,8 @@ namespace PixelCrew
         [SerializeField] private float _jumpForce;
         [SerializeField] private float _damageJumpForce;
         [SerializeField] private float _slamDownVelocity;
+        [SerializeField] private float _dashForce;
+        //[SerializeField] private Transform _airDash;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
@@ -17,7 +19,8 @@ namespace PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
-        [Space] [Header("Particles")]
+        [Space]
+        [Header("Particles")]
         [SerializeField] private SpawnComponent _runDustParticles;
         [SerializeField] private SpawnComponent _jumpDustParticles;
         [SerializeField] private SpawnComponent _fallDustParticles;
@@ -31,9 +34,11 @@ namespace PixelCrew
         private bool _doubleJumpIsActive;
         private bool _allowDoubleJump;
         private bool _isJumping;
+        private bool _dashIsActive;
 
         private float _jump;
         private int _coins;
+        private bool _dash;
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
@@ -61,9 +66,39 @@ namespace PixelCrew
             _isGrounded = IsGrounded();
         }
 
+        public void SetDash(bool dash)
+        {
+            _dash = dash;
+
+            //if (_skillAirDashIsActive)
+            //{
+            //    transform.position = _airDash.position;
+            //}
+        }
+
+        private void ResetDash()
+        {
+            _dashIsActive = true;
+        }
+
         private void FixedUpdate()
         {
             var xVelocity = _direction.x * _speed;
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            if (_dash && _dashIsActive)
+            {
+                xVelocity *= _dashForce;
+                _rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+                _rigidbody.constraints = RigidbodyConstraints2D.None;
+                _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+                _dash = false;
+                _dashIsActive = false;
+
+                Invoke("ResetDash", 2f);
+            }
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
             var yVelocity = CalculateYVelocity();
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
@@ -235,6 +270,12 @@ namespace PixelCrew
         {
             _doubleJumpIsActive = true;
             Debug.Log("NEW SKILL: DOUBLE JUMP");
+        }
+
+        public void ActivateAirDash()
+        {
+            _dashIsActive = true;
+            Debug.Log("NEW SKILL: AIR DASH");
         }
     }
 }
