@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5048512431045816345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5048512431045816350}
+  - component: {fileID: 5048512431045816351}
+  - component: {fileID: 5048512431045816344}
+  - component: {fileID: 8906995446877054846}
+  - component: {fileID: 3018801798779601166}
+  - component: {fileID: 4944774852615101053}
+  m_Layer: 0
+  m_Name: DashIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5048512431045816350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048512431045816345}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38, y: 2.5, z: 0}
+  m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5048512431045816351
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048512431045816345}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -316269439
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e63c03e0025a26c43968cdc9a08f8777, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.125, y: 3.125}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &5048512431045816344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048512431045816345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _clips:
+  - _name: idle
+    _sprites:
+    - {fileID: 21300000, guid: e63c03e0025a26c43968cdc9a08f8777, type: 3}
+    - {fileID: 21300000, guid: 4a1244d9ead760c4280914abd4d2f2e4, type: 3}
+    - {fileID: 21300000, guid: 72b84d4693c3de34b83f605542f63dd8, type: 3}
+    - {fileID: 21300000, guid: 453b0f83b795eeb459113a37069383f1, type: 3}
+    - {fileID: 21300000, guid: 00c281829506b154c89c69effa3c79a0, type: 3}
+    - {fileID: 21300000, guid: 81dd74a76b2c4864fba969aba2317cc2, type: 3}
+    - {fileID: 21300000, guid: 262f686744687344b8e8bc7a7f1bbf67, type: 3}
+    - {fileID: 21300000, guid: 4dcb94bca1681914a9d94713b7a577d8, type: 3}
+    - {fileID: 21300000, guid: 94570db9cb48a6447b0e8292f37ed151, type: 3}
+    - {fileID: 21300000, guid: 601532a5f9f3ef041a682634870fca8a, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - _name: destroy
+    _sprites:
+    - {fileID: 6040734443530017722, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
+    - {fileID: 8167133005111728920, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
+    - {fileID: 2014349484240403859, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
+    - {fileID: 6326803469982491369, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4944774852615101053}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!61 &8906995446877054846
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048512431045816345}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09654993, y: -0.048275374}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4375, y: 1.09375}
+    newSize: {x: 3.125, y: 3.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3870875, y: 0.5181429}
+  m_EdgeRadius: 0
+--- !u!114 &3018801798779601166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048512431045816345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e93165c7d763d34183ff33d9009f1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5048512431045816344}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: destroy
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8906995446877054846}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: ActivateAirDash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4944774852615101053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048512431045816345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430acfd34f12c314db907c638305ec1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 5048512431045816345}

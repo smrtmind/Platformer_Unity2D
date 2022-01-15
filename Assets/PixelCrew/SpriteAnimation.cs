@@ -8,7 +8,7 @@ namespace PixelCrew
 
     public class SpriteAnimation : MonoBehaviour
     {
-        [SerializeField] [Range(1, 30)] private int _frameRate = 10;
+        [SerializeField] [Range(1, 100)] private int _frameRate = 10;
         [SerializeField] private UnityEvent<string> _onComplete;
         [SerializeField] private AnimationClip[] _clips;
 

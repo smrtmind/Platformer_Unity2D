@@ -19,12 +19,12 @@ namespace PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
-        [Space]
-        [Header("Particles")]
+        [Space] [Header("Particles")]
         [SerializeField] private SpawnComponent _runDustParticles;
         [SerializeField] private SpawnComponent _jumpDustParticles;
         [SerializeField] private SpawnComponent _fallDustParticles;
         [SerializeField] private ParticleSystem _hitParticles;
+        [SerializeField] private SpawnComponent _dashWaveParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
@@ -88,6 +88,7 @@ namespace PixelCrew
             if (_dash && _dashIsActive)
             {
                 xVelocity *= _dashForce;
+                _dashWaveParticles.Spawn();
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
                 _rigidbody.constraints = RigidbodyConstraints2D.None;
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -275,7 +276,7 @@ namespace PixelCrew
         public void ActivateAirDash()
         {
             _dashIsActive = true;
-            Debug.Log("NEW SKILL: AIR DASH");
+            Debug.Log("NEW SKILL: DASH");
         }
     }
 }

@@ -54,6 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1615774876}
+  - component: {fileID: 412684423}
   m_Layer: 0
   m_Name: DashPosition
   m_TagString: Untagged
@@ -69,12 +70,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615774875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &412684423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615774875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a9b48b97affa84d99869af76ffa4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1615774876}
+  _prefab: {fileID: 8704575587730348135, guid: 40c55ccaf9c0bf847b89b832864d2d99, type: 3}
 --- !u!1 &1543762774169611274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,7 +5114,7 @@ MonoBehaviour:
   _jumpForce: 11.5
   _damageJumpForce: 10
   _slamDownVelocity: 11.5
-  _dashForce: 30
+  _dashForce: 35
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -5113,6 +5128,7 @@ MonoBehaviour:
   _jumpDustParticles: {fileID: 47701124}
   _fallDustParticles: {fileID: 7035943205029121499}
   _hitParticles: {fileID: 8077923649142214071}
+  _dashWaveParticles: {fileID: 412684423}
 --- !u!114 &9005311172567613481
 MonoBehaviour:
   m_ObjectHideFlags: 0
