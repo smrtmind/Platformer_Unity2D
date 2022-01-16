@@ -88,7 +88,11 @@ namespace PixelCrew
             if (_dash && _dashIsActive)
             {
                 xVelocity *= _dashForce;
-                _dashWaveParticles.Spawn();
+                if (_direction.x > 0 || _direction.x < 0)
+                {
+                    _dashWaveParticles.Spawn();
+                }
+
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
                 _rigidbody.constraints = RigidbodyConstraints2D.None;
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
