@@ -45,6 +45,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 47701123}
   _prefab: {fileID: 4476619537445411834, guid: f34a0c0b63bc8df49a882b87f4904f70, type: 3}
+--- !u!1 &934787702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934787703}
+  - component: {fileID: 934787704}
+  m_Layer: 0
+  m_Name: AttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &934787703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934787702}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9005311172567613485}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &934787704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934787702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94ace0325cfdd141bbdf2d016fbc642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.2
 --- !u!1 &1615774875
 GameObject:
   m_ObjectHideFlags: 0
@@ -5032,6 +5076,7 @@ Transform:
   - {fileID: 47701123}
   - {fileID: 1216954982292525915}
   - {fileID: 1615774876}
+  - {fileID: 934787703}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5115,6 +5160,7 @@ MonoBehaviour:
   _damageJumpForce: 10
   _slamDownVelocity: 11.5
   _dashForce: 35
+  _damage: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -5124,6 +5170,9 @@ MonoBehaviour:
     m_Bits: 256
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.15, z: 0}
+  _armed: {fileID: 9100000, guid: 666bd023d349308429b9681b141ac97a, type: 2}
+  _disArmed: {fileID: 9100000, guid: e04a8913e25ae274e8b1bf79a166b86d, type: 2}
+  _attackRange: {fileID: 934787704}
   _runDustParticles: {fileID: 991532492}
   _jumpDustParticles: {fileID: 47701124}
   _fallDustParticles: {fileID: 7035943205029121499}
@@ -5230,6 +5279,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 94b79c3d-28ed-4859-8bd1-483eb3b791d6
     m_ActionName: Hero/Dash[/Keyboard/leftShift,/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9005311172567613486}
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dd2bbf2b-8b19-4d46-8c29-3f1ca95cf13b
+    m_ActionName: Hero/Attack[/Keyboard/x]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero

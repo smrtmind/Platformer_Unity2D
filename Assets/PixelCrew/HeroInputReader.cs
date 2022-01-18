@@ -39,7 +39,15 @@ namespace PixelCrew
         {
             if (context.canceled)
             {
-                _hero.SetDash(true);
+                _hero.Dash();
+            }
+        }
+
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            if (context.canceled)
+            {
+                _hero.Attack();
             }
         }
     }

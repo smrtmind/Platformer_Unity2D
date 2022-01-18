@@ -1,5 +1,7 @@
 ﻿using PixelCrew.Components;
 using PixelCrew.Utils;
+using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelCrew
@@ -11,6 +13,7 @@ namespace PixelCrew
         [SerializeField] private float _damageJumpForce;
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _dashForce;
+        [SerializeField] private int _damage;
         //[SerializeField] private Transform _airDash;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
@@ -19,6 +22,11 @@ namespace PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
+        [SerializeField] private AnimatorController _armed;
+        [SerializeField] private AnimatorController _disArmed;
+
+        [SerializeField] private CheckCircleOverlap _attackRange;
+
         [Space] [Header("Particles")]
         [SerializeField] private SpawnComponent _runDustParticles;
         [SerializeField] private SpawnComponent _jumpDustParticles;
@@ -26,7 +34,7 @@ namespace PixelCrew
         [SerializeField] private ParticleSystem _hitParticles;
         [SerializeField] private SpawnComponent _dashWaveParticles;
 
-        private Collider2D[] _interactionResult = new Collider2D[1];
+        private readonly Collider2D[] _interactionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private Animator _animator;
@@ -39,11 +47,13 @@ namespace PixelCrew
         private float _jump;
         private int _coins;
         private bool _dash;
+        private bool _isArmed;
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int Hit = Animator.StringToHash("is-hit");
+        private static readonly int AttackKey = Animator.StringToHash("attack");
 
         private void Awake()
         {
@@ -66,14 +76,29 @@ namespace PixelCrew
             _isGrounded = IsGrounded();
         }
 
-        public void SetDash(bool dash)
+        public void Dash()
         {
-            _dash = dash;
+            _dash = true;
+        }
 
-            //if (_skillAirDashIsActive)
-            //{
-            //    transform.position = _airDash.position;
-            //}
+        public void Attack()
+        {
+            if (!_isArmed) return;
+
+            _animator.SetTrigger(AttackKey);
+        }
+
+        public void OnAttack()
+        {
+            var gos = _attackRange.GetObjectsInRange();
+            foreach (var go in gos)
+            {
+                var hp = go.GetComponent<HealthComponent>();
+                if (hp != null && go.CompareTag("Enemy"))
+                {
+                    hp.ModifyHealth(-_damage);
+                }
+            }
         }
 
         private void ResetDash()
@@ -190,11 +215,13 @@ namespace PixelCrew
             return hit.collider != null;
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
-            Gizmos.color = IsGrounded() ? Color.green : Color.red;
-            Gizmos.DrawSphere(transform.position + _groundCheckPositionDelta, _groundCheckRadius);
+            Handles.color = IsGrounded() ? HandlesUtils.TransparentGreen : HandlesUtils.TransparentRed;
+            Handles.DrawSolidDisc(transform.position + _groundCheckPositionDelta, Vector3.forward, _groundCheckRadius);
         }
+#endif
 
         public void SaySomething()
         {
@@ -281,6 +308,12 @@ namespace PixelCrew
         {
             _dashIsActive = true;
             Debug.Log("NEW SKILL: DASH");
+        }
+
+        public void ArmHero()
+        {
+            _isArmed = true;
+            _animator.runtimeAnimatorController = _armed;
         }
     }
 }
