@@ -88,7 +88,7 @@ namespace PixelCrew
             if (_dash && _dashIsActive)
             {
                 xVelocity *= _dashForce;
-                if (_direction.x > 0 || _direction.x < 0)
+                if (_direction.x != 0)
                 {
                     _dashWaveParticles.Spawn();
                 }

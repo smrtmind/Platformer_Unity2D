@@ -57,7 +57,7 @@ namespace PixelCrew
         private void StartAnimation()
         {
             _nextFrameTime = Time.time + _secondsPerFrame;
-            _isPlaying = true;
+            enabled = _isPlaying = true;
             _currentFrame = default;
         }
 
@@ -80,9 +80,9 @@ namespace PixelCrew
 
                 else
                 {
+                    enabled = _isPlaying = clip.AllowNextClip;
                     clip.OnComplete?.Invoke();
                     _onComplete?.Invoke(clip.Name);
-                    enabled = _isPlaying = clip.AllowNextClip;
                     if (clip.AllowNextClip)
                     {
                         _currentFrame = default;
