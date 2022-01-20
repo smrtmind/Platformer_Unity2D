@@ -39,15 +39,17 @@ namespace PixelCrew
         private Vector2 _direction;
         private Animator _animator;
         private bool _isGrounded;
-        private bool _doubleJumpIsActive;
         private bool _allowDoubleJump;
         private bool _isJumping;
+
+        //skills
+        private bool _doubleJumpIsActive;
         private bool _dashIsActive;
+        private bool _isArmed;
 
         private float _jump;
         private int _coins;
         private bool _dash;
-        private bool _isArmed;
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
@@ -101,18 +103,25 @@ namespace PixelCrew
             }
         }
 
-        private void ResetDash()
-        {
-            _dashIsActive = true;
-        }
-
         private void FixedUpdate()
         {
+            var xVelocity = CalculateXVelocity();
+            var yVelocity = CalculateYVelocity();
+            _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
+
+            _animator.SetBool(IsGroundKey, _isGrounded);
+            _animator.SetBool(IsRunningKey, _direction.x != 0);
+            _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
+
+            UpdateSpriteDirection();
+        }
+
+        private float CalculateXVelocity()
+        {
             var xVelocity = _direction.x * _speed;
-            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
             if (_dash && _dashIsActive)
             {
-                xVelocity *= _dashForce;
                 if (_direction.x != 0)
                 {
                     _dashWaveParticles.Spawn();
@@ -123,20 +132,11 @@ namespace PixelCrew
                 _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
                 _dash = false;
-                _dashIsActive = false;
 
-                Invoke("ResetDash", 2f);
+                return xVelocity *= _dashForce;
             }
-            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-            var yVelocity = CalculateYVelocity();
-            _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
-
-            _animator.SetBool(IsGroundKey, _isGrounded);
-            _animator.SetBool(IsRunningKey, _direction.x != 0);
-            _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
-
-            UpdateSpriteDirection();
+            return xVelocity;
         }
 
         private float CalculateYVelocity()

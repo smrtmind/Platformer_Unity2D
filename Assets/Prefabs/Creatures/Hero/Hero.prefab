@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94ace0325cfdd141bbdf2d016fbc642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.2
+  _radius: 0.3
 --- !u!1 &1615774875
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,7 +5163,7 @@ MonoBehaviour:
   _damage: 1
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5120
   _interactionRadius: 1
   _interactionLayer:
     serializedVersion: 2
