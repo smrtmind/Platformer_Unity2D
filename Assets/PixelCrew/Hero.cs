@@ -33,6 +33,7 @@ namespace PixelCrew
         [SerializeField] private SpawnComponent _fallDustParticles;
         [SerializeField] private ParticleSystem _hitParticles;
         [SerializeField] private SpawnComponent _dashWaveParticles;
+        [SerializeField] private SpawnComponent _swordSlashParticles;
 
         private readonly Collider2D[] _interactionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
@@ -88,6 +89,7 @@ namespace PixelCrew
             if (!_isArmed) return;
 
             _animator.SetTrigger(AttackKey);
+            _swordSlashParticles.Spawn();
         }
 
         public void OnAttack()
@@ -99,6 +101,7 @@ namespace PixelCrew
                 if (hp != null && go.CompareTag("Enemy"))
                 {
                     hp.ModifyHealth(-_damage);
+                    
                 }
             }
         }
@@ -314,6 +317,11 @@ namespace PixelCrew
         {
             _isArmed = true;
             _animator.runtimeAnimatorController = _armed;
+        }
+
+        public void Throw()
+        {
+
         }
     }
 }
