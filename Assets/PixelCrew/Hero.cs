@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Components;
+using PixelCrew.Model;
 using PixelCrew.Utils;
 using UnityEditor;
 using UnityEditor.Animations;
@@ -18,6 +19,7 @@ namespace PixelCrew
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
+        [SerializeField] private float _damageVelocity;
 
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
@@ -27,7 +29,8 @@ namespace PixelCrew
 
         [SerializeField] private CheckCircleOverlap _attackRange;
 
-        [Space] [Header("Particles")]
+        [Space]
+        [Header("Particles")]
         [SerializeField] private SpawnComponent _runDustParticles;
         [SerializeField] private SpawnComponent _jumpDustParticles;
         [SerializeField] private SpawnComponent _fallDustParticles;
@@ -43,13 +46,7 @@ namespace PixelCrew
         private bool _allowDoubleJump;
         private bool _isJumping;
 
-        //skills
-        private bool _doubleJumpIsActive;
-        private bool _dashIsActive;
-        private bool _isArmed;
-
         private float _jump;
-        private int _coins;
         private bool _dash;
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
@@ -58,10 +55,27 @@ namespace PixelCrew
         private static readonly int Hit = Animator.StringToHash("is-hit");
         private static readonly int AttackKey = Animator.StringToHash("attack");
 
+        private GameSession _session;
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+        }
+
+        private void Start()
+        {
+            _session = FindObjectOfType<GameSession>();
+
+            var health = GetComponent<HealthComponent>();
+            health.SetHealth(_session.Data.Hp);
+
+            UpdateHeroWeapon();
+        }
+
+        public void OnHealthChanged(int currentHealth)
+        {
+            _session.Data.Hp = currentHealth;
         }
 
         public void SetDirection(Vector2 direction)
@@ -86,13 +100,13 @@ namespace PixelCrew
 
         public void Attack()
         {
-            if (!_isArmed) return;
+            if (!_session.Data.IsArmed) return;
 
             _animator.SetTrigger(AttackKey);
             _swordSlashParticles.Spawn();
         }
 
-        public void OnAttack()
+        public void OnDoAttack()
         {
             var gos = _attackRange.GetObjectsInRange();
             foreach (var go in gos)
@@ -101,7 +115,6 @@ namespace PixelCrew
                 if (hp != null && go.CompareTag("Enemy"))
                 {
                     hp.ModifyHealth(-_damage);
-                    
                 }
             }
         }
@@ -123,7 +136,7 @@ namespace PixelCrew
         {
             var xVelocity = _direction.x * _speed;
 
-            if (_dash && _dashIsActive)
+            if (_dash && _session.Data.DashIsActive)
             {
                 if (_direction.x != 0)
                 {
@@ -155,7 +168,7 @@ namespace PixelCrew
 
             if (_isGrounded)
             {
-                if (_doubleJumpIsActive)
+                if (_session.Data.DoubleJumpIsActive)
                 {
                     _allowDoubleJump = true;
                 }
@@ -187,7 +200,7 @@ namespace PixelCrew
                 yVelocity = _jumpForce;
                 _jumpDustParticles.Spawn();
             }
-            else if (_allowDoubleJump && _doubleJumpIsActive)
+            else if (_allowDoubleJump && _session.Data.DoubleJumpIsActive)
             {
                 yVelocity = _jumpForce;
                 _jumpDustParticles.Spawn();
@@ -233,8 +246,8 @@ namespace PixelCrew
 
         public void AddCoins(int coins)
         {
-            _coins += coins;
-            Debug.Log($"+{coins} coins. TOTAL COINS: {_coins}");
+            _session.Data.Coins += coins;
+            Debug.Log($"+{coins} coins. TOTAL COINS: {_session.Data.Coins}");
         }
 
         public void TakeDamage()
@@ -243,7 +256,7 @@ namespace PixelCrew
             _animator.SetTrigger(Hit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpForce);
 
-            if (_coins > 0)
+            if (_session.Data.Coins > 0)
             {
                 SpawnCoins();
             }
@@ -251,8 +264,8 @@ namespace PixelCrew
 
         private void SpawnCoins()
         {
-            var numCoinsToDispose = Mathf.Min(_coins, 5);
-            _coins -= numCoinsToDispose;
+            var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
+            _session.Data.Coins -= numCoinsToDispose;
 
             var burst = _hitParticles.emission.GetBurst(0);
             burst.count = numCoinsToDispose;
@@ -288,6 +301,11 @@ namespace PixelCrew
                 {
                     _fallDustParticles.Spawn();
                 }
+
+                if (contact.relativeVelocity.y >= _damageVelocity)
+                {
+                    GetComponent<HealthComponent>().ModifyHealth(-1);
+                }
             }
         }
 
@@ -298,25 +316,31 @@ namespace PixelCrew
 
         public void SetCoinsToDefault()
         {
-            _coins = default;
+            _session.Data.Coins = default;
         }
 
         public void ActivateDoubleJump()
         {
-            _doubleJumpIsActive = true;
+            _session.Data.DoubleJumpIsActive = true;
             Debug.Log("NEW SKILL: DOUBLE JUMP");
         }
 
         public void ActivateAirDash()
         {
-            _dashIsActive = true;
+            _session.Data.DashIsActive = true;
             Debug.Log("NEW SKILL: DASH");
         }
 
         public void ArmHero()
         {
-            _isArmed = true;
-            _animator.runtimeAnimatorController = _armed;
+            _session.Data.IsArmed = true;
+            UpdateHeroWeapon();
+        }
+
+        private void UpdateHeroWeapon()
+        {
+            //ternary
+            _animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disArmed;
         }
 
         public void Throw()

@@ -29,8 +29,11 @@ namespace PixelCrew
         {
             for (int i = 0; i < particles.Length; i++)
             {
-                Spawn(particles[i]);
-                yield return new WaitForSeconds(_waitTime);
+                if (particles[i] != null)
+                {
+                    Spawn(particles[i]);
+                    yield return new WaitForSeconds(_waitTime);
+                }
             }
         }
 
@@ -89,7 +92,9 @@ namespace PixelCrew
         private void TryStopRoutine()
         {
             if (_routine != null)
+            {
                 StopCoroutine(_routine);
+            }              
         }
     }
 }
