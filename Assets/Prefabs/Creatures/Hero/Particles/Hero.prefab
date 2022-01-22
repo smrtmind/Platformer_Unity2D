@@ -5214,7 +5214,7 @@ MonoBehaviour:
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 256
-  _damageVelocity: 15
+  _damageVelocity: 25
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.15, z: 0}
   _armed: {fileID: 9100000, guid: 666bd023d349308429b9681b141ac97a, type: 2}
