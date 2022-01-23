@@ -10,5 +10,6 @@ namespace PixelCrew.Model
         public bool IsArmed;
         public bool DoubleJumpIsActive;
         public bool DashIsActive;
+        public bool OnWallHookIsActive;
     }
 }

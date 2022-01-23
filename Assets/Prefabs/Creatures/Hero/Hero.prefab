@@ -179,6 +179,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1615774876}
   _prefab: {fileID: 8191301804318424288, guid: 4658133925817a845a5650397434aea3, type: 3}
+--- !u!1 &1455083097815839528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3882161866966354183}
+  - component: {fileID: 6828737916789674423}
+  - component: {fileID: 894666417988303220}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3882161866966354183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455083097815839528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.112, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9005311172567613485}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6828737916789674423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455083097815839528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf5323f00349004ca8909a85732ee99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  IsTouchingLayer: 0
+--- !u!58 &894666417988303220
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455083097815839528}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &1543762774169611274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5123,6 +5187,7 @@ Transform:
   - {fileID: 1615774876}
   - {fileID: 934787703}
   - {fileID: 601853692}
+  - {fileID: 3882161866966354183}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5215,6 +5280,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _damageVelocity: 25
+  _wallCheck: {fileID: 6828737916789674423}
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.15, z: 0}
   _armed: {fileID: 9100000, guid: 666bd023d349308429b9681b141ac97a, type: 2}

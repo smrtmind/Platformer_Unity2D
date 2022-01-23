@@ -20,6 +20,7 @@ namespace PixelCrew
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private float _damageVelocity;
+        [SerializeField] private LayerCheck _wallCheck;
 
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
@@ -45,6 +46,7 @@ namespace PixelCrew
         private bool _isGrounded;
         private bool _allowDoubleJump;
         private bool _isJumping;
+        private bool _isOnWall;
 
         private float _jump;
         private bool _dash;
@@ -52,15 +54,18 @@ namespace PixelCrew
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
-        private static readonly int Hit = Animator.StringToHash("is-hit");
+        private static readonly int HitKey = Animator.StringToHash("is-hit");
         private static readonly int AttackKey = Animator.StringToHash("attack");
+        private static readonly int OnTheWallKey = Animator.StringToHash("is-onTheWall");
 
         private GameSession _session;
+        private float _defaultGravityScale;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _defaultGravityScale = _rigidbody.gravityScale;
         }
 
         private void Start()
@@ -91,6 +96,25 @@ namespace PixelCrew
         private void Update()
         {
             _isGrounded = IsGrounded();
+
+            if (_session.Data.OnWallHookIsActive)
+            {
+                if (_wallCheck.IsTouchingLayer && _direction.x == transform.localScale.x)
+                {
+                    _isOnWall = true;
+                    _rigidbody.gravityScale = 0;
+
+                    _animator.SetBool(OnTheWallKey, true);
+                }
+
+                else
+                {
+                    _animator.SetBool(OnTheWallKey, false);
+
+                    _isOnWall = false;
+                    _rigidbody.gravityScale = _defaultGravityScale;
+                }
+            }
         }
 
         public void Dash()
@@ -176,10 +200,20 @@ namespace PixelCrew
                 _isJumping = false;
             }
 
+            if (_isOnWall)
+            {
+                _allowDoubleJump = true;
+            }
+
             if (isJumpPressing)
             {
                 _isJumping = true;
                 yVelocity = CalculateJumpVelocity(yVelocity);
+            }
+
+            else if (_isOnWall)
+            {
+                yVelocity = 0f;
             }
 
             else if (_rigidbody.velocity.y > 0 && _isJumping)
@@ -253,7 +287,7 @@ namespace PixelCrew
         public void TakeDamage()
         {
             _isJumping = false;
-            _animator.SetTrigger(Hit);
+            _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpForce);
 
             if (_session.Data.Coins > 0)
@@ -329,6 +363,12 @@ namespace PixelCrew
         {
             _session.Data.DashIsActive = true;
             Debug.Log("NEW SKILL: DASH");
+        }
+
+        public void ActivateOnWallHook()
+        {
+            _session.Data.OnWallHookIsActive = true;
+            Debug.Log("NEW SKILL: HOOK (stick to walls)");
         }
 
         public void ArmHero()
