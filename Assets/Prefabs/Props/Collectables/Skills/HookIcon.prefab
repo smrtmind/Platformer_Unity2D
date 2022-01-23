@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5048512431045816350}
   - component: {fileID: 5048512431045816351}
   - component: {fileID: 5048512431045816344}
-  - component: {fileID: 8906995446877054846}
   - component: {fileID: 3018801798779601166}
   - component: {fileID: 4944774852615101053}
+  - component: {fileID: 6945785340842665440}
   m_Layer: 0
   m_Name: HookIcon
   m_TagString: Untagged
@@ -146,32 +146,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!61 &8906995446877054846
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5048512431045816345}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.09654993, y: -0.048275374}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 1.25}
-    newSize: {x: 3.125, y: 3.125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3870875, y: 0.5181429}
-  m_EdgeRadius: 0
 --- !u!114 &3018801798779601166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +173,7 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8906995446877054846}
+      - m_Target: {fileID: 6945785340842665440}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -211,7 +185,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: ActivateAirDash
+        m_MethodName: ActivateOnWallHook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -234,3 +208,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 5048512431045816345}
+--- !u!58 &6945785340842665440
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048512431045816345}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.16}
+  serializedVersion: 2
+  m_Radius: 0.31595507

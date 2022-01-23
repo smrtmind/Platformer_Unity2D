@@ -5274,7 +5274,7 @@ MonoBehaviour:
   _damage: 1
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 5120
+    m_Bits: 29696
   _interactionRadius: 1
   _interactionLayer:
     serializedVersion: 2

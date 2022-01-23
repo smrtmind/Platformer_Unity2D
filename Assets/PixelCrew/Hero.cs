@@ -15,7 +15,6 @@ namespace PixelCrew
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _dashForce;
         [SerializeField] private int _damage;
-        //[SerializeField] private Transform _airDash;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;

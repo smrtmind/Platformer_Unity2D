@@ -270,6 +270,9 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
+  _onChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1455157991737175149
 MonoBehaviour:
   m_ObjectHideFlags: 0
