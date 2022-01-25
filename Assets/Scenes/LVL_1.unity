@@ -17697,7 +17697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1331681465}
   m_Layer: 0
-  m_Name: <----------------------------- HERO
+  m_Name: <----------------------------- CREATURES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
