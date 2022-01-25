@@ -1,4 +1,5 @@
-﻿using PixelCrew.Model;
+﻿using PixelCrew.Creatures;
+using PixelCrew.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

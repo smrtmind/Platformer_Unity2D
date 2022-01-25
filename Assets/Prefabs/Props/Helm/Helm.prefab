@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1921385163}
   m_Layer: 8
   m_Name: Helm
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -316269439
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 5774581190672780694, guid: 2bfc930e2db1742baa532587a3dcc688,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

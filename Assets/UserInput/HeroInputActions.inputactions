@@ -6,14 +6,6 @@
             "id": "f6e3e3c3-5b73-4c7f-a16b-8b9e7896c2e4",
             "actions": [
                 {
-                    "name": "SaySomething",
-                    "type": "Button",
-                    "id": "decbb4c6-a81c-4c94-bf5f-a9fc775accb9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Movement",
                     "type": "Value",
                     "id": "adcc1b67-b8ed-4d37-9680-bef40b01cd6c",
@@ -55,17 +47,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "a5d2b737-65bb-4d0b-a516-fb2eeb131feb",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SaySomething",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "Arrows",
                     "id": "b51dcceb-7e17-408b-977f-494f97ab8a49",

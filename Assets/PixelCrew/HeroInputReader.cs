@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Creatures;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace PixelCrew
@@ -17,14 +18,6 @@ namespace PixelCrew
         {
             var jump = context.ReadValue<float>();
             _hero.SetJump(jump);
-        }
-
-        public void OnSaySomething(InputAction.CallbackContext context)
-        {
-            if (context.canceled)
-            {
-                _hero.SaySomething();
-            }  
         }
 
         public void OnInteract(InputAction.CallbackContext context)
