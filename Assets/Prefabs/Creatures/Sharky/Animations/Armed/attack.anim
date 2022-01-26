@@ -20,14 +20,20 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 5b5f031d3bd465d478430b357433967a, type: 3}
+      value: {fileID: 21300000, guid: 340ed7814de6b24419f5a5ac0e3fe9be, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: 5bbb8513142c52345b3cf68dfa1dbdaf, type: 3}
+      value: {fileID: 21300000, guid: 907498a03869ae545b60545902077a65, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: 6aaa546a810b75440a9835f268bb04cb, type: 3}
+      value: {fileID: 21300000, guid: cc8d9b337ab977b40992a479a0881aec, type: 3}
     - time: 0.3
-      value: {fileID: 21300000, guid: e96a23f0d3154634fa97458f00072545, type: 3}
+      value: {fileID: 21300000, guid: 5b5f031d3bd465d478430b357433967a, type: 3}
     - time: 0.4
+      value: {fileID: 21300000, guid: 5bbb8513142c52345b3cf68dfa1dbdaf, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 6aaa546a810b75440a9835f268bb04cb, type: 3}
+    - time: 0.6
+      value: {fileID: 21300000, guid: e96a23f0d3154634fa97458f00072545, type: 3}
+    - time: 0.7
       value: {fileID: 21300000, guid: 3155432459072c6458e929b557bd2e86, type: 3}
     attribute: m_Sprite
     path: 
@@ -48,6 +54,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
+    - {fileID: 21300000, guid: 340ed7814de6b24419f5a5ac0e3fe9be, type: 3}
+    - {fileID: 21300000, guid: 907498a03869ae545b60545902077a65, type: 3}
+    - {fileID: 21300000, guid: cc8d9b337ab977b40992a479a0881aec, type: 3}
     - {fileID: 21300000, guid: 5b5f031d3bd465d478430b357433967a, type: 3}
     - {fileID: 21300000, guid: 5bbb8513142c52345b3cf68dfa1dbdaf, type: 3}
     - {fileID: 21300000, guid: 6aaa546a810b75440a9835f268bb04cb, type: 3}
@@ -58,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -78,7 +87,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.1
+  - time: 0.3
     functionName: OnDoAttack
     data: 
     objectReferenceParameter: {fileID: 0}
