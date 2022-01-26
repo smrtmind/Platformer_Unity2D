@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1707693294}
   - component: {fileID: 8839427773969997962}
   - component: {fileID: 485247349}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sharky
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 833080209204073017}
   - component: {fileID: 734673222073268231}
   - component: {fileID: 3441724620699841792}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HitCoinsSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5103,7 +5103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492254109811386663}
   - component: {fileID: 4181984795480189909}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ExclamationPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -5184,7 +5184,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 0.5}
+  m_Offset: {x: -2, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5195,7 +5195,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 2}
+  m_Size: {x: 6, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &4324571012554832115
 MonoBehaviour:
@@ -5250,7 +5250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6945961477906234237}
   - component: {fileID: 3746548804731980347}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: MissPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -5295,7 +5295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7695499193221277419}
   - component: {fileID: 1985006291837778027}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SlamDownPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -5341,7 +5341,7 @@ GameObject:
   - component: {fileID: 5749034057374284983}
   - component: {fileID: 2660524918379062279}
   - component: {fileID: 8521628498397990084}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5404,7 +5404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5179020096956502374}
   - component: {fileID: 8802454408016945276}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FootStepPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -5452,7 +5452,7 @@ GameObject:
   - component: {fileID: 8802454408756071564}
   - component: {fileID: 2501127408229484887}
   - component: {fileID: 2382034312492777407}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5560,7 +5560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8802454408155495244}
   - component: {fileID: 8802454408155495245}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SwordSlashPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5605,7 +5605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8802454408675043635}
   - component: {fileID: 8802454408675043636}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: JumpPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -5650,7 +5650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8802454409238589740}
   - component: {fileID: 8802454408578950455}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: DashPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -5696,7 +5696,7 @@ GameObject:
   - component: {fileID: 8802454409585243611}
   - component: {fileID: 8802454409585243613}
   - component: {fileID: 8802454409585243612}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5772,7 +5772,7 @@ GameObject:
   - component: {fileID: 8802454409599672383}
   - component: {fileID: 8802454409599672353}
   - component: {fileID: 8802454409599672352}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -137,7 +137,7 @@ MonoBehaviour:
   _radius: 0.3
   _mask:
     serializedVersion: 2
-    m_Bits: 32055
+    m_Bits: 64823
   _tags:
   - Enemy
   _onOverlap:
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 29696
+    m_Bits: 62464
   _isTouchingLayer: 0
 --- !u!58 &1571820944
 CircleCollider2D:

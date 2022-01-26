@@ -14,6 +14,7 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _missHeroCooldown = 0.5f;
         private Coroutine _current;
         private GameObject _target;
+        private CapsuleCollider2D _collider;
 
         private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
 
@@ -29,6 +30,7 @@ namespace PixelCrew.Creatures
             _creature = GetComponent<Creature>();
             _animator = GetComponent<Animator>();
             _patrol = GetComponent<Patrol>();
+            _collider = GetComponent<CapsuleCollider2D>();
         }
 
         private void Start()
@@ -70,6 +72,10 @@ namespace PixelCrew.Creatures
             }
 
             _particles.Spawn("Miss");
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            StopAllCoroutines();
+            StartState(_patrol.DoPatrol());
+            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             yield return new WaitForSeconds(_missHeroCooldown);
         }
 
@@ -107,6 +113,10 @@ namespace PixelCrew.Creatures
         {
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);
+
+            _collider.direction = (CapsuleDirection2D)1;
+            _collider.size = new Vector2(_collider.size.y, _collider.size.x); 
+            _collider.offset = Vector2.zero;
 
             if (_current != null)
             {
