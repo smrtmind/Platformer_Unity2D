@@ -72,10 +72,9 @@ namespace PixelCrew.Creatures
             }
 
             _particles.Spawn("Miss");
-            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-            StopAllCoroutines();
+            StopCoroutine(_current);
             StartState(_patrol.DoPatrol());
-            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
             yield return new WaitForSeconds(_missHeroCooldown);
         }
 
