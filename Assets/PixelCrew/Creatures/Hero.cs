@@ -28,6 +28,8 @@ namespace PixelCrew.Creatures
         private bool _dash;
 
         private static readonly int OnTheWallKey = Animator.StringToHash("is-onTheWall");
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
+
 
         private GameSession _session;
         private float _defaultGravityScale;
@@ -242,9 +244,14 @@ namespace PixelCrew.Creatures
             Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disArmed;
         }
 
+        public void OnDoThrow()
+        {
+            _particles.Spawn("Throw");
+        }
+
         public void Throw()
         {
-
+            Animator.SetTrigger(ThrowKey);
         }
     }
 }
