@@ -246,6 +246,7 @@ namespace PixelCrew.Creatures
 
         public void ActivateThrowingSword()
         {
+            _session.Data.Swords += 4;
             _session.Data.ThrowingSwordIsActive = true;
             Debug.Log("NEW SKILL: THROWING SWORD");
         }
@@ -261,6 +262,12 @@ namespace PixelCrew.Creatures
             Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disArmed;
         }
 
+        public void AddSwords()
+        {
+            _session.Data.Swords++;
+            Debug.Log($"+{1} sword. TOTAL SWORDS: {_session.Data.Swords}");
+        } 
+
         public void OnDoThrow()
         {
             _particles.Spawn("Throw");
@@ -270,8 +277,9 @@ namespace PixelCrew.Creatures
         {
             if (_session.Data.ThrowingSwordIsActive && _session.Data.IsArmed)
             {
-                if (_throwCooldown.IsReady)
+                if (_throwCooldown.IsReady && _session.Data.Swords > 1)
                 {
+                    _session.Data.Swords--;
                     Animator.SetTrigger(ThrowKey);
                     _throwCooldown.Reset();
                 }               

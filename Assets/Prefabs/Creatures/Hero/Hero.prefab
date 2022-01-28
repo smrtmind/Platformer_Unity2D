@@ -5510,6 +5510,7 @@ MonoBehaviour:
   _interactionRadius: 1
   _dashForce: 35
   _maxSafeVelocity: 25
+  _swordsAmount: 1
   _throwCooldown:
     _value: 1
   _dashCooldown:
