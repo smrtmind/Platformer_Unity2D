@@ -16,10 +16,14 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _dashForce;
         [SerializeField] private float _maxSafeVelocity;
 
+        [Header("Cooldowns")]
+        [SerializeField] private Cooldown _throwCooldown;
+        [SerializeField] private Cooldown _dashCooldown;
+
+        [Space]
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disArmed;
 
-        [Space]
         [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
 
@@ -59,7 +63,7 @@ namespace PixelCrew.Creatures
         {
             base.Update();
 
-            if (_session.Data.OnWallHookIsActive)
+            if (_session.Data.WallHookIsActive)
             {
                 if (_wallCheck.IsTouchingLayer && Direction.x == transform.localScale.x)
                 {
@@ -86,7 +90,14 @@ namespace PixelCrew.Creatures
 
         public void Dash()
         {
-            _dash = true;
+            if (_session.Data.DashIsActive)
+            {
+                if (_dashCooldown.IsReady)
+                {
+                    _dash = true;
+                    _dashCooldown.Reset();
+                }
+            }
         }
 
         public override void Attack()
@@ -227,10 +238,16 @@ namespace PixelCrew.Creatures
             Debug.Log("NEW SKILL: DASH");
         }
 
-        public void ActivateOnWallHook()
+        public void ActivateWallHook()
         {
-            _session.Data.OnWallHookIsActive = true;
+            _session.Data.WallHookIsActive = true;
             Debug.Log("NEW SKILL: HOOK (stick to walls)");
+        }
+
+        public void ActivateThrowingSword()
+        {
+            _session.Data.ThrowingSwordIsActive = true;
+            Debug.Log("NEW SKILL: THROWING SWORD");
         }
 
         public void ArmHero()
@@ -251,7 +268,14 @@ namespace PixelCrew.Creatures
 
         public void Throw()
         {
-            Animator.SetTrigger(ThrowKey);
+            if (_session.Data.ThrowingSwordIsActive && _session.Data.IsArmed)
+            {
+                if (_throwCooldown.IsReady)
+                {
+                    Animator.SetTrigger(ThrowKey);
+                    _throwCooldown.Reset();
+                }               
+            }
         }
     }
 }

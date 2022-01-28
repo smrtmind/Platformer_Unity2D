@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5048512431045816345
+--- !u!1 &8698065639085128958
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5048512431045816350}
-  - component: {fileID: 5048512431045816351}
-  - component: {fileID: 5048512431045816344}
-  - component: {fileID: 3018801798779601166}
-  - component: {fileID: 4944774852615101053}
-  - component: {fileID: 6945785340842665440}
+  - component: {fileID: 8698065639085128945}
+  - component: {fileID: 8698065639085128944}
+  - component: {fileID: 8698065639085128959}
+  - component: {fileID: 1961263553715042223}
+  - component: {fileID: 3837687535749719464}
+  - component: {fileID: 3614860223053610589}
   m_Layer: 0
-  m_Name: HookIcon
+  m_Name: ThrowSwordIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5048512431045816350
+--- !u!4 &8698065639085128945
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5048512431045816345}
+  m_GameObject: {fileID: 8698065639085128958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38, y: 2.5, z: 0}
+  m_LocalPosition: {x: 37.948257, y: 0.34805393, z: 0}
   m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5048512431045816351
+--- !u!212 &8698065639085128944
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5048512431045816345}
+  m_GameObject: {fileID: 8698065639085128958}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,24 +74,24 @@ SpriteRenderer:
   m_SortingLayerID: 438754173
   m_SortingLayer: 4
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 1d1e36a744bf8794695c0fcfd0e43843, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8047e2ecc69d3b542b7f682db0cc0e33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.125, y: 3.125}
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5048512431045816344
+--- !u!114 &8698065639085128959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5048512431045816345}
+  m_GameObject: {fileID: 8698065639085128958}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
@@ -101,24 +101,10 @@ MonoBehaviour:
   _clips:
   - _name: idle
     _sprites:
-    - {fileID: 21300000, guid: 1d1e36a744bf8794695c0fcfd0e43843, type: 3}
-    - {fileID: 21300000, guid: 8cc90915ce4812d47a6cb84a9a39540b, type: 3}
-    - {fileID: 21300000, guid: 9453b97835947f74895a1b7d4c0fd4c7, type: 3}
-    - {fileID: 21300000, guid: 07ec23cd68c87c949a045134ff0d7f6c, type: 3}
-    - {fileID: 21300000, guid: 0318bad8406164140914787f90b71e1f, type: 3}
-    - {fileID: 21300000, guid: be20e94d7a0869845a7ef6f6b631fe1c, type: 3}
-    - {fileID: 21300000, guid: ac4190e674b35ed4ba695e2e939bef99, type: 3}
-    - {fileID: 21300000, guid: f7c655a73a29a0c489305c9798ab650c, type: 3}
-    - {fileID: 21300000, guid: b7467c9a239ee9e4197b04daacbe9529, type: 3}
-    - {fileID: 21300000, guid: e7c35f1ffabb2e144b006117097d3ed1, type: 3}
-    - {fileID: 21300000, guid: f9d3611f29cc49e49ad744c68fe08e3e, type: 3}
-    - {fileID: 21300000, guid: 4d5eb0af5e7447541bf8b5f111b2b0c5, type: 3}
-    - {fileID: 21300000, guid: ac67cd1afd48e7a42bb71b3618824950, type: 3}
-    - {fileID: 21300000, guid: b13be2ee80134984893a6cac2e3afd29, type: 3}
-    - {fileID: 21300000, guid: fa5be0207df4bde4da6626ab62e6c200, type: 3}
-    - {fileID: 21300000, guid: 66b9f72ad2f41e046beda40c6790cc70, type: 3}
-    - {fileID: 21300000, guid: 902c8dc7f6dec964faf91e9ea0b7d433, type: 3}
-    - {fileID: 21300000, guid: a973ac8be72c3a2449d77dacb99b4840, type: 3}
+    - {fileID: 21300000, guid: 8047e2ecc69d3b542b7f682db0cc0e33, type: 3}
+    - {fileID: 21300000, guid: 748ff6902ae66c24582c18f1bfa849b4, type: 3}
+    - {fileID: 21300000, guid: 530fce0ce1a02cb449a56a493b665c47, type: 3}
+    - {fileID: 21300000, guid: f4dc120d624f30541af41a8c6a4e134a, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -135,7 +121,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4944774852615101053}
+        - m_Target: {fileID: 3614860223053610589}
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
@@ -146,13 +132,29 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &3018801798779601166
+--- !u!58 &1961263553715042223
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8698065639085128958}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.021219064, y: -0.012012705}
+  serializedVersion: 2
+  m_Radius: 0.28843167
+--- !u!114 &3837687535749719464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5048512431045816345}
+  m_GameObject: {fileID: 8698065639085128958}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e93165c7d763d34183ff33d9009f1c7, type: 3}
@@ -165,7 +167,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5048512431045816344}
+      - m_Target: {fileID: 8698065639085128959}
         m_MethodName: SetClip
         m_Mode: 5
         m_Arguments:
@@ -176,7 +178,7 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6945785340842665440}
+      - m_Target: {fileID: 1961263553715042223}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -188,7 +190,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: ActivateWallHook
+        m_MethodName: ActivateThrowingSword
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -198,32 +200,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4944774852615101053
+--- !u!114 &3614860223053610589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5048512431045816345}
+  m_GameObject: {fileID: 8698065639085128958}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 430acfd34f12c314db907c638305ec1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 5048512431045816345}
---- !u!58 &6945785340842665440
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5048512431045816345}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.02, y: 0.16}
-  serializedVersion: 2
-  m_Radius: 0.31595507
+  _objectToDestroy: {fileID: 8698065639085128958}

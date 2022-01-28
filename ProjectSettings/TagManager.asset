@@ -44,20 +44,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 
-    uniqueID: 156832157
-    locked: 0
-  - name: 
-    uniqueID: 2254299031
+  - name: TileMap
+    uniqueID: 189240101
     locked: 0
   - name: Level
     uniqueID: 3978697857
     locked: 0
   - name: Chars
     uniqueID: 1447187359
-    locked: 0
-  - name: 
-    uniqueID: 189240101
     locked: 0
   - name: Props
     uniqueID: 438754173

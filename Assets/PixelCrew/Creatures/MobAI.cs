@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Components;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace PixelCrew.Creatures
 
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;
-        [SerializeField] private float _missHeroCooldown = 0.5f;
+        [SerializeField] private float _missHeroCooldown = 2f;
         private Coroutine _current;
         private GameObject _target;
         private CapsuleCollider2D _collider;
@@ -48,10 +49,18 @@ namespace PixelCrew.Creatures
 
         private IEnumerator AgroToHero()
         {
+            LookAtHero();
             _particles.Spawn("Exclamation");
             yield return new WaitForSeconds(_alarmDelay);
 
             StartState(GoToHero());
+        }
+
+        private void LookAtHero()
+        {
+            var direction = GetDirectionToTarget();
+            _creature.SetDirection(Vector2.zero);
+            _creature.UpdateSpriteDirection(direction);
         }
 
         private IEnumerator GoToHero()
@@ -71,11 +80,11 @@ namespace PixelCrew.Creatures
                 yield return null;
             }
 
+            _creature.SetDirection(Vector2.zero);
             _particles.Spawn("Miss");
-            StopCoroutine(_current);
-            StartState(_patrol.DoPatrol());
-
             yield return new WaitForSeconds(_missHeroCooldown);
+
+            StartState(_patrol.DoPatrol());
         }
 
         private IEnumerator Attack()
@@ -91,9 +100,15 @@ namespace PixelCrew.Creatures
 
         private void SetDirectionToTarget()
         {
+            var direction = GetDirectionToTarget();
+            _creature.SetDirection(direction);
+        }
+
+        private Vector2 GetDirectionToTarget()
+        {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
-            _creature.SetDirection(direction.normalized);
+            return direction.normalized;
         }
 
         private void StartState(IEnumerator coroutine)
@@ -117,6 +132,7 @@ namespace PixelCrew.Creatures
             _collider.size = new Vector2(_collider.size.y, _collider.size.x); 
             _collider.offset = Vector2.zero;
 
+            _creature.SetDirection(Vector2.zero);
             if (_current != null)
             {
                 StopCoroutine(_current);
