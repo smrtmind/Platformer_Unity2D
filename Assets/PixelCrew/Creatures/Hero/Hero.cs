@@ -11,6 +11,8 @@ namespace PixelCrew.Creatures.Hero
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayerCheck _wallCheck;
+        [SerializeField] private LayerCheck _frontObjectsCheck;
+        [SerializeField] private LayerCheck _platformCheck;
 
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _dashForce;
@@ -30,6 +32,8 @@ namespace PixelCrew.Creatures.Hero
         private bool _allowDoubleJump;
         private bool _isOnWall;
         private bool _dash;
+        private RigidbodyConstraints2D _defaultConstraints;
+        private CapsuleCollider2D _collider;
 
         private static readonly int OnWallKey = Animator.StringToHash("is-onTheWall");
         private static readonly int ThrowKey = Animator.StringToHash("throw");
@@ -43,6 +47,8 @@ namespace PixelCrew.Creatures.Hero
             base.Awake();
 
             _defaultGravityScale = Rigidbody.gravityScale;
+            _defaultConstraints = Rigidbody.constraints;
+            _collider = GetComponent<CapsuleCollider2D>();
         }
 
         private void Start()
@@ -69,12 +75,15 @@ namespace PixelCrew.Creatures.Hero
                 if (_wallCheck.IsTouchingLayer && moveToSameDirection)
                 {
                     _isOnWall = true;
+                    Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+                    Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     Rigidbody.gravityScale = 0;
                 }
 
                 else
                 {
                     _isOnWall = false;
+                    Rigidbody.constraints = _defaultConstraints;
                     Rigidbody.gravityScale = _defaultGravityScale;
                 }
 
@@ -113,14 +122,14 @@ namespace PixelCrew.Creatures.Hero
 
             if (_dash && _session.Data.DashIsActive)
             {
-                if (Direction.x != 0)
+                if (Direction.x != 0 && !_frontObjectsCheck.IsTouchingLayer)
                 {
                     _particles.Spawn("DashWave");
                 }
 
                 Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
-                Rigidbody.constraints = RigidbodyConstraints2D.None;
                 Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                Rigidbody.constraints = _defaultConstraints;
 
                 _dash = false;
 
@@ -134,6 +143,7 @@ namespace PixelCrew.Creatures.Hero
         {
             var yVelocity = Rigidbody.velocity.y;
             var isJumpPressing = Jump > 0;//_direction.y > 0
+            var isDownArrayPressing = Direction.y < 0;
 
             //check if you push up
             //if (_direction.y > 0)
@@ -154,7 +164,18 @@ namespace PixelCrew.Creatures.Hero
                 return 0f;
             }
 
+            if (isJumpPressing && isDownArrayPressing && _platformCheck.IsTouchingLayer)
+            {
+                _collider.enabled = false;
+                Invoke("EnableHeroCollider", 0.4f);
+            }
+
             return base.CalculateYVelocity();
+        }
+
+        private void EnableHeroCollider()
+        {
+            _collider.enabled = true;
         }
 
         protected override float CalculateJumpVelocity(float yVelocity)

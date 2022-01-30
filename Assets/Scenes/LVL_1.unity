@@ -24090,7 +24090,7 @@ MonoBehaviour:
     IsArmed: 0
     DoubleJumpIsActive: 0
     DashIsActive: 0
-    WallHookIsActive: 0
+    WallClimbIsActive: 0
     ThrowingSwordIsActive: 0
 --- !u!4 &1644745986
 Transform:
@@ -43918,11 +43918,6 @@ PrefabInstance:
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1774082697}
-    - target: {fileID: 9005311172567613480, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
-        type: 3}
-      propertyPath: _damageVelocity
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 9005311172567613485, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
         type: 3}
       propertyPath: m_RootOrder
