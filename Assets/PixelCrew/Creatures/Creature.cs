@@ -1,4 +1,6 @@
 ﻿using PixelCrew.Components;
+using PixelCrew.Components.ColliderBased;
+using PixelCrew.Components.GameObjectBased;
 using UnityEngine;
 
 namespace PixelCrew.Creatures

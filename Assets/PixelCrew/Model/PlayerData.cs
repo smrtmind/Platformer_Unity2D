@@ -7,11 +7,11 @@ namespace PixelCrew.Model
     {
         public int Coins;
         public int Hp;
-        public int Swords;
+        public int ThrowingSwords;
         public bool IsArmed;
         public bool DoubleJumpIsActive;
         public bool DashIsActive;
-        public bool WallHookIsActive;
+        public bool WallClimbIsActive;
         public bool ThrowingSwordIsActive;
     }
 }

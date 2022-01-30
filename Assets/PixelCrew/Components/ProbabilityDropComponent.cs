@@ -24,21 +24,38 @@ namespace PixelCrew.Components
         public void CalculateDrop()
         {
             var itemsPerDrop = new GameObject[_count];
+            var itemCount = 0;
             var total = _drop.Sum(dropData => dropData.Probability);
             var sortedDrop = _drop.OrderBy(dropData => dropData.Probability);
 
-            for (int i = 0; i < _count; i++)
+            while (itemCount < _count)
             {
                 var random = UnityEngine.Random.value * total;
+                var current = 0f;
                 foreach (var dropData in sortedDrop)
                 {
-                    if (dropData.Probability >= random)
+                    current += dropData.Probability;
+                    if (current >= random)
                     {
-                        itemsPerDrop[i] = dropData.Drop;
-                        break; 
+                        itemsPerDrop[itemCount] = dropData.Drop;
+                        itemCount++;
+                        break;
                     }
                 }
             }
+
+            //for (int i = 0; i < _count; i++)
+            //{
+            //    var random = UnityEngine.Random.value * total;
+            //    foreach (var dropData in sortedDrop)
+            //    {
+            //        if (dropData.Probability >= random)
+            //        {
+            //            itemsPerDrop[i] = dropData.Drop;
+            //            break; 
+            //        }
+            //    }
+            //}
 
             _onDropCalculated?.Invoke(itemsPerDrop);
         }

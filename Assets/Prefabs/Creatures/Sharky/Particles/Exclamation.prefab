@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -316269439
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0bc39ce808870174aaa3593e7088807f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _clips:
-  - _name: jump
+  - _name: exclamation
     _sprites:
     - {fileID: 21300000, guid: 0bc39ce808870174aaa3593e7088807f, type: 3}
     - {fileID: 21300000, guid: c3a081a74331aab488682efbea1d1ff7, type: 3}
