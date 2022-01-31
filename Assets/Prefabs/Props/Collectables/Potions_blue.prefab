@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1517793839}
   - component: {fileID: 1517793838}
   - component: {fileID: 1517793837}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Potions_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -316269439
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1185527514606905908, guid: 6e9a39ab0835fe24dba2540bca0d2a6c,
     type: 3}
@@ -115,6 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:

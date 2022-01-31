@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 528661972717971919}
   - component: {fileID: 528661972717971918}
   - component: {fileID: 2408080587681329814}
-  - component: {fileID: 7182563722529704191}
+  - component: {fileID: 4664802715875129816}
   - component: {fileID: -2304440979909365691}
   - component: {fileID: -4065443154341636215}
   - component: {fileID: -1460536045082854264}
   m_Layer: 0
-  m_Name: PearlProgectile
+  m_Name: PearlSinusoidalProgectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528661972717971912}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &7182563722529704191
+--- !u!114 &4664802715875129816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,11 +133,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 528661972717971912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d84d15192ae63514ab36ac87c8382ba4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e59cd7b2eb6fd04780a2ad5802b3247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 0.1
   _invertX: 1
+  _frequency: 40
+  _amplitude: 0.25
 --- !u!114 &-2304440979909365691
 MonoBehaviour:
   m_ObjectHideFlags: 0

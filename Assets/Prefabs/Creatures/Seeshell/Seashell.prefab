@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 6432610474161812799}
   - component: {fileID: 6432610474161812796}
   - component: {fileID: 6771646102727898861}
+  - component: {fileID: 3252884934509473527}
+  - component: {fileID: 4177570394263617507}
+  - component: {fileID: 2569288278570892992}
+  - component: {fileID: 8495142242454923930}
   m_Layer: 15
   m_Name: Seashell
   m_TagString: Enemy
@@ -121,6 +125,112 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3252884934509473527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432610474161812797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7567f841df9ee7e4fa8a36fbacf1c764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vision: {fileID: 6432610475433480551}
+  _meleeCooldown:
+    _value: 2
+  _meleeAttack: {fileID: 6432610475201457924}
+  _meleeCanAttack: {fileID: 6432610475201457979}
+  _rangeCooldown:
+    _value: 2
+  _rangeAttack: {fileID: 6432610474971347563}
+--- !u!114 &4177570394263617507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432610474161812797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835773f4fb4b49840971166b7b95748f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 2
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6771646102727898861}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: hit
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8495142242454923930}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2569288278570892992}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onChange:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2569288278570892992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432610474161812797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430acfd34f12c314db907c638305ec1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 6432610474161812797}
+--- !u!114 &8495142242454923930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432610474161812797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a9b48b97affa84d99869af76ffa4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 6432610474161812798}
+  _prefab: {fileID: 360328554237043090, guid: 9a6b8e793ed77764d825acad5eef4dce, type: 3}
+  _invertXScale: 0
 --- !u!1 &6432610474971347561
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 6432610474971347560}
-  _prefab: {fileID: 528661972717971912, guid: 9bb4eab2ab1809f458d1453b1212251f, type: 3}
+  _prefab: {fileID: 528661972717971912, guid: 78e71a641ef2b884bb3732fbe1a9c6ce, type: 3}
   _invertXScale: 0
 --- !u!1 &6432610475201457977
 GameObject:
@@ -305,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6432610475433480858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -0.594, z: 0}
+  m_LocalPosition: {x: -1.5, y: -0.594, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6432610474161812798}
@@ -335,7 +445,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 1}
+  m_Size: {x: 6, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &6432610475433480551
 MonoBehaviour:

@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 601853692}
   - component: {fileID: 601853693}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: SwordSlashPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 934787703}
   - component: {fileID: 934787704}
   - component: {fileID: 252213564}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1553219691}
   - component: {fileID: 1553219693}
   - component: {fileID: 1553219692}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -319,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615774876}
   - component: {fileID: 412684423}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: DashPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 3882161866966354183}
   - component: {fileID: 6828737916789674423}
   - component: {fileID: 894666417988303220}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3059387046913598761}
   - component: {fileID: 8566842532689652630}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: ThrowSwordPosition
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 4505213191712295318}
   - component: {fileID: 8847091862252143394}
   - component: {fileID: 5981626101117408304}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: FrontObjectsCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

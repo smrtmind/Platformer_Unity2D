@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8464663258954646989}
   - component: {fileID: 783066136042919804}
   - component: {fileID: 2507547638615749417}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: GoldCoinParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2311021051730427391}
   - component: {fileID: 8522651713426904358}
   - component: {fileID: 8150400823675402327}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: StuckedSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
