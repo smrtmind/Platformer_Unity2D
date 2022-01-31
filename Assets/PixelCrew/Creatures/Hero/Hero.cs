@@ -113,7 +113,11 @@ namespace PixelCrew.Creatures.Hero
             if (!_session.Data.IsArmed) return;
 
             base.Attack();
-            _particles.Spawn("SwordSlash");
+
+            if (!_wallCheck.IsTouchingLayer)
+            {
+                _particles.Spawn("SwordSlash");
+            }
         }
 
         protected override float CalculateXVelocity()

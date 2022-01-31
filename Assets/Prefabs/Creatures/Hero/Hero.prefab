@@ -667,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 45056
+    m_Bits: 46080
   _isTouchingLayer: 0
 --- !u!58 &5981626101117408304
 CircleCollider2D:
