@@ -1,7 +1,9 @@
-﻿using PixelCrew.Components.Health;
+﻿using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
+using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Utils;
+using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -22,13 +24,17 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private Cooldown _dashCooldown;
 
+        [Header("Super Throw")]
+        [SerializeField] private Cooldown _superThrowCooldown;
+        [SerializeField] private int _superThrowParticles;
+        [SerializeField] private float _superThrowDelay;
+
         [Space]
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disArmed;
+        [SerializeField] private ProbabilityDropComponent _hitDrop;
 
-        [Header("Particles")]
-        [SerializeField] private ParticleSystem _hitParticles;
-
+        private bool _superThrow;
         private bool _allowDoubleJump;
         private bool _isOnWall;
         private bool _dash;
@@ -190,7 +196,7 @@ namespace PixelCrew.Creatures.Hero
                 _allowDoubleJump = false;
 
                 return _jumpForce;
-            }   
+            }
 
             return base.CalculateJumpVelocity(yVelocity);
         }
@@ -216,11 +222,8 @@ namespace PixelCrew.Creatures.Hero
             var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
             _session.Data.Coins -= numCoinsToDispose;
 
-            var burst = _hitParticles.emission.GetBurst(0);
-            burst.count = numCoinsToDispose;
-            _hitParticles.emission.SetBurst(0, burst);
-
-            _hitParticles.Play();
+            _hitDrop.SetCount(numCoinsToDispose);
+            _hitDrop.CalculateDrop();
         }
 
         public void Interact()
@@ -290,23 +293,54 @@ namespace PixelCrew.Creatures.Hero
         {
             _session.Data.ThrowingSwords++;
             Debug.Log($"+{1} sword. TOTAL SWORDS: {_session.Data.ThrowingSwords}");
-        } 
+        }
 
         public void OnDoThrow()
         {
+            if (_superThrow)
+            {
+                var numThrows = Mathf.Min(_superThrowParticles, _session.Data.ThrowingSwords - 1);
+                StartCoroutine(DoSuperThrow(numThrows));
+            }
+
+            else
+            {
+                ThrowAndRemoveOneItem();
+            }
+
+            _superThrow = false;
+        }
+
+        private IEnumerator DoSuperThrow(int numThrows)
+        {
+            for (int i = 0; i < numThrows; i++)
+            {
+                ThrowAndRemoveOneItem();
+                yield return new WaitForSeconds(_superThrowDelay);
+            }
+        }
+
+        private void ThrowAndRemoveOneItem()
+        {
+            _session.Data.ThrowingSwords--;
             _particles.Spawn("Throw");
         }
 
-        public void Throw()
+        public void StartThrowing()
+        {
+            _superThrowCooldown.Reset();
+        }
+
+        public void PerformThrowing()
         {
             if (_session.Data.ThrowingSwordIsActive && _session.Data.IsArmed)
             {
-                if (_throwCooldown.IsReady && _session.Data.ThrowingSwords > 1)
-                {
-                    _session.Data.ThrowingSwords--;
-                    Animator.SetTrigger(ThrowKey);
-                    _throwCooldown.Reset();
-                }               
+                if (!_throwCooldown.IsReady || _session.Data.ThrowingSwords <= 1) return;
+
+                if (_superThrowCooldown.IsReady) _superThrow = true;
+
+                Animator.SetTrigger(ThrowKey);
+                _throwCooldown.Reset();
             }
         }
     }

@@ -59,6 +59,8 @@ namespace PixelCrew.Creatures.Mobs
 
         private void LookAtHero()
         {
+            if (_isDead) return;
+
             var direction = GetDirectionToTarget();
             _creature.SetDirection(Vector2.zero);
             _creature.UpdateSpriteDirection(direction);

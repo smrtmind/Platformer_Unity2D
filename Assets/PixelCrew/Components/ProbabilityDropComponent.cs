@@ -60,17 +60,22 @@ namespace PixelCrew.Components
             _onDropCalculated?.Invoke(itemsPerDrop);
         }
 
+        public void SetCount(int count)
+        {
+            _count = count;
+        }
+
         [Serializable]
         public class DropData
         {
             public GameObject Drop;
             [Range(0f, 100f)] public float Probability;
         }
+    }
 
-        [Serializable]
-        public class DropEvent : UnityEvent<GameObject[]>
-        {
+    [Serializable]
+    public class DropEvent : UnityEvent<GameObject[]>
+    {
 
-        }
     }
 }
