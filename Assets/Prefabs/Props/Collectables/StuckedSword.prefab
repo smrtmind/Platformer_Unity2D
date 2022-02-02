@@ -15,8 +15,7 @@ GameObject:
   - component: {fileID: 5602344846169904820}
   - component: {fileID: 3156326220272068215}
   - component: {fileID: 2311021051730427391}
-  - component: {fileID: 8522651713426904358}
-  - component: {fileID: 8150400823675402327}
+  - component: {fileID: 2967471286772322817}
   m_Layer: 16
   m_Name: StuckedSword
   m_TagString: Untagged
@@ -178,7 +177,7 @@ MonoBehaviour:
   _tag: Player
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -193,19 +192,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8150400823675402327}
+      - m_Target: {fileID: 2967471286772322817}
         m_MethodName: Add
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8522651713426904358}
-        m_MethodName: ArmHero
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -215,7 +203,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8522651713426904358
+--- !u!114 &2967471286772322817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,18 +212,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8761971551360484036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e885f000f276d46a250c2892fadb5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 824205ba72c26e6419f48df2a4825c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8150400823675402327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8761971551360484036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e44af59db24208648b2c1feffea70650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _id: ThrowingSword
+  _count: 1

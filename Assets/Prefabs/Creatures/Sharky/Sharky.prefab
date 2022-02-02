@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 12288
+    m_Bits: 13312
   _isTouchingLayer: 0
 --- !u!61 &1688635761
 BoxCollider2D:

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 490574076424353074}
   - component: {fileID: 1665263072}
   - component: {fileID: 1665263073}
-  - component: {fileID: 1665263074}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -73,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 438754173
-  m_SortingLayer: 6
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5e7ccda443e15e24e9683d6eacd2acee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -167,18 +166,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 512
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1665263074}
-        m_MethodName: ArmHero
-        m_Mode: 0
+      - m_Target: {fileID: 0}
+        m_MethodName: ActivateSkill
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Sword
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1665263072}
@@ -192,15 +194,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1665263074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465667366858429003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e885f000f276d46a250c2892fadb5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

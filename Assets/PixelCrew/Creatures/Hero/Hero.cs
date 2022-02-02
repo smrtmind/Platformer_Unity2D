@@ -48,6 +48,9 @@ namespace PixelCrew.Creatures.Hero
         private GameSession _session;
         private float _defaultGravityScale;
 
+        private int CoinsCount => _session.Data.Inventory.Count("Coin");
+        private int ThrowingSwordCount => _session.Data.Inventory.Count("ThrowingSword");
+
         protected override void Awake()
         {
             base.Awake();
@@ -61,9 +64,30 @@ namespace PixelCrew.Creatures.Hero
         {
             _session = FindObjectOfType<GameSession>();
             var health = GetComponent<HealthComponent>();
+            _session.Data.Inventory.OnChanged += OnInventoryChange;
+            _session.Data.Inventory.OnChanged += InventoryInfo;
 
             health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
+        }
+
+        private void OnDestroy()
+        {
+            _session.Data.Inventory.OnChanged -= OnInventoryChange;
+            _session.Data.Inventory.OnChanged -= InventoryInfo;
+        }
+
+        private void InventoryInfo(string id, int value)
+        {
+            Debug.Log($"Inventory changed: {id}: {value}");
+        }
+
+        private void OnInventoryChange(string id, int value)
+        {
+            if (id == "ThrowingSword")
+            {
+                UpdateHeroWeapon();
+            }
         }
 
         public void OnHealthChanged(int currentHealth)
@@ -116,7 +140,7 @@ namespace PixelCrew.Creatures.Hero
 
         public override void Attack()
         {
-            if (!_session.Data.IsArmed) return;
+            if (!_session.Data.SwordIsActive) return;
 
             base.Attack();
 
@@ -201,17 +225,15 @@ namespace PixelCrew.Creatures.Hero
             return base.CalculateJumpVelocity(yVelocity);
         }
 
-        public void AddCoins(int coins)
+        public void AddToInventory(string id, int value)
         {
-            _session.Data.Coins += coins;
-            Debug.Log($"+{coins} coins. TOTAL COINS: {_session.Data.Coins}");
+            _session.Data.Inventory.Add(id, value);
         }
 
         public override void TakeDamage()
         {
             base.TakeDamage();
-
-            if (_session.Data.Coins > 0)
+            if (CoinsCount > 0)
             {
                 SpawnCoins();
             }
@@ -219,8 +241,8 @@ namespace PixelCrew.Creatures.Hero
 
         private void SpawnCoins()
         {
-            var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
-            _session.Data.Coins -= numCoinsToDispose;
+            var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
+            _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
 
             _hitDrop.SetCount(numCoinsToDispose);
             _hitDrop.CalculateDrop();
@@ -248,58 +270,16 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
-        public void SetCoinsToDefault()
-        {
-            _session.Data.Coins = default;
-        }
-
-        public void ActivateDoubleJump()
-        {
-            _session.Data.DoubleJumpIsActive = true;
-            Debug.Log("NEW SKILL: DOUBLE JUMP");
-        }
-
-        public void ActivateAirDash()
-        {
-            _session.Data.DashIsActive = true;
-            Debug.Log("NEW SKILL: DASH");
-        }
-
-        public void ActivateWallHook()
-        {
-            _session.Data.WallClimbIsActive = true;
-            Debug.Log("NEW SKILL: WALL CLIMB");
-        }
-
-        public void ActivateThrowingSword()
-        {
-            _session.Data.ThrowingSwords += 5;
-            _session.Data.ThrowingSwordIsActive = true;
-            Debug.Log("NEW SKILL: THROWING SWORD");
-        }
-
-        public void ArmHero()
-        {
-            _session.Data.IsArmed = true;
-            UpdateHeroWeapon();
-        }
-
         private void UpdateHeroWeapon()
         {
-            Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disArmed;
-        }
-
-        public void AddSwords()
-        {
-            _session.Data.ThrowingSwords++;
-            Debug.Log($"+{1} sword. TOTAL SWORDS: {_session.Data.ThrowingSwords}");
+            Animator.runtimeAnimatorController = _session.Data.SwordIsActive ? _armed : _disArmed;
         }
 
         public void OnDoThrow()
         {
             if (_superThrow)
             {
-                var numThrows = Mathf.Min(_superThrowParticles, _session.Data.ThrowingSwords - 1);
+                var numThrows = Mathf.Min(_superThrowParticles, ThrowingSwordCount);
                 StartCoroutine(DoSuperThrow(numThrows));
             }
 
@@ -322,7 +302,7 @@ namespace PixelCrew.Creatures.Hero
 
         private void ThrowAndRemoveOneItem()
         {
-            _session.Data.ThrowingSwords--;
+            _session.Data.Inventory.Remove("ThrowingSword", 1);
             _particles.Spawn("Throw");
         }
 
@@ -333,15 +313,40 @@ namespace PixelCrew.Creatures.Hero
 
         public void PerformThrowing()
         {
-            if (_session.Data.ThrowingSwordIsActive && _session.Data.IsArmed)
+            if (_session.Data.SwordIsActive)
             {
-                if (!_throwCooldown.IsReady || _session.Data.ThrowingSwords <= 1) return;
+                if (!_throwCooldown.IsReady || ThrowingSwordCount <= 0) return;
 
                 if (_superThrowCooldown.IsReady) _superThrow = true;
 
                 Animator.SetTrigger(ThrowKey);
                 _throwCooldown.Reset();
             }
+        }
+
+        public void ActivateSkill(string skill)
+        {
+            switch (skill)
+            {
+                case "Double Jump":
+                    _session.Data.DoubleJumpIsActive = true;
+                    break;
+
+                case "Dash":
+                    _session.Data.DashIsActive = true;
+                    break;
+
+                case "Wall Climb":
+                    _session.Data.WallClimbIsActive = true;
+                    break;
+
+                case "Sword":
+                    _session.Data.SwordIsActive = true;
+                    UpdateHeroWeapon();
+                    break;
+            }
+
+            Debug.Log($"NEW SKILL: {skill}");
         }
     }
 }

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4487390674581310501}
   - component: {fileID: 4487390674581310500}
   - component: {fileID: 4487390674581310498}
-  - component: {fileID: 8548289148517975524}
   - component: {fileID: 4833534908262187891}
   - component: {fileID: 6284382835002777183}
   - component: {fileID: 2180492925175654204}
   - component: {fileID: 2730028555056822273}
+  - component: {fileID: 2103195096629030382}
   m_Layer: 16
   m_Name: SilverCoinParticle
   m_TagString: Untagged
@@ -104,19 +104,6 @@ CircleCollider2D:
   m_Offset: {x: 0.016165733, y: 0.015255481}
   serializedVersion: 2
   m_Radius: 0.17293811
---- !u!114 &8548289148517975524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4487390674581310503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6bad22a09748649acca936d9247305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numCoins: 1
 --- !u!114 &4833534908262187891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,9 +212,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8548289148517975524}
+      - m_Target: {fileID: 2103195096629030382}
         m_MethodName: Add
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -258,3 +245,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2103195096629030382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4487390674581310503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824205ba72c26e6419f48df2a4825c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _count: 1

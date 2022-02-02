@@ -157,6 +157,8 @@ GameObject:
   - component: {fileID: 8469168471129990494}
   - component: {fileID: 8469168471129990493}
   - component: {fileID: 2045534279}
+  - component: {fileID: 3036254261179797053}
+  - component: {fileID: 1206612872813693502}
   m_Layer: 18
   m_Name: Totem1
   m_TagString: Enemy
@@ -220,7 +222,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -316269439
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 059f6b6c4fb84d741b2d5ad2627eb1ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -317,7 +319,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.12620348}
+  m_Offset: {x: -0.12449801, y: -0.12620348}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -328,7 +330,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7931383, y: 0.6725532}
+  m_Size: {x: 0.61637616, y: 0.6725532}
   m_EdgeRadius: 0
 --- !u!50 &8469168471129990489
 Rigidbody2D:
@@ -475,6 +477,43 @@ MonoBehaviour:
   _target: {fileID: 1314909262}
   _prefab: {fileID: 4476619537445411834, guid: f4a271baa9f7a8c4b8d87bf0af155c1e, type: 3}
   _invertXScale: 0
+--- !u!68 &3036254261179797053
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8469168471129990437}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.06}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.91, y: 0}
+  - {x: 0.91, y: 0}
+--- !u!251 &1206612872813693502
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8469168471129990437}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &8469168471217265018
 GameObject:
   m_ObjectHideFlags: 0
