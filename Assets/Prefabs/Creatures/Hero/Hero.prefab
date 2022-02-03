@@ -1216,6 +1216,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _hitCooldown:
+    _value: 0
 --- !u!114 &1419873745
 MonoBehaviour:
   m_ObjectHideFlags: 0

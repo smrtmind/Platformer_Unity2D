@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixelCrew.Utils;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,13 +12,20 @@ namespace PixelCrew.Components.Health
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] private HealthChangeEvent _onChange;
+        [SerializeField] private Cooldown _hitCooldown;
 
         public void ModifyHealth(int healthDelta)
         {
             if (_health <= 0) return;
 
-            _health += healthDelta;
-            _onChange?.Invoke(_health);
+            if (_hitCooldown.IsReady)
+            {
+                _health += healthDelta;
+                _onChange?.Invoke(_health);
+
+                _hitCooldown.Reset();
+            }
+            else return;
 
             if (healthDelta < 0)
             {

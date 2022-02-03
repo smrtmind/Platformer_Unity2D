@@ -356,6 +356,8 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
+  _hitCooldown:
+    _value: 2
 --- !u!114 &8802454409449830497
 MonoBehaviour:
   m_ObjectHideFlags: 0
