@@ -92,6 +92,52 @@ MonoBehaviour:
   _target: {fileID: 601853692}
   _prefab: {fileID: 4476619537445411834, guid: 3ac1765a3f6724f46b4ccc6c1615c4da, type: 3}
   _invertXScale: 0
+--- !u!1 &654740535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654740536}
+  - component: {fileID: 654740537}
+  m_Layer: 9
+  m_Name: HealEffectPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &654740536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654740535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.51, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9005311172567613485}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654740537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654740535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a9b48b97affa84d99869af76ffa4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 654740536}
+  _prefab: {fileID: 2416828730014240789, guid: 943c5d00102002d4d8231d1d36145a6d, type: 3}
+  _invertXScale: 0
 --- !u!1 &934787702
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 9216
   _isTouchingLayer: 0
 --- !u!58 &894666417988303220
 CircleCollider2D:
@@ -813,6 +859,7 @@ Transform:
   - {fileID: 5312620976036426176}
   - {fileID: 1553219691}
   - {fileID: 1939310761}
+  - {fileID: 654740536}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1194,3 +1241,5 @@ MonoBehaviour:
     Component: {fileID: 601853693}
   - Id: Throw
     Component: {fileID: 8566842532689652630}
+  - Id: Heal
+    Component: {fileID: 654740537}

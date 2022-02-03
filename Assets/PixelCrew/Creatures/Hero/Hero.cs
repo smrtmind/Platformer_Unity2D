@@ -43,6 +43,8 @@ namespace PixelCrew.Creatures.Hero
 
         private static readonly int OnWallKey = Animator.StringToHash("is-onTheWall");
         private static readonly int ThrowKey = Animator.StringToHash("throw");
+        private static readonly int RunNearWallKey = Animator.StringToHash("is-runNearWall");
+        private static readonly int IdleNearWallKey = Animator.StringToHash("is-idleNearWall");
 
 
         private GameSession _session;
@@ -100,6 +102,20 @@ namespace PixelCrew.Creatures.Hero
         protected override void Update()
         {
             base.Update();
+            bool _isRunNearWall;
+            bool _isIdleNearWall;
+
+            if (_wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x != 0)
+                _isRunNearWall = true;
+            else
+                _isRunNearWall = false;
+            Animator.SetBool(RunNearWallKey, _isRunNearWall);
+
+            if (_wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x == 0)
+                _isIdleNearWall = true;
+            else
+                _isIdleNearWall = false;
+            Animator.SetBool(IdleNearWallKey, _isIdleNearWall);
 
             var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
             if (_session.Data.WallClimbIsActive)
@@ -355,6 +371,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (PotionsCount > 0)
             {
+                _particles.Spawn("Heal");
                 _health.ModifyHealth(5);
                 _session.Data.Inventory.Remove("HealthPotion", 1);
             }

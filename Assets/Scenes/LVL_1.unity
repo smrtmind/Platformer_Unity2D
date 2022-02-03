@@ -3926,7 +3926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c70e5cdd3368041bb67bd36e1f4a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lavaFloor: 1
 --- !u!114 &282508283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19788,7 +19787,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1341950198
 PrefabInstance:
@@ -21413,7 +21412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c70e5cdd3368041bb67bd36e1f4a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lavaFloor: 1
 --- !u!1001 &1455470672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27628,7 +27626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c70e5cdd3368041bb67bd36e1f4a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lavaFloor: 0
 --- !u!4 &1774082698
 Transform:
   m_ObjectHideFlags: 0
@@ -42474,7 +42471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c70e5cdd3368041bb67bd36e1f4a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lavaFloor: 1
 --- !u!114 &2097124546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44189,7 +44185,7 @@ PrefabInstance:
     - target: {fileID: 9005311172567613485, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9005311172567613485, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
         type: 3}

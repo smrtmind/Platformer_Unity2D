@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: zzz start
+  m_Name: runNearWall
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,17 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 530e7db6705aeea44af7726627e5d79d, type: 3}
+      value: {fileID: 21300000, guid: 4812ff6013a9ee04e887234bfd7a1dea, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: 03bd43b80705618478f9209588f20710, type: 3}
+      value: {fileID: 21300000, guid: d15bada73a0964b45ab3a4e9b51613cc, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: 6d80a98296599844bb810e4a6165143c, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: 0f763ae7ff150e84e8c7f774820fc7a6, type: 3}
+    - time: 0.4
+      value: {fileID: 21300000, guid: a42a7bd31ef09c74ba8b66d28bcc5399, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: d9a5be2b8d86af54e88c64d6f8dca467, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,19 +50,23 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 530e7db6705aeea44af7726627e5d79d, type: 3}
-    - {fileID: 21300000, guid: 03bd43b80705618478f9209588f20710, type: 3}
+    - {fileID: 21300000, guid: 4812ff6013a9ee04e887234bfd7a1dea, type: 3}
+    - {fileID: 21300000, guid: d15bada73a0964b45ab3a4e9b51613cc, type: 3}
+    - {fileID: 21300000, guid: 6d80a98296599844bb810e4a6165143c, type: 3}
+    - {fileID: 21300000, guid: 0f763ae7ff150e84e8c7f774820fc7a6, type: 3}
+    - {fileID: 21300000, guid: a42a7bd31ef09c74ba8b66d28bcc5399, type: 3}
+    - {fileID: 21300000, guid: d9a5be2b8d86af54e88c64d6f8dca467, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.2
+    m_StopTime: 0.6
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -68,4 +80,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.1
+    functionName: Spawn
+    data: Run
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.3
+    functionName: Spawn
+    data: Run
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
