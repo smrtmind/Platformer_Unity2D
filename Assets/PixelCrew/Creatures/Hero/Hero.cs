@@ -46,10 +46,12 @@ namespace PixelCrew.Creatures.Hero
 
 
         private GameSession _session;
+        private HealthComponent _health;
         private float _defaultGravityScale;
 
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
         private int ThrowingSwordCount => _session.Data.Inventory.Count("ThrowingSword");
+        private int PotionsCount => _session.Data.Inventory.Count("HealthPotion");
 
         protected override void Awake()
         {
@@ -63,11 +65,11 @@ namespace PixelCrew.Creatures.Hero
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-            var health = GetComponent<HealthComponent>();
+            _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChange;
             _session.Data.Inventory.OnChanged += InventoryInfo;
 
-            health.SetHealth(_session.Data.Hp);
+            _health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
         }
 
@@ -347,6 +349,15 @@ namespace PixelCrew.Creatures.Hero
             }
 
             Debug.Log($"NEW SKILL: {skill}");
+        }
+
+        public void Use()
+        {
+            if (PotionsCount > 0)
+            {
+                _health.ModifyHealth(5);
+                _session.Data.Inventory.Remove("HealthPotion", 1);
+            }
         }
     }
 }

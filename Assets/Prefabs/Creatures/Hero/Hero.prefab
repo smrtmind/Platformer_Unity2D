@@ -1035,6 +1035,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3cb6d3c8-7e95-4f55-ba6f-421d9a4197e8
     m_ActionName: Hero/Throw[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9005311172567613486}
+        m_MethodName: OnUse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c01ee8bf-2b33-49ea-9194-d49767f9cd9e
+    m_ActionName: Hero/Use[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero

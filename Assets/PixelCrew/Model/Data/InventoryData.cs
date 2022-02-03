@@ -21,14 +21,43 @@ namespace PixelCrew.Model.Data
             var itemDef = DefinitionsFacade.Instance.Items.Get(id);
             if (itemDef.IsVoid) return;
 
-            var item = GetItem(id);
-            if (item == null)
+            var inventoryIsFull = _inventory.Count >= DefinitionsFacade.Instance.Player.InventorySize;
+
+            if (itemDef.IsStackable)
             {
-                item = new InventoryItemData(id);
-                _inventory.Add(item);
+                var item = GetItem(id);
+                if (item == null)
+                {
+                    if (inventoryIsFull)
+                    {
+                        Debug.Log("Inventory is full");
+                        return;
+                    }
+
+                    item = new InventoryItemData(id);
+                    _inventory.Add(item);
+                }
+
+                item.Value += value;
             }
 
-            item.Value += value;
+            else
+            {
+                //var remainingItemsToAdd = DefinitionsFacade.Instance.Player.InventorySize - _inventory.Count;
+                //value = Mathf.Min(remainingItemsToAdd, value);
+
+                for (int i = 0; i < value; i++)
+                {
+                    if (inventoryIsFull)
+                    {
+                        Debug.Log("Inventory is full");
+                        return;
+                    }
+
+                    var item = new InventoryItemData(id) {Value = 1};
+                    _inventory.Add(item);
+                }
+            }
 
             OnChanged?.Invoke(id, Count(id));
         }
@@ -38,14 +67,28 @@ namespace PixelCrew.Model.Data
             var itemDef = DefinitionsFacade.Instance.Items.Get(id);
             if (itemDef.IsVoid) return;
 
-            var item = GetItem(id);
-            if (item == null) return;
-
-            item.Value -= value;
-
-            if (item.Value <= 0)
+            if (itemDef.IsStackable)
             {
-                _inventory.Remove(item);
+                var item = GetItem(id);
+                if (item == null) return;
+
+                item.Value -= value;
+
+                if (item.Value <= 0)
+                {
+                    _inventory.Remove(item);
+                }
+            }
+
+            else
+            {
+                for (int i = 0; i < value; i++)
+                {
+                    var item = GetItem(id);
+                    if (item == null) return;
+
+                    _inventory.Remove(item);
+                }
             }
 
             OnChanged?.Invoke(id, Count(id));

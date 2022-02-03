@@ -14,7 +14,8 @@ namespace PixelCrew.Creatures.Mobs
         [SerializeField] private float _alarmDelay = 2f;
         [SerializeField] private float _attackCooldown = 1f;
         [SerializeField] private float _missHeroCooldown = 2f;
-        private Coroutine _current;
+
+        private IEnumerator _current;
         private GameObject _target;
         private CapsuleCollider2D _collider;
 
@@ -123,7 +124,8 @@ namespace PixelCrew.Creatures.Mobs
                 StopCoroutine(_current);
             }
 
-            _current = StartCoroutine(coroutine);
+            _current = coroutine;
+            StartCoroutine(coroutine);
         }
 
         public void OnDie()

@@ -7,6 +7,8 @@ namespace PixelCrew.Components.Level
 {
     public class ReloadLevelComponent : MonoBehaviour
     {
+        //[SerializeField] private bool _lavaFloor;
+
         private Hero _hero;
 
         private void Start()
@@ -17,7 +19,7 @@ namespace PixelCrew.Components.Level
         public void Reload()
         {
             var session = FindObjectOfType<GameSession>();
-            Destroy(session.gameObject);
+            session.LoadLastSave();
 
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
