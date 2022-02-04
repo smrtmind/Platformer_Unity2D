@@ -102,20 +102,19 @@ namespace PixelCrew.Creatures.Hero
         protected override void Update()
         {
             base.Update();
-            bool _isRunNearWall;
-            bool _isIdleNearWall;
 
-            if (_wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x != 0)
-                _isRunNearWall = true;
-            else
-                _isRunNearWall = false;
-            Animator.SetBool(RunNearWallKey, _isRunNearWall);
+            if (Animator.runtimeAnimatorController == _armed)
+            {
+                if (_wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x != 0)
+                    Animator.SetBool(RunNearWallKey, true);
+                else
+                    Animator.SetBool(RunNearWallKey, false);
 
-            if (_wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x == 0)
-                _isIdleNearWall = true;
-            else
-                _isIdleNearWall = false;
-            Animator.SetBool(IdleNearWallKey, _isIdleNearWall);
+                if (_wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x == 0)
+                    Animator.SetBool(IdleNearWallKey, true);
+                else
+                    Animator.SetBool(IdleNearWallKey, false);
+            }
 
             var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
             if (_session.Data.WallClimbIsActive)
@@ -165,6 +164,7 @@ namespace PixelCrew.Creatures.Hero
             if (!_wallCheck.IsTouchingLayer)
             {
                 _particles.Spawn("SwordSlash");
+                Sounds.Play("Melee");
             }
         }
 
@@ -233,9 +233,9 @@ namespace PixelCrew.Creatures.Hero
         protected override float CalculateJumpVelocity(float yVelocity)
         {
             if (!IsGrounded && !_isOnWall && _allowDoubleJump && _session.Data.DoubleJumpIsActive)
-            {
-                _particles.Spawn("Jump");
+            {              
                 _allowDoubleJump = false;
+                DoJumpVfx();
 
                 return _jumpForce;
             }
@@ -320,8 +320,9 @@ namespace PixelCrew.Creatures.Hero
 
         private void ThrowAndRemoveOneItem()
         {
-            _session.Data.Inventory.Remove("ThrowingSword", 1);
+            Sounds.Play("Range");
             _particles.Spawn("Throw");
+            _session.Data.Inventory.Remove("ThrowingSword", 1);
         }
 
         public void StartThrowing()
