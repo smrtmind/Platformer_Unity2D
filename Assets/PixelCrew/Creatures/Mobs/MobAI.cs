@@ -3,6 +3,7 @@ using PixelCrew.Components.ColliderBased;
 using PixelCrew.Creatures.Mobs.Patrolling;
 using System.Collections;
 using UnityEngine;
+using PixelCrew.Components.Audio;
 
 namespace PixelCrew.Creatures.Mobs
 {
@@ -26,6 +27,7 @@ namespace PixelCrew.Creatures.Mobs
         private Animator _animator;
         private bool _isDead;
         private Patrol _patrol;
+        private PlaySoundsComponent _sounds;
 
         private void Awake()
         {
@@ -34,6 +36,7 @@ namespace PixelCrew.Creatures.Mobs
             _animator = GetComponent<Animator>();
             _patrol = GetComponent<Patrol>();
             _collider = GetComponent<CapsuleCollider2D>();
+            _sounds = GetComponent<PlaySoundsComponent>();
         }
 
         private void Start()
@@ -95,6 +98,7 @@ namespace PixelCrew.Creatures.Mobs
         {
             while (_canAttack.IsTouchingLayer)
             {
+                _sounds.Play("Bite");
                 _creature.Attack();
                 yield return new WaitForSeconds(_attackCooldown);
             }
@@ -130,6 +134,7 @@ namespace PixelCrew.Creatures.Mobs
 
         public void OnDie()
         {
+            _sounds.Play("Die");
             _particles.Spawn("DeadMark");
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);

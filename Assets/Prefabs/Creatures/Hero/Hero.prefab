@@ -1545,3 +1545,9 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: aa5af542fef29284f8b64b634edbd36a, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: f62d7496dc7b41e4ab6821e8091d4ff0, type: 3}
+  - _id: Dash
+    _clip: {fileID: 8300000, guid: 2b4531d02ee51044fb999d1aaabbcc10, type: 3}
+  - _id: Sword
+    _clip: {fileID: 8300000, guid: 6cd9bad02480e3e47bdfc1add0e908c2, type: 3}
+  - _id: Heal
+    _clip: {fileID: 8300000, guid: 7981ab4a6b825cd4fb385a5d1d62768e, type: 3}

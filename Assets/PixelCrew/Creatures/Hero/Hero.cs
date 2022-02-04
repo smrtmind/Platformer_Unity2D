@@ -105,15 +105,10 @@ namespace PixelCrew.Creatures.Hero
 
             if (Animator.runtimeAnimatorController == _armed)
             {
-                if (_wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x != 0)
-                    Animator.SetBool(RunNearWallKey, true);
-                else
-                    Animator.SetBool(RunNearWallKey, false);
+                bool _isRunNearWall = _wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x != 0 ? true : false;
 
-                if (_wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x == 0)
-                    Animator.SetBool(IdleNearWallKey, true);
-                else
-                    Animator.SetBool(IdleNearWallKey, false);
+                Animator.SetBool(RunNearWallKey, _isRunNearWall);
+                Animator.SetBool(IdleNearWallKey, !_isRunNearWall);
             }
 
             var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
@@ -177,6 +172,7 @@ namespace PixelCrew.Creatures.Hero
                 if (Direction.x != 0 && !_frontObjectsCheck.IsTouchingLayer)
                 {
                     _particles.Spawn("DashWave");
+                    Sounds.Play("Dash");
                 }
 
                 Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
@@ -361,6 +357,7 @@ namespace PixelCrew.Creatures.Hero
 
                 case "Sword":
                     _session.Data.SwordIsActive = true;
+                    Sounds.Play("Sword");
                     UpdateHeroWeapon();
                     break;
             }
@@ -372,6 +369,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (PotionsCount > 0)
             {
+                Sounds.Play("Heal");
                 _particles.Spawn("Heal");
                 _health.ModifyHealth(5);
                 _session.Data.Inventory.Remove("HealthPotion", 1);
