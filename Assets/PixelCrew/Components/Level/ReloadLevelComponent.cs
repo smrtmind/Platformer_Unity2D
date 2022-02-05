@@ -7,8 +7,6 @@ namespace PixelCrew.Components.Level
 {
     public class ReloadLevelComponent : MonoBehaviour
     {
-        //[SerializeField] private bool _lavaFloor;
-
         private Hero _hero;
 
         private void Start()

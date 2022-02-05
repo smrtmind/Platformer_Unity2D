@@ -100,7 +100,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1864705387}
-        m_MethodName: StartDrop
+        m_MethodName: DropImmediate
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

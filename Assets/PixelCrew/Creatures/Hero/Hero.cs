@@ -2,6 +2,7 @@
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;
+using PixelCrew.Model.Data;
 using PixelCrew.Utils;
 using System.Collections;
 using UnityEditor.Animations;
@@ -9,7 +10,7 @@ using UnityEngine;
 
 namespace PixelCrew.Creatures.Hero
 {
-    public class Hero : Creature
+    public class Hero : Creature, ICanAddToInventory
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayerCheck _wallCheck;
