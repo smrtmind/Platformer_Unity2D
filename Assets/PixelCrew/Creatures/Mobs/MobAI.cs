@@ -98,8 +98,9 @@ namespace PixelCrew.Creatures.Mobs
         {
             while (_canAttack.IsTouchingLayer)
             {
-                _sounds.Play("Bite");
                 _creature.Attack();
+                _sounds.Play("Hit");
+                //_particles.Spawn("BiteEffect");
                 yield return new WaitForSeconds(_attackCooldown);
             }
 
@@ -139,11 +140,11 @@ namespace PixelCrew.Creatures.Mobs
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);
 
-            _collider.direction = (CapsuleDirection2D)1;
-            _collider.size = new Vector2(_collider.size.y, _collider.size.x); 
-            _collider.offset = Vector2.zero;
+            //_collider.direction = (CapsuleDirection2D)1;
+            //_collider.size = new Vector2(_collider.size.y, _collider.size.x); 
+            //_collider.offset = Vector2.zero;
 
-            _collider.gameObject.layer = 11;
+            //_collider.gameObject.layer = 11;
 
             _creature.SetDirection(Vector2.zero);
             if (_current != null)
