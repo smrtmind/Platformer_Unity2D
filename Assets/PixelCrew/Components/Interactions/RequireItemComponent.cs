@@ -19,7 +19,7 @@ namespace PixelCrew.Components.Interactions
             var isAllRequirementsFit = true;
             foreach (var item in _required)
             {
-                var numItems = session.Data.Inventory.Count(item.Id); 
+                var numItems = session.Data.Inventory.Count(item.Id);
                 if (numItems < item.Value)
                 {
                     isAllRequirementsFit = false;
@@ -41,6 +41,12 @@ namespace PixelCrew.Components.Interactions
 
             else
             {
+                foreach (var item in _required)
+                {
+                    session.Data.Inventory.Remove(item.Id, item.Value);
+                    Debug.Log($"You need item: {item.Id}, amount: {item.Value} ");
+                }
+
                 _onFail?.Invoke();
             }
         }

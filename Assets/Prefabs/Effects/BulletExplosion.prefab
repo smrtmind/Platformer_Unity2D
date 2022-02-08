@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2700885888226334978}
   - component: {fileID: -3312879161872488472}
   m_Layer: 15
-  m_Name: PearlProjectileExplosion
+  m_Name: BulletExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

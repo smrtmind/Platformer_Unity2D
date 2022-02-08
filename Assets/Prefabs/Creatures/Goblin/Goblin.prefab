@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 852644891}
   - component: {fileID: 852644889}
   - component: {fileID: 1422062408}
-  m_Layer: 17
+  m_Layer: 15
   m_Name: PatrolGroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852644888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2099998, y: -0.615, z: 0}
+  m_LocalPosition: {x: 0.2099998, y: -0.525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 491406283003245981}
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 13312
+    m_Bits: 29696
   _isTouchingLayer: 0
 --- !u!61 &1422062408
 BoxCollider2D:
@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1368832655
 Transform:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1845039710}
   - component: {fileID: 1845039708}
   - component: {fileID: 1688635761}
-  m_Layer: 17
+  m_Layer: 15
   m_Name: PatrolObstacleCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845039707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: -0.08199996, z: 0}
+  m_LocalPosition: {x: 0.21, y: 0.008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 491406283003245981}
@@ -412,13 +412,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -316269439
   m_SortingLayer: 2
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 8f8e3d2b1f0850a4897a8ae200673809, type: 3}
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: a85dc64d48cbe0e4e9f06aaff2e82e6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.75, y: 0.875}
+  m_Size: {x: 1.25, y: 1.09375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -546,8 +546,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1368832656}
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 1368832654}
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invertScale: 0
-  _speed: 2
+  _speed: 3
   _jumpForce: 20
   _damageVelocity: 5
   _groundLayer:
@@ -653,7 +653,7 @@ MonoBehaviour:
   _source: {fileID: 614413551}
   _sounds:
   - _id: Hurt
-    _clip: {fileID: 8300000, guid: 621b81b88949fdb4ca48d434a9c783b8, type: 3}
+    _clip: {fileID: 8300000, guid: a4a0a9688b24afd4a8d5cdbb9af22382, type: 3}
   - _id: Die
     _clip: {fileID: 8300000, guid: 36d93c3c2cb3f1c43b9dfe7f831bb972, type: 3}
   - _id: Hit
@@ -761,7 +761,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 2}
+  m_Size: {x: 30, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &4324571012554832115
 MonoBehaviour:
