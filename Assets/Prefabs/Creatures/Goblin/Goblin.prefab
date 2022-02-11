@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835773f4fb4b49840971166b7b95748f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 2
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -761,7 +761,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 2}
+  m_Size: {x: 24, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &4324571012554832115
 MonoBehaviour:
