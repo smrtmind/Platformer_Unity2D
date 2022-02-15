@@ -11,7 +11,7 @@ namespace PixelCrew.UI.MainMenu
         public void OnStartGame()
         {
             _closeAction = () => { SceneManager.LoadScene("LVL_1"); };
-            Close();
+            StartGame();
         }
 
         public void OnShowOptions()
