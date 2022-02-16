@@ -329,7 +329,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void PerformThrowing()
         {
-            if (_session.Data.SwordIsActive)
+            if (_session.Data.SwordIsActive && !_frontObjectsCheck.IsTouchingLayer)
             {
                 if (!_throwCooldown.IsReady || ThrowingSwordCount <= 0) return;
 

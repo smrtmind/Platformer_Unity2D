@@ -10,7 +10,7 @@ namespace PixelCrew.UI
         private static readonly int Escape = Animator.StringToHash("exit");
         private static readonly int LaunchGame = Animator.StringToHash("start");
 
-        private void Start()
+        protected virtual void Start()
         {
             _animator = GetComponent<Animator>();
 

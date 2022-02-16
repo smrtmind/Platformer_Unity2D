@@ -77246,8 +77246,8 @@ MonoBehaviour:
     Hp: 15
     DoubleJumpIsActive: 1
     DashIsActive: 1
-    WallClimbIsActive: 0
-    SwordIsActive: 0
+    WallClimbIsActive: 1
+    SwordIsActive: 1
 --- !u!4 &1644745986
 Transform:
   m_ObjectHideFlags: 0
