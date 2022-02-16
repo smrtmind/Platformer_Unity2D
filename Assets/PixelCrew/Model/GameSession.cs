@@ -1,5 +1,6 @@
 ﻿using PixelCrew.Model.Data;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Model
 {
@@ -12,6 +13,8 @@ namespace PixelCrew.Model
 
         private void Awake()
         {
+            LoadHud();
+
             if (IsSessionExist())
             {
                 Destroy(gameObject);
@@ -24,26 +27,23 @@ namespace PixelCrew.Model
             }
         }
 
+        private void LoadHud()
+        {
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+        }
+
         private bool IsSessionExist()
         {
-            var session = FindObjectOfType<GameSession>();
-            if (session != this)
+            var sessions = FindObjectsOfType<GameSession>();
+            foreach (var gameSession in sessions)
             {
-                return true;
+                if (gameSession != this)
+                {
+                    return true;
+                }
             }
 
             return false;
-
-            //var sessions = FindObjectOfType<GameSession>();
-            //foreach (var gameSession in sessions)
-            //{
-            //    if (gameSession != this)
-            //    {
-            //        return true;
-            //    }
-            //}
-
-            //return false;
         }
 
         public void Save()

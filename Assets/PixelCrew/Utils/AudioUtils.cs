@@ -4,11 +4,11 @@ namespace PixelCrew.Utils
 {
     public class AudioUtils
     {
-        public const string SfxSourceTag = "SfxAudioSource";
+        public const string SoundsSourceTag = "SoundsAudioSource";
 
         public static AudioSource FindSfxSource()
         {
-            return GameObject.FindWithTag(SfxSourceTag).GetComponent<AudioSource>();
+            return GameObject.FindWithTag(SoundsSourceTag).GetComponent<AudioSource>();
         }
     }
 }

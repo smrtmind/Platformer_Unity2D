@@ -72,7 +72,7 @@ namespace PixelCrew.Creatures.Hero
             _session.Data.Inventory.OnChanged += OnInventoryChange;
             _session.Data.Inventory.OnChanged += InventoryInfo;
 
-            _health.SetHealth(_session.Data.Hp);
+            _health.SetHealth(_session.Data.Hp.Value);
             UpdateHeroWeapon();
         }
 
@@ -97,7 +97,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnHealthChanged(int currentHealth)
         {
-            _session.Data.Hp = currentHealth;
+            _session.Data.Hp.Value = currentHealth;
         }
 
         protected override void Update()
