@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.UI.Hud;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace PixelCrew.Creatures.Hero
@@ -6,6 +7,12 @@ namespace PixelCrew.Creatures.Hero
     public class HeroInputReader : MonoBehaviour
     {
         [SerializeField] private Hero _hero;
+        private HudController _hud;
+
+        private void Start()
+        {
+            _hud = FindObjectOfType<HudController>();
+        }
 
         public void OnMovement(InputAction.CallbackContext context)
         {
@@ -61,6 +68,14 @@ namespace PixelCrew.Creatures.Hero
             if (context.performed)
             {
                 _hero.Use();
+            }
+        }
+
+        public void OnPause(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hud.OnSettings();
             }
         }
     }

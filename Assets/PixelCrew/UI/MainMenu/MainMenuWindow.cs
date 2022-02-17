@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixelCrew.Utils;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,9 +17,7 @@ namespace PixelCrew.UI.MainMenu
 
         public void OnShowOptions()
         {
-            var window = Resources.Load<GameObject>("UI/OptionsWindow");
-            var canvas = FindObjectOfType<Canvas>();
-            Instantiate(window, canvas.transform);
+            WindowUtils.CreateWindow("UI/OptionsWindow");
         }
 
         public void OnLanguageOptions()

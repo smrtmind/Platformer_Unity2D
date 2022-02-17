@@ -75697,7 +75697,8 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory: []
-    Hp: 15
+    Hp:
+      _value: 10
     DoubleJumpIsActive: 1
     DashIsActive: 1
     WallClimbIsActive: 0
