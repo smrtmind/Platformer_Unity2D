@@ -75,7 +75,11 @@ namespace PixelCrew.Creatures.Hero
         {
             if (context.performed)
             {
-                _hud.OnSettings();
+                if (!_hud.PauseIsAvailable) return;
+                else
+                {
+                    _hud.OnSettings();
+                }
             }
         }
     }

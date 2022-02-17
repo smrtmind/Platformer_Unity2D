@@ -12,12 +12,17 @@ namespace PixelCrew.UI.Hud
 
         private GameSession _session;
 
+        private bool _pauseIsAvailable;
+        public bool PauseIsAvailable => _pauseIsAvailable;
+
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
             _session.Data.Hp.OnChanged += OnHealthChanged;
 
             OnHealthChanged(_session.Data.Hp.Value, 0);
+
+            _pauseIsAvailable = true;
         }
 
         private void OnHealthChanged(int newValue, int oldValue)
@@ -30,6 +35,12 @@ namespace PixelCrew.UI.Hud
         public void OnSettings()
         {
             WindowUtils.CreateWindow("UI/InGameMenuWindow");
+            _pauseIsAvailable = false;
+        }
+
+        public void ResetPauseAccess()
+        {
+            _pauseIsAvailable = true;
         }
 
         private void OnDestroy()

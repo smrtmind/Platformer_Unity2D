@@ -28,8 +28,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 511781222821839568}
   - {fileID: 511781222946667567}
+  - {fileID: 511781222821839568}
   - {fileID: 511781222933692825}
   - {fileID: 511781223674957089}
   m_Father: {fileID: 511781222925941144}
@@ -177,7 +177,7 @@ RectTransform:
   - {fileID: 511781222747957784}
   - {fileID: 511781223048986523}
   m_Father: {fileID: 511781222747718626}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39337844, g: 0.9811321, b: 0.609852, a: 1}
+  m_Color: {r: 0.98039216, g: 0.73062754, b: 0.3921569, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -446,7 +446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RETURN TO GAME
+  m_Text: CONTINUE
 --- !u!1 &511781222925941147
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.98039216, g: 0.73062754, b: 0.3921569, a: 1}
+  m_Color: {r: 0.3921569, g: 0.85026217, b: 0.98039216, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 511781222946667564}
   - component: {fileID: 79903871}
   m_Layer: 5
-  m_Name: ReturnToGameButton
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -718,7 +718,7 @@ RectTransform:
   - {fileID: 511781222917345434}
   - {fileID: 511781223851626739}
   m_Father: {fileID: 511781222747718626}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3921569, g: 0.85026217, b: 0.98039216, a: 1}
+  m_Color: {r: 0.39337844, g: 0.9811321, b: 0.609852, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1374,7 +1374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RETURN TO GAME
+  m_Text: CONTINUE
 --- !u!1 &511781223908837669
 GameObject:
   m_ObjectHideFlags: 0
