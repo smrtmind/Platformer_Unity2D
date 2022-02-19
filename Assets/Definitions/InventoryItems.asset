@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - _id: Coin
-    _isStackable: 1
+    _icon: {fileID: 6582046967323461550, guid: 3061a332f93c593458102e00bbe22b94, type: 3}
+    _tags: 0000000001000000
   - _id: ThrowingSword
-    _isStackable: 1
+    _icon: {fileID: 21300000, guid: 8047e2ecc69d3b542b7f682db0cc0e33, type: 3}
+    _tags: 000000000100000002000000
   - _id: Key
-    _isStackable: 0
+    _icon: {fileID: 21300000, guid: 46014228ef8fa4a4aaad077d77c9e622, type: 3}
+    _tags: 
   - _id: HealthPotion
-    _isStackable: 0
+    _icon: {fileID: 3714227102187029162, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
+    _tags: 
+  - _id: ThrowingPearl
+    _icon: {fileID: 21300000, guid: a0dffd2b793383b4ea9bef1a89c0185b, type: 3}
+    _tags: 000000000100000002000000

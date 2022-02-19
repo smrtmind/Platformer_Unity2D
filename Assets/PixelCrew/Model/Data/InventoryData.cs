@@ -1,6 +1,7 @@
 ﻿using PixelCrew.Model.Definitions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -23,7 +24,7 @@ namespace PixelCrew.Model.Data
 
             var inventoryIsFull = _inventory.Count >= DefinitionsFacade.Instance.Player.InventorySize;
 
-            if (itemDef.IsStackable)
+            if (itemDef.HasTag(ItemTag.Stackable))
             {
                 var item = GetItem(id);
                 if (item == null)
@@ -43,9 +44,6 @@ namespace PixelCrew.Model.Data
 
             else
             {
-                //var remainingItemsToAdd = DefinitionsFacade.Instance.Player.InventorySize - _inventory.Count;
-                //value = Mathf.Min(remainingItemsToAdd, value);
-
                 for (int i = 0; i < value; i++)
                 {
                     if (inventoryIsFull)
@@ -62,12 +60,28 @@ namespace PixelCrew.Model.Data
             OnChanged?.Invoke(id, Count(id));
         }
 
+        public InventoryItemData[] GetAll(params ItemTag[] tags)
+        {
+            var returnValue = new List<InventoryItemData>();
+            foreach (var item in _inventory)
+            {
+                var itemDefinition = DefinitionsFacade.Instance.Items.Get(item.Id);
+                var isAllRequirementsMet = tags.All(x => itemDefinition.HasTag(x));
+                if (isAllRequirementsMet)
+                {
+                    returnValue.Add(item);
+                }
+            }
+
+            return returnValue.ToArray();
+        }
+
         public void Remove(string id, int value)
         {
             var itemDef = DefinitionsFacade.Instance.Items.Get(id);
             if (itemDef.IsVoid) return;
 
-            if (itemDef.IsStackable)
+            if (itemDef.HasTag(ItemTag.Stackable))
             {
                 var item = GetItem(id);
                 if (item == null) return;

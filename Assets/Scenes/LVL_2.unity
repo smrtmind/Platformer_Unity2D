@@ -52214,11 +52214,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6280745523971898442, guid: e9c7de096498e1b459f069e6581ee672,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6992138716421747056, guid: e9c7de096498e1b459f069e6581ee672,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -77858,7 +77853,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: ThrowingPearl
+        Value: 20
+      - Id: ThrowingSword
+        Value: 10
+      - Id: Key
+        Value: 2
     Hp:
       _value: 10
     DoubleJumpIsActive: 1

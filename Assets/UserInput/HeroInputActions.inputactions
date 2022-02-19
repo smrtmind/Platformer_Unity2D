@@ -54,7 +54,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Use",
+                    "name": "SwitchItem",
                     "type": "Button",
                     "id": "c01ee8bf-2b33-49ea-9194-d49767f9cd9e",
                     "expectedControlType": "Button",
@@ -127,61 +127,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Keyboard",
-                    "id": "c01e6f9c-24d1-48f7-8969-83d9218984bc",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "5bfd8ba4-d991-4351-91fd-2dd45e364fb7",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "c480d4ee-62e0-47d0-9feb-90bd50a0f610",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "f3429719-53e8-4d0b-971a-0870a2ab448f",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "9881d81e-99f8-4159-8e27-276e8fa2fabb",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "be635678-751e-4ce4-8f4c-9de817c591cd",
                     "path": "<Keyboard>/c",
@@ -243,7 +188,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Use",
+                    "action": "SwitchItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

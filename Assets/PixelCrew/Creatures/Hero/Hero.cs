@@ -54,7 +54,7 @@ namespace PixelCrew.Creatures.Hero
 
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
         private int ThrowingSwordCount => _session.Data.Inventory.Count("ThrowingSword");
-        private int PotionsCount => _session.Data.Inventory.Count("HealthPotion");
+        //private int PotionsCount => _session.Data.Inventory.Count("HealthPotion");
 
         protected override void Awake()
         {
@@ -366,15 +366,21 @@ namespace PixelCrew.Creatures.Hero
             Debug.Log($"NEW SKILL: {skill}");
         }
 
-        public void Use()
+        //public void Use()
+        //{
+        //    var potionsCount = _session.Data.Inventory.Count("HealthPotion");
+        //    if (potionsCount > 0)
+        //    {
+        //        Sounds.Play("Heal");
+        //        _particles.Spawn("Heal");
+        //        _health.ModifyHealth(5);
+        //        _session.Data.Inventory.Remove("HealthPotion", 1);
+        //    }
+        //}
+
+        public void SwitchItem()
         {
-            if (PotionsCount > 0)
-            {
-                Sounds.Play("Heal");
-                _particles.Spawn("Heal");
-                _health.ModifyHealth(5);
-                _session.Data.Inventory.Remove("HealthPotion", 1);
-            }
+            _session.QuickInventory.SetNextItem();
         }
     }
 }

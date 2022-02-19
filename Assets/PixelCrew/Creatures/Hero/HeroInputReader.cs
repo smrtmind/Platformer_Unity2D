@@ -63,11 +63,11 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
-        public void OnUse(InputAction.CallbackContext context)
+        public void OnSwitchItem(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                _hero.Use();
+                _hero.SwitchItem();
             }
         }
 
