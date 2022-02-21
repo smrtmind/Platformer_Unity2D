@@ -1,7 +1,7 @@
-﻿using PixelCrew.Model.Data.Properties;
+﻿using System;
+using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils.Disposables;
-using System;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -11,10 +11,10 @@ namespace PixelCrew.Model.Data
         private readonly PlayerData _data;
 
         public InventoryItemData[] Inventory { get; private set; }
-
         public readonly IntProperty SelectedIndex = new IntProperty();
-
         public event Action OnChanged;
+
+        public InventoryItemData SelectedItem => Inventory[SelectedIndex.Value];
 
         public QuickInventoryData(PlayerData data)
         {

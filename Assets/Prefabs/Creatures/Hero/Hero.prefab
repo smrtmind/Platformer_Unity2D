@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 3059387046913598761}
   - component: {fileID: 8566842532689652630}
   m_Layer: 17
-  m_Name: ThrowSwordPosition
+  m_Name: ThrowingSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1007,6 +1007,7 @@ MonoBehaviour:
   _armed: {fileID: 9100000, guid: 666bd023d349308429b9681b141ac97a, type: 2}
   _disArmed: {fileID: 9100000, guid: e04a8913e25ae274e8b1bf79a166b86d, type: 2}
   _hitDrop: {fileID: 1939310759}
+  _throwSpawner: {fileID: 8566842532689652630}
 --- !u!114 &9005311172567613481
 MonoBehaviour:
   m_ObjectHideFlags: 0

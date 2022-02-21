@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Utils;
+using System;
 using UnityEngine;
 
 namespace PixelCrew.Components.GameObjectBased
@@ -19,6 +20,11 @@ namespace PixelCrew.Components.GameObjectBased
             instance.transform.localScale = scale;
 
             instance.SetActive(true);
+        }
+
+        public void SetPrefab(GameObject prefab)
+        {
+            _prefab = prefab;
         }
     }
 }

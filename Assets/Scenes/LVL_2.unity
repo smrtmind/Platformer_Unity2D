@@ -77854,11 +77854,9 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: ThrowingPearl
-        Value: 20
       - Id: ThrowingSword
-        Value: 10
-      - Id: Key
+        Value: 2
+      - Id: ThrowingPearl
         Value: 2
     Hp:
       _value: 10
