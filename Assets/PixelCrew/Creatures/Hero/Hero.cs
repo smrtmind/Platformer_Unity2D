@@ -5,6 +5,7 @@ using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repository.Item;
 using PixelCrew.Utils;
 using System.Collections;
 using UnityEditor.Animations;

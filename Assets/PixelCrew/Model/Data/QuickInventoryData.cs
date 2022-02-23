@@ -1,6 +1,7 @@
 ﻿using System;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repository.Item;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
 

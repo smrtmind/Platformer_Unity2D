@@ -2,34 +2,18 @@
 using System.Linq;
 using UnityEngine;
 
-namespace PixelCrew.Model.Definitions
+namespace PixelCrew.Model.Definitions.Repository.Item
 {
     [CreateAssetMenu(menuName = "Definitions/InventoryItems", fileName = "InventoryItems")]
-    public class InventoryItemsDefinitions : ScriptableObject
+    public class ItemsRepository : DefinitionRepository<ItemDef>
     {
-        [SerializeField] private ItemDef[] _items;
-
-        public ItemDef Get(string id)
-        {
-            foreach (var itemDef in _items)
-            {
-                if (itemDef.Id == id)
-                {
-                    return itemDef;
-                }
-            }
-
-            return default;
-        }
-
 #if UNITY_EDITOR
-        public ItemDef[] ItemsForEditor => _items;
+        public ItemDef[] ItemsForEditor => _collection;
 #endif
-
     }
 
     [Serializable]
-    public struct ItemDef
+    public struct ItemDef : IHaveId
     {
         [SerializeField] private string _id;
         [SerializeField] private Sprite _icon;

@@ -1,4 +1,4 @@
-﻿namespace PixelCrew.Model.Definitions
+﻿namespace PixelCrew.Model.Definitions.Repository.Item
 {
     public enum ItemTag
     {

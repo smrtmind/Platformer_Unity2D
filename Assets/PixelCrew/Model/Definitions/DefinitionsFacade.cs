@@ -1,15 +1,17 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Model.Definitions.Repository;
+using PixelCrew.Model.Definitions.Repository.Item;
+using UnityEngine;
 
 namespace PixelCrew.Model.Definitions
 {
     [CreateAssetMenu(menuName = "Definitions/DefinitionsFacade", fileName = "DefinitionsFacade")]
     public class DefinitionsFacade : ScriptableObject
     {
-        [SerializeField] private InventoryItemsDefinitions _items;
+        [SerializeField] private ItemsRepository _items;
         [SerializeField] private ThrowableItemsDefinitions _throwableItems;
         [SerializeField] private PlayerDefinitions _player;
 
-        public InventoryItemsDefinitions Items => _items;
+        public ItemsRepository Items => _items;
         public ThrowableItemsDefinitions ThrowableItems => _throwableItems;
         public PlayerDefinitions Player => _player;
 
