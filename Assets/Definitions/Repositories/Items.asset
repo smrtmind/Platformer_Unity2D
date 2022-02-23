@@ -10,21 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 025323f878777614e87fdcade7f162c7, type: 3}
-  m_Name: InventoryItems
+  m_Name: Items
   m_EditorClassIdentifier: 
-  _items:
+  _collection:
   - _id: Coin
     _icon: {fileID: 6582046967323461550, guid: 3061a332f93c593458102e00bbe22b94, type: 3}
     _tags: 0000000001000000
-  - _id: ThrowingSword
+  - _id: ThrowableSword
     _icon: {fileID: 21300000, guid: 8047e2ecc69d3b542b7f682db0cc0e33, type: 3}
     _tags: 000000000100000002000000
   - _id: Key
     _icon: {fileID: 21300000, guid: 46014228ef8fa4a4aaad077d77c9e622, type: 3}
-    _tags: 
-  - _id: HealthPotion
-    _icon: {fileID: 3714227102187029162, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    _tags: 
-  - _id: ThrowingPearl
+    _tags: 01000000
+  - _id: ThrowablePearl
     _icon: {fileID: 21300000, guid: a0dffd2b793383b4ea9bef1a89c0185b, type: 3}
     _tags: 000000000100000002000000
+  - _id: MediumHpPotion
+    _icon: {fileID: -2490300807704163751, guid: b0434f20d58194b40a74dfaa9f8e5f1e,
+      type: 3}
+    _tags: 000000000100000003000000
+  - _id: BigHpPotion
+    _icon: {fileID: -2157444351414893163, guid: b0434f20d58194b40a74dfaa9f8e5f1e,
+      type: 3}
+    _tags: 000000000100000003000000

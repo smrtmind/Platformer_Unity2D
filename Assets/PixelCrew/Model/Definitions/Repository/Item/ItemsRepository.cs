@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Definitions.Repository.Item
 {
-    [CreateAssetMenu(menuName = "Definitions/InventoryItems", fileName = "InventoryItems")]
+    [CreateAssetMenu(menuName = "Definitions/Repositories/Items", fileName = "Items")]
     public class ItemsRepository : DefinitionRepository<ItemDef>
     {
 #if UNITY_EDITOR

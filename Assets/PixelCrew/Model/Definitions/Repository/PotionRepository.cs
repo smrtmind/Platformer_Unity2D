@@ -1,0 +1,24 @@
+﻿using PixelCrew.Model.Definitions.Repository.Item;
+using System;
+using UnityEngine;
+
+namespace PixelCrew.Model.Definitions.Repository
+{
+    [CreateAssetMenu(menuName = "Definitions/Repositories/Potions", fileName = "Potions")]
+    public class PotionRepository : DefinitionRepository<PotionDefinition>
+    {
+        
+    }
+
+    [Serializable]
+    public struct PotionDefinition : IHaveId
+    {
+        [InventoryId] [SerializeField] private string _id;
+        [SerializeField] private float _value;
+        [SerializeField] private float _time;
+
+        public string Id => _id;
+        public float Value => _value;
+        public float Time => _time;
+    }
+}

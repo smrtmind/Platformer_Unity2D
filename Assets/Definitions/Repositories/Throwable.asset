@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f6b2569e242c714aafa754765b8e33f, type: 3}
-  m_Name: ThrowableItems
+  m_Name: Throwable
   m_EditorClassIdentifier: 
-  _items:
-  - _id: ThrowingSword
+  _collection:
+  - _id: ThrowableSword
     _projectile: {fileID: 8761971551360484036, guid: e8f1c28edccc17c43a19224a972e1a62,
       type: 3}
-  - _id: ThrowingPearl
+  - _id: ThrowablePearl
     _projectile: {fileID: 528661972717971912, guid: 6e91ec2478ad5c349aa4aa6b26bc6980,
       type: 3}

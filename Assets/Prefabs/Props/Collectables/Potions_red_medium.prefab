@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4928235937817636352}
   - component: {fileID: 5356128110818152360}
   m_Layer: 16
-  m_Name: Potions_red
+  m_Name: Potions_red_medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 438754173
   m_SortingLayer: 4
   m_SortingOrder: 2
-  m_Sprite: {fileID: 3714227102187029162, guid: 6e9a39ab0835fe24dba2540bca0d2a6c,
+  m_Sprite: {fileID: -2490300807704163751, guid: b0434f20d58194b40a74dfaa9f8e5f1e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -183,13 +183,13 @@ MonoBehaviour:
   _clips:
   - _name: idle
     _sprites:
-    - {fileID: 3714227102187029162, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: -6202940564662568092, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: -8747976068718324687, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: 7142050841817600938, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: -860807820763296739, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: -5249288142952506341, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: 1089735312403315716, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
+    - {fileID: -2490300807704163751, guid: b0434f20d58194b40a74dfaa9f8e5f1e, type: 3}
+    - {fileID: 5978172670740846147, guid: b0434f20d58194b40a74dfaa9f8e5f1e, type: 3}
+    - {fileID: 3984858985630839249, guid: b0434f20d58194b40a74dfaa9f8e5f1e, type: 3}
+    - {fileID: -847320057620857340, guid: b0434f20d58194b40a74dfaa9f8e5f1e, type: 3}
+    - {fileID: 2058469598213388066, guid: b0434f20d58194b40a74dfaa9f8e5f1e, type: 3}
+    - {fileID: -2476824666112082157, guid: b0434f20d58194b40a74dfaa9f8e5f1e, type: 3}
+    - {fileID: 5759679396640440606, guid: b0434f20d58194b40a74dfaa9f8e5f1e, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -197,10 +197,10 @@ MonoBehaviour:
         m_Calls: []
   - _name: destroy
     _sprites:
-    - {fileID: 6040734443530017722, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: 8167133005111728920, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: 2014349484240403859, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
-    - {fileID: 6326803469982491369, guid: 6e9a39ab0835fe24dba2540bca0d2a6c, type: 3}
+    - {fileID: 8869786999968596276, guid: 9c139c985beb1cf47be4466913113f9e, type: 3}
+    - {fileID: -9089499099718931717, guid: 9c139c985beb1cf47be4466913113f9e, type: 3}
+    - {fileID: -325389865058378367, guid: 9c139c985beb1cf47be4466913113f9e, type: 3}
+    - {fileID: -5497517162853735073, guid: 9c139c985beb1cf47be4466913113f9e, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824205ba72c26e6419f48df2a4825c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: HealthPotion
+  _id: MediumHpPotion
   _count: 1
 --- !u!114 &5356128110818152360
 MonoBehaviour:

@@ -4,6 +4,7 @@
     {
         Stackable,
         Usable,
-        Throwable
+        Throwable,
+        Potion
     }
 }
