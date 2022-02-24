@@ -77854,7 +77854,7 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: ThrowableSword
+      - Id: ThrowingSword
         Value: 5
       - Id: MediumHpPotion
         Value: 1

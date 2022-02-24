@@ -16,13 +16,13 @@ MonoBehaviour:
   - _id: Coin
     _icon: {fileID: 6582046967323461550, guid: 3061a332f93c593458102e00bbe22b94, type: 3}
     _tags: 0000000001000000
-  - _id: ThrowableSword
+  - _id: ThrowingSword
     _icon: {fileID: 21300000, guid: 8047e2ecc69d3b542b7f682db0cc0e33, type: 3}
     _tags: 000000000100000002000000
   - _id: Key
     _icon: {fileID: 21300000, guid: 46014228ef8fa4a4aaad077d77c9e622, type: 3}
     _tags: 01000000
-  - _id: ThrowablePearl
+  - _id: ThrowingPearl
     _icon: {fileID: 21300000, guid: a0dffd2b793383b4ea9bef1a89c0185b, type: 3}
     _tags: 000000000100000002000000
   - _id: MediumHpPotion
