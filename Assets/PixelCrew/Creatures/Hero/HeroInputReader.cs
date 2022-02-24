@@ -50,7 +50,7 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
-        public void OnThrow(InputAction.CallbackContext context)
+        public void OnUseQuickItem(InputAction.CallbackContext context)
         {
             if (context.started)
             {
@@ -59,7 +59,7 @@ namespace PixelCrew.Creatures.Hero
 
             if (context.canceled)
             {
-                _hero.PerformThrowing();
+                _hero.UseQuickItem();
             }
         }
 

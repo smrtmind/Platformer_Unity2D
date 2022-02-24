@@ -839,7 +839,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &479181446006778986
 AudioListener:
@@ -849,6 +849,52 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786229112000058239}
   m_Enabled: 1
+--- !u!1 &8064854662168104735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8594170356279120160}
+  - component: {fileID: 3900724367565643721}
+  m_Layer: 9
+  m_Name: SpeedUpEffectPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8594170356279120160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064854662168104735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.247, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_Children: []
+  m_Father: {fileID: 9005311172567613485}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3900724367565643721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064854662168104735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a9b48b97affa84d99869af76ffa4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 8594170356279120160}
+  _prefab: {fileID: 2416828730014240789, guid: d18a8344f1b69d84ab1b880fe8e57589, type: 3}
+  _invertXScale: 0
 --- !u!1 &9005311172567613491
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +946,7 @@ Transform:
   - {fileID: 1553219691}
   - {fileID: 1939310761}
   - {fileID: 654740536}
+  - {fileID: 8594170356279120160}
   - {fileID: 3450896930787770102}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1112,7 +1159,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9005311172567613486}
-        m_MethodName: OnThrow
+        m_MethodName: OnUseQuickItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1313,6 +1360,8 @@ MonoBehaviour:
     Component: {fileID: 8566842532689652630}
   - Id: Heal
     Component: {fileID: 654740537}
+  - Id: SpeedUp
+    Component: {fileID: 3900724367565643721}
 --- !u!114 &2011634830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,5 +1387,3 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 2b4531d02ee51044fb999d1aaabbcc10, type: 3}
   - _id: Sword
     _clip: {fileID: 8300000, guid: 6cd9bad02480e3e47bdfc1add0e908c2, type: 3}
-  - _id: Heal
-    _clip: {fileID: 8300000, guid: 7981ab4a6b825cd4fb385a5d1d62768e, type: 3}

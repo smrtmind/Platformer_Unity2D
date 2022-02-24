@@ -14,7 +14,7 @@ namespace PixelCrew.Model.Definitions
 
         public ItemsRepository Items => _items;
         public ThrowableItemsDefinitions ThrowableItems => _throwableItems;
-        public PotionRepository Potion => _potions;
+        public PotionRepository Potions => _potions;
         public PlayerDefinitions Player => _player;
 
         private static DefinitionsFacade _instance;

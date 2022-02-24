@@ -15,7 +15,20 @@ namespace PixelCrew.Model.Data
         public readonly IntProperty SelectedIndex = new IntProperty();
         public event Action OnChanged;
 
-        public InventoryItemData SelectedItem => Inventory[SelectedIndex.Value];
+        public InventoryItemData SelectedItem
+        {
+            get
+            {
+                if (Inventory.Length > 0 && Inventory.Length > SelectedIndex.Value)
+                {
+                    return Inventory[SelectedIndex.Value];
+                }
+
+                return null;
+            }
+        }
+
+        public ItemDef SelectedDef => DefinitionsFacade.Instance.Items.Get(SelectedItem?.Id);
 
         public QuickInventoryData(PlayerData data)
         {

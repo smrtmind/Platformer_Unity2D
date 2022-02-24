@@ -5,6 +5,7 @@ using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repository;
 using PixelCrew.Model.Definitions.Repository.Item;
 using PixelCrew.Utils;
 using System.Collections;
@@ -358,7 +359,63 @@ namespace PixelCrew.Creatures.Hero
             _superThrowCooldown.Reset();
         }
 
-        public void PerformThrowing()
+        public void UseQuickItem()
+        {
+            if (IsSelectedItem(ItemTag.Throwable))
+            {
+                PerformThrowing();
+            }
+
+            else if (IsSelectedItem(ItemTag.Potion))
+            {
+                UsePotion();
+            }
+        }
+
+        private void UsePotion()
+        {
+            var potion = DefinitionsFacade.Instance.Potions.Get(SelectedItemId);
+
+            switch (potion.Effect)
+            {
+                case Effect.Heal:
+                    _session.Data.Hp.Value += (int)potion.Value;
+                    _particles.Spawn("Heal");
+                    break;
+
+                case Effect.SpeedUp:
+                    _speedUpCooldown = new Cooldown { Value = potion.Time };
+                    _additionalSpeed = potion.Value;
+                    _speedUpCooldown.Reset();
+                    _particles.Spawn("SpeedUp");
+                    break;
+
+                case Effect.Mana:
+                    break;
+            }
+
+            _session.Data.Inventory.Remove(potion.Id, 1); 
+        }
+
+        private Cooldown _speedUpCooldown = new Cooldown();
+        private float _additionalSpeed;
+
+        protected override float CalculateSpeed()
+        {
+            if (_speedUpCooldown.IsReady)
+            {
+                _additionalSpeed = 0f;
+            }
+
+            return base.CalculateSpeed() + _additionalSpeed;
+        }
+
+        private bool IsSelectedItem(ItemTag tag)
+        {
+            return _session.QuickInventory.SelectedDef.HasTag(tag);
+        }
+
+        private void PerformThrowing()
         {
             if (_session.Data.SwordIsActive && !_frontObjectsCheck.IsTouchingLayer)
             {
@@ -396,18 +453,6 @@ namespace PixelCrew.Creatures.Hero
 
             Debug.Log($"NEW SKILL: {skill}");
         }
-
-        //public void Use()
-        //{
-        //    var potionsCount = _session.Data.Inventory.Count("HealthPotion");
-        //    if (potionsCount > 0)
-        //    {
-        //        Sounds.Play("Heal");
-        //        _particles.Spawn("Heal");
-        //        _health.ModifyHealth(5);
-        //        _session.Data.Inventory.Remove("HealthPotion", 1);
-        //    }
-        //}
 
         public void SwitchItem()
         {

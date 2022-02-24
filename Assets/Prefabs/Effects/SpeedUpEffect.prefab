@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2070493784197043089}
   - component: {fileID: 6488727822266507666}
   m_Layer: 0
-  m_Name: HealEffect
+  m_Name: SpeedUpEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -316269439
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0321c0d20c095bd4a86f879d29c134b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11e72d34e0b9ebc46ab871a168377251, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,20 +96,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 15
+  _frameRate: 10
   _clips:
   - _name: heal
     _sprites:
-    - {fileID: 21300000, guid: 0321c0d20c095bd4a86f879d29c134b6, type: 3}
-    - {fileID: 21300000, guid: ebde93345928f284daa2334260340992, type: 3}
-    - {fileID: 21300000, guid: 64e8ad087f71d734fb92210742c71879, type: 3}
-    - {fileID: 21300000, guid: d43ceaf48b4063d4b8d20bd0cdf1886c, type: 3}
-    - {fileID: 21300000, guid: c519a081c29358f478ba24e71cea8132, type: 3}
-    - {fileID: 21300000, guid: ca5024885818d7a4b8ca748eb58e4fd9, type: 3}
-    - {fileID: 21300000, guid: 8afa9b267c08c9f4fb92770d2e336d44, type: 3}
-    - {fileID: 21300000, guid: efdb59d4abddf714b99d6837fce5635f, type: 3}
-    - {fileID: 21300000, guid: 0faa5f01fcc3d464593d03ab3019eef6, type: 3}
-    - {fileID: 21300000, guid: b94d4ecc1fe84854bb5ef645f781a3e6, type: 3}
+    - {fileID: 21300000, guid: 11e72d34e0b9ebc46ab871a168377251, type: 3}
+    - {fileID: 21300000, guid: 0ef6df0b7578cee4390adef86ae2a54d, type: 3}
+    - {fileID: 21300000, guid: 45b0bcaeb1bdefb4a88b940f775529a6, type: 3}
+    - {fileID: 21300000, guid: 0a214508b39ef3d45bc668fd2b82dc8a, type: 3}
+    - {fileID: 21300000, guid: 5a060c4fc0c533145978bfb4b4915d40, type: 3}
+    - {fileID: 21300000, guid: b03810a29a50e814fbdbf9081d23fb7c, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:
@@ -149,7 +145,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7981ab4a6b825cd4fb385a5d1d62768e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d9819a3ef9c8d3d45a1b196bc0802fd0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

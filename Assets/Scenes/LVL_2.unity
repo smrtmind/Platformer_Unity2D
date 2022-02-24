@@ -77855,9 +77855,11 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: ThrowableSword
-        Value: 2
-      - Id: ThrowablePearl
-        Value: 2
+        Value: 5
+      - Id: MediumHpPotion
+        Value: 1
+      - Id: SpeedUpPotion
+        Value: 5
     Hp:
       _value: 10
     DoubleJumpIsActive: 1
