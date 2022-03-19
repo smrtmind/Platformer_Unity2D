@@ -20,6 +20,7 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private LayerCheck _wallCheck;
         [SerializeField] private LayerCheck _frontObjectsCheck;
         [SerializeField] private LayerCheck _platformCheck;
+        [SerializeField] private LayerCheck _dashCheck;
 
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _dashForce;
@@ -187,18 +188,49 @@ namespace PixelCrew.Creatures.Hero
 
         protected override float CalculateXVelocity()
         {
+            //var xVelocity = base.CalculateXVelocity();
+
+            //if (_dash && _session.Data.DashIsActive)
+            //{
+            //    if (Direction.x != 0 && !_frontObjectsCheck.IsTouchingLayer)
+            //    {
+            //        _particles.Spawn("DashDust");
+            //        _particles.Spawn("DashEffect");
+            //        Sounds.Play("Dash");
+            //    }
+
+            //    Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+            //    Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            //    Rigidbody.constraints = _defaultConstraints;
+
+            //    _dash = false;
+
+            //    return xVelocity *= _dashForce;
+            //}
+
+            //return xVelocity;
+
+            
             var xVelocity = base.CalculateXVelocity();
 
             if (_dash && _session.Data.DashIsActive)
             {
                 if (Direction.x != 0 && !_frontObjectsCheck.IsTouchingLayer)
                 {
-                    _particles.Spawn("DashWave");
+                    _particles.Spawn("DashDust");
+                    _particles.Spawn("DashEffect");
                     Sounds.Play("Dash");
                 }
 
                 Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
                 Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+                if (!_dashCheck.IsTouchingLayer)
+                {                    
+                    _collider.enabled = false;
+                    Invoke("EnableHeroCollider", 0.05f);
+                }
+
                 Rigidbody.constraints = _defaultConstraints;
 
                 _dash = false;
@@ -206,7 +238,7 @@ namespace PixelCrew.Creatures.Hero
                 return xVelocity *= _dashForce;
             }
 
-            return xVelocity;
+            return xVelocity;          
         }
 
         protected override float CalculateYVelocity()

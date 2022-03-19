@@ -46,6 +46,80 @@ MonoBehaviour:
   _target: {fileID: 47701123}
   _prefab: {fileID: 4476619537445411834, guid: f34a0c0b63bc8df49a882b87f4904f70, type: 3}
   _invertXScale: 0
+--- !u!1 &556475196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556475197}
+  - component: {fileID: 556475199}
+  - component: {fileID: 556475198}
+  m_Layer: 17
+  m_Name: DashCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &556475197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556475196}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9005311172567613485}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &556475199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556475196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf5323f00349004ca8909a85732ee99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 13312
+  _isTouchingLayer: 0
+--- !u!61 &556475198
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556475196}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.28072, y: 0.074160576}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.0039759, y: 0.6179981}
+  m_EdgeRadius: 0
 --- !u!1 &601853691
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &601853693
 MonoBehaviour:
@@ -117,11 +191,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654740535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.51, z: 0}
+  m_LocalPosition: {x: 0, y: 0.51, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 13
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &654740537
 MonoBehaviour:
@@ -168,7 +242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &934787704
 MonoBehaviour:
@@ -245,7 +319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1553219693
 MonoBehaviour:
@@ -321,7 +395,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1571820945
 MonoBehaviour:
@@ -366,7 +440,7 @@ GameObject:
   - component: {fileID: 1615774876}
   - component: {fileID: 412684423}
   m_Layer: 17
-  m_Name: DashPosition
+  m_Name: DashDustPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -380,8 +454,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615774875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.099, y: 0, z: 0}
+  m_LocalScale: {x: 0.2537482, y: 0.2537482, z: 0.2537482}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
   m_RootOrder: 4
@@ -399,7 +473,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1615774876}
-  _prefab: {fileID: 8191301804318424288, guid: 4658133925817a845a5650397434aea3, type: 3}
+  _prefab: {fileID: 3137411985608978788, guid: 6f3d5544b4d652a469b7f4b031c0b1db, type: 3}
+  _invertXScale: 1
+--- !u!1 &1653437196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653437197}
+  - component: {fileID: 1653437198}
+  m_Layer: 17
+  m_Name: DashEffectPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653437197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653437196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.833, y: 0.361, z: 0}
+  m_LocalScale: {x: 0.112702295, y: 0.112702295, z: 0.112702295}
+  m_Children: []
+  m_Father: {fileID: 9005311172567613485}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1653437198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653437196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a9b48b97affa84d99869af76ffa4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1653437197}
+  _prefab: {fileID: 6354681386319389010, guid: 724216acb48453f42a64106d0ad01001, type: 3}
   _invertXScale: 0
 --- !u!1 &1939310758
 GameObject:
@@ -431,7 +551,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 12
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1939310759
 MonoBehaviour:
@@ -510,7 +630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1169433638600596447
 MonoBehaviour:
@@ -574,7 +694,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6828737916789674423
 MonoBehaviour:
@@ -776,7 +896,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8847091862252143394
 MonoBehaviour:
@@ -839,7 +959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &479181446006778986
 AudioListener:
@@ -878,7 +998,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 14
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3900724367565643721
 MonoBehaviour:
@@ -937,7 +1057,10 @@ Transform:
   - {fileID: 1216954982292525915}
   - {fileID: 3059387046913598761}
   - {fileID: 1615774876}
+  - {fileID: 1653437197}
   - {fileID: 601853692}
+  - {fileID: 8594170356279120160}
+  - {fileID: 654740536}
   - {fileID: 934787703}
   - {fileID: 3882161866966354183}
   - {fileID: 4505213191712295318}
@@ -945,9 +1068,8 @@ Transform:
   - {fileID: 5312620976036426176}
   - {fileID: 1553219691}
   - {fileID: 1939310761}
-  - {fileID: 654740536}
-  - {fileID: 8594170356279120160}
   - {fileID: 3450896930787770102}
+  - {fileID: 556475197}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1040,6 +1162,7 @@ MonoBehaviour:
   _wallCheck: {fileID: 6828737916789674423}
   _frontObjectsCheck: {fileID: 8847091862252143394}
   _platformCheck: {fileID: 1169433638600596447}
+  _dashCheck: {fileID: 556475199}
   _slamDownVelocity: 11.5
   _dashForce: 35
   _maxSafeVelocity: 25
@@ -1352,7 +1475,7 @@ MonoBehaviour:
     Component: {fileID: 47701124}
   - Id: SlamDown
     Component: {fileID: 7035943205029121499}
-  - Id: DashWave
+  - Id: DashDust
     Component: {fileID: 412684423}
   - Id: SwordSlash
     Component: {fileID: 601853693}
@@ -1360,6 +1483,8 @@ MonoBehaviour:
     Component: {fileID: 8566842532689652630}
   - Id: Heal
     Component: {fileID: 654740537}
+  - Id: DashEffect
+    Component: {fileID: 1653437198}
   - Id: SpeedUp
     Component: {fileID: 3900724367565643721}
 --- !u!114 &2011634830
