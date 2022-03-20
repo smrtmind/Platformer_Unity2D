@@ -410,8 +410,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -316269439
-  m_SortingLayer: 2
+  m_SortingLayerID: 189240101
+  m_SortingLayer: 1
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: a85dc64d48cbe0e4e9f06aaff2e82e6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -622,6 +622,7 @@ MonoBehaviour:
   _alarmDelay: 0.5
   _attackCooldown: 1
   _missHeroCooldown: 0.5
+  _horizontalTreshold: 0.2
 --- !u!114 &331937404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,7 +651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6583fb971418a674cbb3a15ddd654d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 614413551}
   _sounds:
   - _id: Hurt
     _clip: {fileID: 8300000, guid: a4a0a9688b24afd4a8d5cdbb9af22382, type: 3}

@@ -188,35 +188,18 @@ namespace PixelCrew.Creatures.Hero
 
         protected override float CalculateXVelocity()
         {
-            //var xVelocity = base.CalculateXVelocity();
-
-            //if (_dash && _session.Data.DashIsActive)
-            //{
-            //    if (Direction.x != 0 && !_frontObjectsCheck.IsTouchingLayer)
-            //    {
-            //        _particles.Spawn("DashDust");
-            //        _particles.Spawn("DashEffect");
-            //        Sounds.Play("Dash");
-            //    }
-
-            //    Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
-            //    Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-            //    Rigidbody.constraints = _defaultConstraints;
-
-            //    _dash = false;
-
-            //    return xVelocity *= _dashForce;
-            //}
-
-            //return xVelocity;
-
-            
             var xVelocity = base.CalculateXVelocity();
 
             if (_dash && _session.Data.DashIsActive)
             {
                 if (Direction.x != 0 && !_frontObjectsCheck.IsTouchingLayer)
                 {
+                    if (!_dashCheck.IsTouchingLayer)
+                    {
+                        _collider.enabled = false;
+                        Invoke("EnableHeroCollider", 0.05f);
+                    }
+
                     _particles.Spawn("DashDust");
                     _particles.Spawn("DashEffect");
                     Sounds.Play("Dash");
@@ -224,13 +207,6 @@ namespace PixelCrew.Creatures.Hero
 
                 Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
                 Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-                if (!_dashCheck.IsTouchingLayer)
-                {                    
-                    _collider.enabled = false;
-                    Invoke("EnableHeroCollider", 0.05f);
-                }
-
                 Rigidbody.constraints = _defaultConstraints;
 
                 _dash = false;
@@ -275,10 +251,7 @@ namespace PixelCrew.Creatures.Hero
             return base.CalculateYVelocity();
         }
 
-        private void EnableHeroCollider()
-        {
-            _collider.enabled = true;
-        }
+        private void EnableHeroCollider() => _collider.enabled = true;
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {

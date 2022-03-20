@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824205ba72c26e6419f48df2a4825c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: ThrowableSword
+  _id: ThrowingSword
   _count: 5
 --- !u!82 &1729664418
 AudioSource:

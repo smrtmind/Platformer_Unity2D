@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using PixelCrew.Utils;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,13 @@ namespace PixelCrew.Components
         [SerializeField] private Transform destTransform;
         [SerializeField] private float _alphaTime = 1;
         [SerializeField] private float _moveTime = 1;
+
+        private AudioListenerSwitcher _listenerSwitcher;
+
+        private void Start()
+        {
+            _listenerSwitcher = FindObjectOfType<AudioListenerSwitcher>();
+        }
 
         public void Teleport(GameObject target)
         {
@@ -23,12 +31,14 @@ namespace PixelCrew.Components
             SetLockInput(input, isLocked: true);
             yield return AlphaAnimation(sprite, 0);
             target.SetActive(false);
+            _listenerSwitcher.On();
 
             yield return MoveAnimation(target);
 
+            _listenerSwitcher.Off();
             target.SetActive(true);
             yield return AlphaAnimation(sprite, 1);
-            SetLockInput(input, isLocked: false);
+            SetLockInput(input, isLocked: false);         
         }
 
         private void SetLockInput(PlayerInput input, bool isLocked)
@@ -70,20 +80,3 @@ namespace PixelCrew.Components
         }
     }
 }
-
-/*
-using UnityEngine;
-
-namespace PixelCrew.Components
-{
-    public class TeleportComponent : MonoBehaviour
-    {
-        [SerializeField] private Transform _destTransform;
-
-        public void Teleport(GameObject target)
-        {
-            target.transform.position = _destinationTransform.position;
-        }
-    }
-}
-*/
