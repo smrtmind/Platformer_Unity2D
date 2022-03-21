@@ -50,9 +50,7 @@ namespace PixelCrew.Creatures.Hero
 
         private static readonly int OnWallKey = Animator.StringToHash("is-onTheWall");
         private static readonly int ThrowKey = Animator.StringToHash("throw");
-        private static readonly int RunNearWallKey = Animator.StringToHash("is-runNearWall");
-        private static readonly int IdleNearWallKey = Animator.StringToHash("is-idleNearWall");
-
+        private static readonly int IsNearWallKey = Animator.StringToHash("is-nearWall");
 
         private GameSession _session;
         private HealthComponent _health;
@@ -128,10 +126,7 @@ namespace PixelCrew.Creatures.Hero
 
             if (Animator.runtimeAnimatorController == _armed)
             {
-                bool _isRunNearWall = _wallCheck.IsTouchingLayer && IsGrounded && _session.Data.SwordIsActive && Direction.x != 0 ? true : false;
-
-                Animator.SetBool(RunNearWallKey, _isRunNearWall);
-                Animator.SetBool(IdleNearWallKey, !_isRunNearWall);
+                Animator.SetBool(IsNearWallKey, _wallCheck.IsTouchingLayer);
             }
 
             var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
