@@ -44895,11 +44895,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1331681465}
     m_Modifications:
-    - target: {fileID: 9005311172567613476, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
-        type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 1480670261, guid: f044bcab1d351cd4d9c76cb86f75e6a1, type: 3}
+      propertyPath: _timers.Array.data[0].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1774082697}
+    - target: {fileID: 9005311172567613476, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1884418294}
     - target: {fileID: 9005311172567613485, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
         type: 3}
       propertyPath: m_RootOrder

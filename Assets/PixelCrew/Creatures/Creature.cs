@@ -152,7 +152,6 @@ namespace PixelCrew.Creatures
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
-            //Sounds.Play("Melee");
         }
 
         public void OnDoAttack()

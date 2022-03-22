@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3325309166057523908}
   - component: {fileID: 3325309166057523909}
   - component: {fileID: 708090798698377541}
-  - component: {fileID: 1203959930122872752}
-  - component: {fileID: 7072578549936284704}
+  - component: {fileID: 1805142246734327211}
+  - component: {fileID: 3942095934758551440}
   m_Layer: 0
-  m_Name: FireColumn
+  m_Name: FireColumnEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -316269439
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4d385099635511a4ba3b7e34043b8a59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008446217, y: -0.58703136}
+  m_Offset: {x: -0.008446217, y: -0.66395617}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,9 +135,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5109205, y: 1.0133953}
+  m_Size: {x: 0.5109205, y: 0.8595457}
   m_EdgeRadius: 0
---- !u!114 &1203959930122872752
+--- !u!114 &1805142246734327211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7072578549936284704}
+      - m_Target: {fileID: 3942095934758551440}
         m_MethodName: Apply
         m_Mode: 0
         m_Arguments:
@@ -167,7 +167,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7072578549936284704
+--- !u!114 &3942095934758551440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

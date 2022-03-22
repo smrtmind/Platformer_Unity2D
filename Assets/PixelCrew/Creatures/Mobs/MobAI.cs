@@ -148,7 +148,7 @@ namespace PixelCrew.Creatures.Mobs
             _sounds.Play("Die");
             _particles.Spawn("DeadMark");
             _isDead = true;
-            _animator.SetBool(IsDeadKey, true);
+            _animator.SetBool(IsDeadKey, _isDead);
 
             //_collider.direction = (CapsuleDirection2D)1;
             //_collider.size = new Vector2(_collider.size.y, _collider.size.x); 

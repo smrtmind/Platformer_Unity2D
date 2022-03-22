@@ -40,6 +40,7 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private AnimatorController _disArmed;
         [SerializeField] private ProbabilityDropComponent _hitDrop;
         [SerializeField] private SpawnComponent _throwSpawner;
+        [SerializeField] private GoContainerComponent _dropOnDie;
 
         private bool _superThrow;
         private bool _allowDoubleJump;
@@ -51,6 +52,7 @@ namespace PixelCrew.Creatures.Hero
         private static readonly int OnWallKey = Animator.StringToHash("is-onTheWall");
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsNearWallKey = Animator.StringToHash("is-nearWall");
+        private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
 
         private GameSession _session;
         private HealthComponent _health;
@@ -176,7 +178,11 @@ namespace PixelCrew.Creatures.Hero
 
             if (!_wallCheck.IsTouchingLayer)
             {
-                _particles.Spawn("SwordSlash");
+                if (IsGrounded)
+                    _particles.Spawn("AttackSlash");                 
+                else
+                    _particles.Spawn("AirAttackSlash");
+
                 Sounds.Play("Melee");
             }
         }
@@ -457,6 +463,16 @@ namespace PixelCrew.Creatures.Hero
         public void SwitchItem()
         {
             _session.QuickInventory.SetNextItem();
+        }
+
+        public void OnDie()
+        {
+            if (_session.Data.SwordIsActive)
+                _dropOnDie.Drop();
+
+            Sounds.Play("HeroDie");
+            _particles.Spawn("DeadMark");
+            Animator.SetBool(IsDeadKey, true);
         }
     }
 }
