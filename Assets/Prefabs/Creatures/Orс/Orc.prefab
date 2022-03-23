@@ -511,6 +511,8 @@ GameObject:
   - component: {fileID: 331937404}
   - component: {fileID: 409197354}
   - component: {fileID: 1332989468}
+  - component: {fileID: 1817026128676595965}
+  - component: {fileID: 6404011529668819291}
   m_Layer: 15
   m_Name: Orc
   m_TagString: Enemy
@@ -870,6 +872,46 @@ MonoBehaviour:
   _summonCooldown:
     _value: 6
   _summonCreature: {fileID: 1062508422}
+--- !u!114 &1817026128676595965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491406283003245955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31098e8cc404e434781c1b4e4e2ed963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6404011529668819291}
+        m_MethodName: Apply
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6404011529668819291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491406283003245955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27e11f5006636b4794361900974e308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthDelta: -1
 --- !u!1 &2419614695836238397
 GameObject:
   m_ObjectHideFlags: 0

@@ -342,6 +342,8 @@ GameObject:
   - component: {fileID: 8839427773969997962}
   - component: {fileID: 331937404}
   - component: {fileID: 409197354}
+  - component: {fileID: 2124467605}
+  - component: {fileID: 2124467606}
   m_Layer: 15
   m_Name: Sharky
   m_TagString: Enemy
@@ -691,6 +693,46 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 630562a1fa2bfda42a81d7547d2820a8, type: 3}
   - _id: Hit
     _clip: {fileID: 8300000, guid: 182564c76faea9741a8312dd00924d13, type: 3}
+--- !u!114 &2124467605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491406283003245955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27e11f5006636b4794361900974e308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthDelta: -1
+--- !u!114 &2124467606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491406283003245955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31098e8cc404e434781c1b4e4e2ed963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2124467605}
+        m_MethodName: Apply
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1109168699766484007
 GameObject:
   m_ObjectHideFlags: 0

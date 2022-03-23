@@ -270,6 +270,8 @@ GameObject:
   - component: {fileID: 2569288278570892992}
   - component: {fileID: 1429492614}
   - component: {fileID: 4522698079810848204}
+  - component: {fileID: -5911979804928336205}
+  - component: {fileID: -163317800993920098}
   m_Layer: 15
   m_Name: Seashell
   m_TagString: Enemy
@@ -513,10 +515,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6583fb971418a674cbb3a15ddd654d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 2800923444048992703}
   _sounds:
   - _id: Bite
     _clip: {fileID: 8300000, guid: 182564c76faea9741a8312dd00924d13, type: 3}
+--- !u!114 &-5911979804928336205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432610474161812797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31098e8cc404e434781c1b4e4e2ed963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -163317800993920098}
+        m_MethodName: Apply
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-163317800993920098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432610474161812797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27e11f5006636b4794361900974e308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthDelta: -1
 --- !u!1 &6432610474971347561
 GameObject:
   m_ObjectHideFlags: 0
