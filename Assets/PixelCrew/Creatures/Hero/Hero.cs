@@ -128,7 +128,7 @@ namespace PixelCrew.Creatures.Hero
 
             if (Animator.runtimeAnimatorController == _armed)
             {
-                Animator.SetBool(IsNearWallKey, _wallCheck.IsTouchingLayer);
+                Animator.SetBool(IsNearWallKey, _frontObjectsCheck.IsTouchingLayer);
             }
 
             var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;

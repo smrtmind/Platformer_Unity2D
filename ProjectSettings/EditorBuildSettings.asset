@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LVL_3.unity
     guid: c4f37caa813025b41b9c6e5df437e3ba
   - enabled: 1
+    path: Assets/Scenes/BossFight.unity
+    guid: 7bac1789b0128e04cae543db3260e7dc
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 1b97c13702995034d8d8005972a5f815
   - enabled: 1
