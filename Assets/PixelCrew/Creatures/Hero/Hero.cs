@@ -19,6 +19,7 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayerCheck _wallCheck;
         [SerializeField] private LayerCheck _frontObjectsCheck;
+        [SerializeField] private LayerCheck _instantDeathCheck;
         [SerializeField] private LayerCheck _platformCheck;
         [SerializeField] private LayerCheck _dashCheck;
 
@@ -53,6 +54,7 @@ namespace PixelCrew.Creatures.Hero
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsNearWallKey = Animator.StringToHash("is-nearWall");
         private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
+        private static readonly int IsInstantDeadKey = Animator.StringToHash("is-instantDead");
 
         private GameSession _session;
         private HealthComponent _health;
@@ -470,9 +472,13 @@ namespace PixelCrew.Creatures.Hero
             if (_session.Data.SwordIsActive)
                 _dropOnDie.Drop();
 
+            if (_instantDeathCheck.IsTouchingLayer)
+                Animator.SetBool(IsInstantDeadKey, true);
+            else
+                Animator.SetBool(IsDeadKey, true);
+
             Sounds.Play("HeroDie");
             _particles.Spawn("DeadMark");
-            Animator.SetBool(IsDeadKey, true);
         }
     }
 }

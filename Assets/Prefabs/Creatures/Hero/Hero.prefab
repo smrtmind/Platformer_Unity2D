@@ -166,6 +166,70 @@ MonoBehaviour:
   _target: {fileID: 601853692}
   _prefab: {fileID: 4476619537445411834, guid: 3ac1765a3f6724f46b4ccc6c1615c4da, type: 3}
   _invertXScale: 0
+--- !u!1 &610429133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 610429134}
+  - component: {fileID: 610429135}
+  - component: {fileID: 610429136}
+  m_Layer: 17
+  m_Name: InstantDeathCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &610429134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610429133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.106, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9005311172567613485}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &610429135
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610429133}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
+--- !u!114 &610429136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610429133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf5323f00349004ca8909a85732ee99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 524288
+  _isTouchingLayer: 0
 --- !u!1 &654740535
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 324608
+    m_Bits: 291840
   _isTouchingLayer: 0
 --- !u!58 &1571820944
 CircleCollider2D:
@@ -505,7 +569,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1606472164
 MonoBehaviour:
@@ -673,7 +737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1939310759
 MonoBehaviour:
@@ -751,7 +815,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &2032771863
 CapsuleCollider2D:
@@ -1174,7 +1238,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9005311172567613485}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &479181446006778986
 AudioListener:
@@ -1286,6 +1350,7 @@ Transform:
   - {fileID: 5312620976036426176}
   - {fileID: 1553219691}
   - {fileID: 556475197}
+  - {fileID: 610429134}
   - {fileID: 1939310761}
   - {fileID: 3450896930787770102}
   - {fileID: 2032771862}
@@ -1381,6 +1446,7 @@ MonoBehaviour:
   _interactionCheck: {fileID: 1553219693}
   _wallCheck: {fileID: 6828737916789674423}
   _frontObjectsCheck: {fileID: 8847091862252143394}
+  _instantDeathCheck: {fileID: 610429136}
   _platformCheck: {fileID: 1169433638600596447}
   _dashCheck: {fileID: 556475199}
   _slamDownVelocity: 11.5
