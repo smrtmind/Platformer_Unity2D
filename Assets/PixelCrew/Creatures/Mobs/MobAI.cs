@@ -9,29 +9,29 @@ namespace PixelCrew.Creatures.Mobs
 {
     public class MobAI : MonoBehaviour
     {
-        [SerializeField] private LayerCheck _vision;
-        [SerializeField] private LayerCheck _canAttack;
+        [SerializeField] protected LayerCheck _vision;
+        [SerializeField] protected LayerCheck _canAttack;
 
-        [SerializeField] private float _alarmDelay = 2f;
-        [SerializeField] private float _attackCooldown = 1f;
-        [SerializeField] private float _missHeroCooldown = 2f;
+        [SerializeField] protected float _alarmDelay = 2f;
+        [SerializeField] protected float _attackCooldown = 1f;
+        [SerializeField] protected float _missHeroCooldown = 2f;
 
-        [SerializeField] private float _horizontalTreshold = 0.2f;
+        [SerializeField] protected float _horizontalTreshold = 0.2f;
 
-        private IEnumerator _current;
-        private GameObject _target;
-        private CapsuleCollider2D _collider;
+        protected IEnumerator _current;
+        protected GameObject _target;
+        protected CapsuleCollider2D _collider;
 
-        private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
+        protected static readonly int IsDeadKey = Animator.StringToHash("is-dead");
 
-        private SpawnListComponent _particles;
-        private Creature _creature;
-        private Animator _animator;
-        private bool _isDead;
-        private Patrol _patrol;
-        private PlaySoundsComponent _sounds;
+        protected SpawnListComponent _particles;
+        protected Creature _creature;
+        protected Animator _animator;
+        protected bool _isDead;
+        protected Patrol _patrol;
+        protected PlaySoundsComponent _sounds;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
             _creature = GetComponent<Creature>();
@@ -41,12 +41,12 @@ namespace PixelCrew.Creatures.Mobs
             _sounds = GetComponent<PlaySoundsComponent>();
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             StartState(_patrol.DoPatrol());
         }
 
-        public void OnHeroInVision(GameObject go)
+        private void OnHeroInVision(GameObject go)
         {
             if (_isDead) return;
 
@@ -63,7 +63,7 @@ namespace PixelCrew.Creatures.Mobs
             StartState(GoToHero());
         }
 
-        private void LookAtHero()
+        protected virtual void LookAtHero()
         {
             if (_isDead) return;
 
@@ -110,27 +110,26 @@ namespace PixelCrew.Creatures.Mobs
             {
                 _creature.Attack();
                 _sounds.Play("Hit");
-                //_particles.Spawn("BiteEffect");
                 yield return new WaitForSeconds(_attackCooldown);
             }
 
             StartState(GoToHero());
         }
 
-        private void SetDirectionToTarget()
+        protected virtual void SetDirectionToTarget()
         {
             var direction = GetDirectionToTarget();
             _creature.SetDirection(direction);
         }
 
-        private Vector2 GetDirectionToTarget()
+        protected virtual Vector2 GetDirectionToTarget()
         {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
             return direction.normalized;
         }
 
-        private void StartState(IEnumerator coroutine)
+        protected virtual void StartState(IEnumerator coroutine)
         {
             _creature.SetDirection(Vector2.zero);
 
@@ -143,7 +142,7 @@ namespace PixelCrew.Creatures.Mobs
             StartCoroutine(coroutine);
         }
 
-        public void OnDie()
+        protected virtual void OnDie()
         {
             _sounds.Play("Die");
             _particles.Spawn("DeadMark");
