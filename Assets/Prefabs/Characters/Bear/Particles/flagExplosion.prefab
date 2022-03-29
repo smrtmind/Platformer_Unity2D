@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6866118548410658114
+--- !u!1 &2889601299508537618
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2238952765256217695}
-  - component: {fileID: 7239240372596037106}
-  - component: {fileID: -5860372100501516719}
-  - component: {fileID: 8751090191003030431}
+  - component: {fileID: 9192796310913657915}
+  - component: {fileID: 7715125500538878861}
+  - component: {fileID: 5487387851709515238}
+  - component: {fileID: 1984139227117057522}
+  - component: {fileID: 2367660323321655734}
   m_Layer: 0
-  m_Name: FlagUkraine
+  m_Name: flagExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2238952765256217695
+--- !u!4 &9192796310913657915
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6866118548410658114}
+  m_GameObject: {fileID: 2889601299508537618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27, y: -0.5, z: 0}
+  m_LocalPosition: {x: -52.005257, y: 4.629531, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7239240372596037106
+--- !u!212 &7715125500538878861
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6866118548410658114}
+  m_GameObject: {fileID: 2889601299508537618}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -69,27 +70,27 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 189240101
-  m_SortingLayer: 1
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 9d05c5dfb580fc9458ae83c304c3d1cd, type: 3}
+  m_SortingLayerID: -316269439
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 37f63612c0ac2404691b9f4666414932, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.0625, y: 2.90625}
+  m_Size: {x: 10.5, y: 13.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5860372100501516719
+--- !u!114 &5487387851709515238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6866118548410658114}
+  m_GameObject: {fileID: 2889601299508537618}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae9f9a53168b754d803078489330859, type: 3}
@@ -97,33 +98,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _clips:
-  - _name: idle
+  - _name: boom
     _sprites:
-    - {fileID: 21300000, guid: 9d05c5dfb580fc9458ae83c304c3d1cd, type: 3}
-    - {fileID: 21300000, guid: a7d4f3a3e2dc7f746a9ee148f5b652cd, type: 3}
-    - {fileID: 21300000, guid: c463bf3b59750094ab5bc80be6addba3, type: 3}
-    - {fileID: 21300000, guid: e56907ff15037404e89277d99bf26763, type: 3}
-    - {fileID: 21300000, guid: f64c5b4ea9af55545b6246cab5f3f21b, type: 3}
-    - {fileID: 21300000, guid: 85db747f20866304fbbcd40db41cddaf, type: 3}
-    - {fileID: 21300000, guid: cd5331b0db8a2eb4d9d3119529dd1da5, type: 3}
-    - {fileID: 21300000, guid: c31c41d86247cfd4d9ad7e8c6e57fd3b, type: 3}
-    - {fileID: 21300000, guid: d2bfa0293f71d794c8992a065ab4940a, type: 3}
-    _loop: 1
+    - {fileID: 21300000, guid: 37f63612c0ac2404691b9f4666414932, type: 3}
+    - {fileID: 21300000, guid: 3d496f30d7ca5d4439e314ec7b88f7e0, type: 3}
+    - {fileID: 21300000, guid: a5c3e427a1be6d54689ac8f21d05abfb, type: 3}
+    - {fileID: 21300000, guid: 78cda813720ce3943b5c294b10e4b6eb, type: 3}
+    - {fileID: 21300000, guid: 9dd68f70216551d45b3e2ceae3eb1cff, type: 3}
+    - {fileID: 21300000, guid: 46f0155e8d4f5ad4bba579664a30bf3f, type: 3}
+    - {fileID: 21300000, guid: 279583eafb2721f4baf40d4a735a149a, type: 3}
+    - {fileID: 21300000, guid: 46f0155e8d4f5ad4bba579664a30bf3f, type: 3}
+    - {fileID: 21300000, guid: 9dd68f70216551d45b3e2ceae3eb1cff, type: 3}
+    - {fileID: 21300000, guid: 78cda813720ce3943b5c294b10e4b6eb, type: 3}
+    - {fileID: 21300000, guid: a5c3e427a1be6d54689ac8f21d05abfb, type: 3}
+    - {fileID: 21300000, guid: 3d496f30d7ca5d4439e314ec7b88f7e0, type: 3}
+    - {fileID: 21300000, guid: 37f63612c0ac2404691b9f4666414932, type: 3}
+    _loop: 0
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
-        m_Calls: []
---- !u!82 &8751090191003030431
+        m_Calls:
+        - m_Target: {fileID: 1984139227117057522}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1984139227117057522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889601299508537618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430acfd34f12c314db907c638305ec1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 2889601299508537618}
+--- !u!82 &2367660323321655734
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6866118548410658114}
+  m_GameObject: {fileID: 2889601299508537618}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 927f14e10507cd04f9d3ebe8e3e3f68f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9dc60ed7df1db364f895594f1160d480, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

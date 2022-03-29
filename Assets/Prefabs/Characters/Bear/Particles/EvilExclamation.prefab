@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4963543137624795600}
   - component: {fileID: 4090302196589602185}
   m_Layer: 0
-  m_Name: Exclamation
+  m_Name: EvilExclamation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -316269439
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0bc39ce808870174aaa3593e7088807f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45f775a645d05004da60642c8a6e6b4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,11 +99,15 @@ MonoBehaviour:
   _clips:
   - _name: exclamation
     _sprites:
-    - {fileID: 21300000, guid: 0bc39ce808870174aaa3593e7088807f, type: 3}
-    - {fileID: 21300000, guid: c3a081a74331aab488682efbea1d1ff7, type: 3}
-    - {fileID: 21300000, guid: a0a119be77b61f742879c4f1b48e0102, type: 3}
-    - {fileID: 21300000, guid: 58d48b745cff6ac448ca609bfc5b3e9d, type: 3}
-    - {fileID: 21300000, guid: 9e8db627ab4c9364c9f25ffd45b46013, type: 3}
+    - {fileID: 21300000, guid: 45f775a645d05004da60642c8a6e6b4a, type: 3}
+    - {fileID: 21300000, guid: 30eedca086cb56d4abcf1bb02ae6a572, type: 3}
+    - {fileID: 21300000, guid: 9b8243e0bea474d478a4b9ff3ec4c443, type: 3}
+    - {fileID: 21300000, guid: 9b8243e0bea474d478a4b9ff3ec4c443, type: 3}
+    - {fileID: 21300000, guid: 9b8243e0bea474d478a4b9ff3ec4c443, type: 3}
+    - {fileID: 21300000, guid: 9b8243e0bea474d478a4b9ff3ec4c443, type: 3}
+    - {fileID: 21300000, guid: 9b8243e0bea474d478a4b9ff3ec4c443, type: 3}
+    - {fileID: 21300000, guid: 914f812df56480c49ba2ee971d219bdc, type: 3}
+    - {fileID: 21300000, guid: 9b6cda6b7d35def45bc434c61732cf86, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:

@@ -23,7 +23,6 @@ namespace PixelCrew.Creatures.Mobs
         private static readonly int ThrowKey = Animator.StringToHash("throw");
 
         private HealthComponent _health;
-        private bool _phaseTwoIsStarted;
 
         protected override void Awake()
         {
@@ -59,26 +58,30 @@ namespace PixelCrew.Creatures.Mobs
         {
             while (_vision.IsTouchingLayer)
             {
-                if (_health.Health == _healthForPhaseTwo && _phaseTwoIsStarted == false)
+                if (_animator.runtimeAnimatorController == _phaseOne)
                 {
-                    _phaseTwoIsStarted = true;
+                    if (_health.Health == _healthForPhaseTwo)
+                    {
+                        _animator.SetTrigger(DrinkKey);
+                        _creature.SetDirection(Vector2.zero);
+                        yield return new WaitForSeconds(2.5f);
 
-                    _animator.SetTrigger(DrinkKey);
-                    _creature.SetDirection(Vector2.zero);
-                    yield return new WaitForSeconds(2.5f);
-
-                    _animator.runtimeAnimatorController = _phaseTwo;
-                    _sounds.Play("Growl");
-                    yield return new WaitForSeconds(2f);
+                        _animator.runtimeAnimatorController = _phaseTwo;
+                        _sounds.Play("Growl");
+                        yield return new WaitForSeconds(2f);
+                    }
                 }
 
-                if (_throwCooldown.IsReady && _animator.runtimeAnimatorController == _phaseTwo)
+                if (_animator.runtimeAnimatorController == _phaseTwo)
                 {
-                    _throwCooldown.Reset();
-                    _animator.SetTrigger(ThrowKey);
-                    _creature.SetDirection(Vector2.zero);
+                    if (_throwCooldown.IsReady)
+                    {
+                        _throwCooldown.Reset();
+                        _animator.SetTrigger(ThrowKey);
+                        _creature.SetDirection(Vector2.zero);
 
-                    yield return new WaitForSeconds(0.8f);
+                        yield return new WaitForSeconds(0.8f);
+                    }
                 }
 
                 if (_canAttack.IsTouchingLayer)
