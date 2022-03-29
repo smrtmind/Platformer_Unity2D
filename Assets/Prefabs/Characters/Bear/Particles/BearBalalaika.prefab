@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3634974762172695435}
   - component: {fileID: 8083393215135337235}
   m_Layer: 11
-  m_Name: BearBalalaikaSword
+  m_Name: BearBalalaika
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -316269439
   m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 48b98b71bd6236e4a8ee3c7e7c0b0546, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

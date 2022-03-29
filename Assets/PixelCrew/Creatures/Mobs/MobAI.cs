@@ -142,18 +142,12 @@ namespace PixelCrew.Creatures.Mobs
             StartCoroutine(coroutine);
         }
 
-        protected virtual void OnDie()
+        public void OnDie()
         {
             _sounds.Play("Die");
             _particles.Spawn("DeadMark");
             _isDead = true;
             _animator.SetBool(IsDeadKey, _isDead);
-
-            //_collider.direction = (CapsuleDirection2D)1;
-            //_collider.size = new Vector2(_collider.size.y, _collider.size.x); 
-            //_collider.offset = Vector2.zero;
-
-            //_collider.gameObject.layer = 11;
 
             _creature.SetDirection(Vector2.zero);
             if (_current != null)

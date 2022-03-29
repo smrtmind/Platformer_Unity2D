@@ -1,23 +1,40 @@
 ﻿using PixelCrew.Components.GameObjectBased;
+using PixelCrew.Components.Health;
 using PixelCrew.Utils;
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelCrew.Creatures.Mobs
 {
-    public class AdvancedMobAI : MobAI
+    public class BossAI : MobAI
     {
-        [Header("Summon")]
-        [SerializeField] private Cooldown _summonCooldown;
-        [SerializeField] private SpawnComponent _summonCreature;
+        [Header("Throw")]
+        [SerializeField] private Cooldown _throwCooldown;
+        [SerializeField] private SpawnComponent _throwingWeapon;
 
-        private static readonly int SummonKey = Animator.StringToHash("summon");
+        [Space]
+        [SerializeField] private AnimatorController _phaseOne;
+        [SerializeField] private AnimatorController _phaseTwo;
+        [SerializeField] private int _healthForPhaseTwo;
 
-        protected override void Awake() => base.Awake();
+        private static readonly int AgroKey = Animator.StringToHash("agro");
+        private static readonly int DrinkKey = Animator.StringToHash("drink");
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
+
+        private HealthComponent _health;
+        private bool _phaseTwoIsStarted;
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            _health = GetComponent<HealthComponent>();
+        }
 
         protected override void Start() => base.Start();
 
-        public void OnSummon() => _summonCreature.Spawn();
+        public void OnThrow() => _throwingWeapon.Spawn();
 
         private void OnHeroInVision(GameObject go)
         {
@@ -42,13 +59,26 @@ namespace PixelCrew.Creatures.Mobs
         {
             while (_vision.IsTouchingLayer)
             {
-                if (_summonCooldown.IsReady)
+                if (_health.Health == _healthForPhaseTwo && _phaseTwoIsStarted == false)
                 {
-                    _summonCooldown.Reset();
-                    _animator.SetTrigger(SummonKey);
+                    _phaseTwoIsStarted = true;
+
+                    _animator.SetTrigger(DrinkKey);
+                    _creature.SetDirection(Vector2.zero);
+                    yield return new WaitForSeconds(2.5f);
+
+                    _animator.runtimeAnimatorController = _phaseTwo;
+                    _sounds.Play("Growl");
+                    yield return new WaitForSeconds(2f);
+                }
+
+                if (_throwCooldown.IsReady && _animator.runtimeAnimatorController == _phaseTwo)
+                {
+                    _throwCooldown.Reset();
+                    _animator.SetTrigger(ThrowKey);
                     _creature.SetDirection(Vector2.zero);
 
-                    yield return new WaitForSeconds(1.5f);
+                    yield return new WaitForSeconds(0.8f);
                 }
 
                 if (_canAttack.IsTouchingLayer)
@@ -84,11 +114,16 @@ namespace PixelCrew.Creatures.Mobs
             while (_canAttack.IsTouchingLayer)
             {
                 _creature.Attack();
-                _sounds.Play("Hit");
                 yield return new WaitForSeconds(_attackCooldown);
             }
 
             StartState(GoToHero());
+        }
+
+        public void PlayVFX()
+        {
+            _sounds.Play("Hit");
+            _particles.Spawn("BalalaikaSlash");
         }
 
         protected override void SetDirectionToTarget() => base.SetDirectionToTarget();
