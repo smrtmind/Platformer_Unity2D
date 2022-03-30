@@ -5591,6 +5591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492254109811386663}
   - component: {fileID: 4181984795480189909}
+  - component: {fileID: 90065535}
   m_Layer: 15
   m_Name: ExclamationPosition
   m_TagString: Untagged
@@ -5627,6 +5628,20 @@ MonoBehaviour:
   _target: {fileID: 492254109811386663}
   _prefab: {fileID: 4476619537445411834, guid: edb13a305db5fc0469c6bd0add6cfa35, type: 3}
   _invertXScale: 0
+--- !u!114 &90065535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419614695836238397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448da48d686f2cd4b97969ee7c4c18ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 491406283003245981}
+  _go: {fileID: 2419614695836238397}
 --- !u!1 &2608453326501141544
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,6 +5877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6945961477906234237}
   - component: {fileID: 3746548804731980347}
+  - component: {fileID: 211728561}
   m_Layer: 15
   m_Name: MissPosition
   m_TagString: Untagged
@@ -5898,6 +5914,20 @@ MonoBehaviour:
   _target: {fileID: 6945961477906234237}
   _prefab: {fileID: 4476619537445411834, guid: a999a3bdab9be624fa777f9b3ee2f16f, type: 3}
   _invertXScale: 0
+--- !u!114 &211728561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393179718850415231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448da48d686f2cd4b97969ee7c4c18ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 491406283003245981}
+  _go: {fileID: 4393179718850415231}
 --- !u!1 &4630168311904860796
 GameObject:
   m_ObjectHideFlags: 0
@@ -5911,6 +5941,7 @@ GameObject:
   - component: {fileID: 3969105705651197556}
   - component: {fileID: 8952369810955785960}
   - component: {fileID: 5817936527710615911}
+  - component: {fileID: 1081052858}
   m_Layer: 15
   m_Name: LifeBar
   m_TagString: Untagged
@@ -6012,6 +6043,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeBar: {fileID: 4681372562152422812}
   _hp: {fileID: 0}
+--- !u!114 &1081052858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630168311904860796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448da48d686f2cd4b97969ee7c4c18ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 491406283003245981}
+  _go: {fileID: 4630168311904860796}
 --- !u!1 &5166237411672545838
 GameObject:
   m_ObjectHideFlags: 0

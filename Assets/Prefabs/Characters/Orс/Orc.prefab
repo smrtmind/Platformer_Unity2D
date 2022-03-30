@@ -933,6 +933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492254109811386663}
   - component: {fileID: 4181984795480189909}
+  - component: {fileID: 1622601479557011275}
   m_Layer: 15
   m_Name: ExclamationPosition
   m_TagString: Untagged
@@ -969,6 +970,20 @@ MonoBehaviour:
   _target: {fileID: 492254109811386663}
   _prefab: {fileID: 4476619537445411834, guid: edb13a305db5fc0469c6bd0add6cfa35, type: 3}
   _invertXScale: 0
+--- !u!114 &1622601479557011275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419614695836238397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448da48d686f2cd4b97969ee7c4c18ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 491406283003245981}
+  _go: {fileID: 2419614695836238397}
 --- !u!1 &2616562328795399501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6945961477906234237}
   - component: {fileID: 3746548804731980347}
+  - component: {fileID: 5781021747950627423}
   m_Layer: 15
   m_Name: MissPosition
   m_TagString: Untagged
@@ -1207,6 +1223,20 @@ MonoBehaviour:
   _target: {fileID: 6945961477906234237}
   _prefab: {fileID: 4476619537445411834, guid: a999a3bdab9be624fa777f9b3ee2f16f, type: 3}
   _invertXScale: 0
+--- !u!114 &5781021747950627423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393179718850415231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448da48d686f2cd4b97969ee7c4c18ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 491406283003245981}
+  _go: {fileID: 4393179718850415231}
 --- !u!1 &5139337754156482259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1390,7 @@ GameObject:
   - component: {fileID: 6660852027186140657}
   - component: {fileID: 444736106723283212}
   - component: {fileID: 2371613821579793029}
+  - component: {fileID: 5039329632298218056}
   m_Layer: 15
   m_Name: LifeBar
   m_TagString: Untagged
@@ -1461,6 +1492,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeBar: {fileID: 5803147521497114444}
   _hp: {fileID: 0}
+--- !u!114 &5039329632298218056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7826590850910572631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448da48d686f2cd4b97969ee7c4c18ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 491406283003245981}
+  _go: {fileID: 7826590850910572631}
 --- !u!1 &8017557107747035578
 GameObject:
   m_ObjectHideFlags: 0

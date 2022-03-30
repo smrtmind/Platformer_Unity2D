@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Data
 {
-    public class QuickInventoryData
+    public class QuickInventoryData : IDisposable
     {
         private readonly PlayerData _data;
 
@@ -58,6 +58,11 @@ namespace PixelCrew.Model.Data
         public void SetNextItem()
         {
             SelectedIndex.Value = (int)Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
+        }
+
+        public void Dispose()
+        {
+            _data.Inventory.OnChanged -= OnChangedInventory;
         }
     }
 }

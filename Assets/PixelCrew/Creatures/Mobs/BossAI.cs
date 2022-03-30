@@ -23,12 +23,15 @@ namespace PixelCrew.Creatures.Mobs
         private static readonly int ThrowKey = Animator.StringToHash("throw");
 
         private HealthComponent _health;
+        private Rigidbody2D _rigidbody;
 
         protected override void Awake()
         {
             base.Awake();
 
             _health = GetComponent<HealthComponent>();
+            _rigidbody = GetComponent<Rigidbody2D>();
+
         }
 
         protected override void Start() => base.Start();
@@ -62,6 +65,9 @@ namespace PixelCrew.Creatures.Mobs
                 {
                     if (_health.Health == _healthForPhaseTwo)
                     {
+                        _collider.enabled = false;
+                        _rigidbody.gravityScale = 0;
+
                         _animator.SetTrigger(DrinkKey);
                         _creature.SetDirection(Vector2.zero);
                         yield return new WaitForSeconds(2.5f);
@@ -69,6 +75,9 @@ namespace PixelCrew.Creatures.Mobs
                         _animator.runtimeAnimatorController = _phaseTwo;
                         _sounds.Play("Growl");
                         yield return new WaitForSeconds(2f);
+
+                        _collider.enabled = true;
+                        _rigidbody.gravityScale = 4;
                     }
                 }
 

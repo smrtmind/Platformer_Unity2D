@@ -539,6 +539,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1463181038}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1845039707
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835773f4fb4b49840971166b7b95748f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 2
+  _health: 4
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -1097,7 +1108,7 @@ MonoBehaviour:
   _throwingWeapon: {fileID: 1062508422}
   _phaseOne: {fileID: 9100000, guid: 2fad52b247df3f248a20feaefe0a3183, type: 2}
   _phaseTwo: {fileID: 9100000, guid: 504f42c0135cb3547917ec846374035a, type: 2}
-  _healthForPhaseTwo: 1
+  _healthForPhaseTwo: 2
 --- !u!114 &1817026128676595965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,7 +1198,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c6317ab43dbef4b4d8019dd0f2e74ca3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 45df5e587f174a3418dbc7d935a20751, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1283,6 +1294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492254109811386663}
   - component: {fileID: 4181984795480189909}
+  - component: {fileID: 331606912}
   m_Layer: 15
   m_Name: ExclamationPosition
   m_TagString: Untagged
@@ -1319,6 +1331,20 @@ MonoBehaviour:
   _target: {fileID: 492254109811386663}
   _prefab: {fileID: 4476619537445411834, guid: e308213ade28d324cb26b39ab6d4b079, type: 3}
   _invertXScale: 0
+--- !u!114 &331606912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419614695836238397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448da48d686f2cd4b97969ee7c4c18ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 491406283003245981}
+  _go: {fileID: 2419614695836238397}
 --- !u!1 &2616562328795399501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1752,7 @@ GameObject:
   - component: {fileID: 6660852027186140657}
   - component: {fileID: 444736106723283212}
   - component: {fileID: 2371613821579793029}
+  - component: {fileID: 5234152251975105936}
   m_Layer: 15
   m_Name: LifeBar
   m_TagString: Untagged
@@ -1827,6 +1854,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeBar: {fileID: 5803147521497114444}
   _hp: {fileID: 0}
+--- !u!114 &5234152251975105936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7826590850910572631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448da48d686f2cd4b97969ee7c4c18ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 491406283003245981}
+  _go: {fileID: 7826590850910572631}
 --- !u!1 &8017557107747035578
 GameObject:
   m_ObjectHideFlags: 0
