@@ -69,5 +69,10 @@ namespace PixelCrew.Model
             _trash.Dispose();
             InitModels();
         }
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
+        }
     }
 }

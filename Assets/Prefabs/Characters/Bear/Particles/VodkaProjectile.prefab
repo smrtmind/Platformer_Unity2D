@@ -126,7 +126,7 @@ SpriteRenderer:
   m_SortingLayerID: -316269439
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 198b6a5cfb477f645a9b99a3cbfa666b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3104257df23614e4cae953f398b0b5f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -190,10 +190,10 @@ MonoBehaviour:
   _clips:
   - _name: spinning
     _sprites:
-    - {fileID: 21300000, guid: 198b6a5cfb477f645a9b99a3cbfa666b, type: 3}
-    - {fileID: 21300000, guid: 25cc5015a50a5a04aad1c609b7988dfe, type: 3}
-    - {fileID: 21300000, guid: 3937e0bd099ca9541adfaa2703d86817, type: 3}
-    - {fileID: 21300000, guid: 92ee7f8a6eecd424b9c0fc3f9aec7cfb, type: 3}
+    - {fileID: 21300000, guid: 3104257df23614e4cae953f398b0b5f6, type: 3}
+    - {fileID: 21300000, guid: e1d7bb35108ead3449aae64ba2916a3f, type: 3}
+    - {fileID: 21300000, guid: b439b5f2b595c3644b3c2a33088329b4, type: 3}
+    - {fileID: 21300000, guid: 368917ef772d81a4fa4377a7bdfa33dc, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
