@@ -21,7 +21,7 @@ MonoBehaviour:
     _tags: 000000000100000002000000
   - _id: Key
     _icon: {fileID: 21300000, guid: 46014228ef8fa4a4aaad077d77c9e622, type: 3}
-    _tags: 01000000
+    _tags: 0100000000000000
   - _id: ThrowingPearl
     _icon: {fileID: 21300000, guid: a0dffd2b793383b4ea9bef1a89c0185b, type: 3}
     _tags: 000000000100000002000000
