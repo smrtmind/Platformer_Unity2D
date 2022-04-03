@@ -16757,6 +16757,11 @@ PrefabInstance:
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9005311172567613483, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 666bd023d349308429b9681b141ac97a, type: 2}
     - target: {fileID: 9005311172567613485, guid: f044bcab1d351cd4d9c76cb86f75e6a1,
         type: 3}
       propertyPath: m_RootOrder
