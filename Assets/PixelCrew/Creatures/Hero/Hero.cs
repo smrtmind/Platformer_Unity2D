@@ -11,7 +11,6 @@ using PixelCrew.Utils;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -319,8 +318,6 @@ namespace PixelCrew.Creatures.Hero
 
         private void UpdateHeroWeapon()
         {
-            var scene = SceneManager.GetActiveScene();
-
             if (_session.Data.SwordIsActive && _isSoldier)
                 Animator.runtimeAnimatorController = _soldier;
             else
