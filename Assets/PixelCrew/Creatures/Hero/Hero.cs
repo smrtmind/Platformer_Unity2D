@@ -11,6 +11,7 @@ using PixelCrew.Utils;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -39,10 +40,12 @@ namespace PixelCrew.Creatures.Hero
         [Space]
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disArmed;
+        [SerializeField] private AnimatorController _soldier;
         [SerializeField] private ProbabilityDropComponent _hitDrop;
         [SerializeField] private SpawnComponent _throwSpawner;
         [SerializeField] private GoContainerComponent _dropOnDie;
 
+        private bool _isSoldier;
         private bool _superThrow;
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -128,7 +131,7 @@ namespace PixelCrew.Creatures.Hero
         {
             base.Update();
 
-            if (Animator.runtimeAnimatorController == _armed)
+            if (Animator.runtimeAnimatorController == _armed || Animator.runtimeAnimatorController == _soldier)
             {
                 Animator.SetBool(IsNearWallKey, _frontObjectsCheck.IsTouchingLayer);
             }
@@ -316,7 +319,12 @@ namespace PixelCrew.Creatures.Hero
 
         private void UpdateHeroWeapon()
         {
-            Animator.runtimeAnimatorController = _session.Data.SwordIsActive ? _armed : _disArmed;
+            var scene = SceneManager.GetActiveScene();
+
+            if (_session.Data.SwordIsActive && _isSoldier)
+                Animator.runtimeAnimatorController = _soldier;
+            else
+                Animator.runtimeAnimatorController = _session.Data.SwordIsActive ? _armed : _disArmed;
         }
 
         public void OnDoThrow()
@@ -479,6 +487,12 @@ namespace PixelCrew.Creatures.Hero
 
             Sounds.Play("HeroDie");
             _particles.Spawn("DeadMark");
+        }
+
+        public void FightForUkraine()
+        {
+            _isSoldier = true;
+            Animator.runtimeAnimatorController = _soldier;
         }
     }
 }

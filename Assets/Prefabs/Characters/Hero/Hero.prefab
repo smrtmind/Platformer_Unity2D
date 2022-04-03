@@ -1462,6 +1462,7 @@ MonoBehaviour:
   _superThrowDelay: 0.2
   _armed: {fileID: 9100000, guid: 666bd023d349308429b9681b141ac97a, type: 2}
   _disArmed: {fileID: 9100000, guid: e04a8913e25ae274e8b1bf79a166b86d, type: 2}
+  _soldier: {fileID: 9100000, guid: a8c21adf367f4c6408e08d73bdd42dd8, type: 2}
   _hitDrop: {fileID: 1939310759}
   _throwSpawner: {fileID: 8566842532689652630}
   _dropOnDie: {fileID: 1606472164}
@@ -1763,6 +1764,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1480670261}
         m_MethodName: SetTimer
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
